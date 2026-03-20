@@ -7,10 +7,10 @@
 #SBATCH --output=logs/act_libero_%j.out
 #SBATCH --error=logs/act_libero_%j.err
 
+cd /ocean/projects/cis260038p/mlee12/act
+
 module load anaconda3
 conda activate aloha
-
-cd /ocean/projects/cis260038p/mlee12/act
 
 # Start with single task + larger batch to validate quickly
 python3 imitate_episodes.py \
