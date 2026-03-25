@@ -64,6 +64,10 @@ def get_args_parser():
     parser.add_argument('--chunk_size', action='store', type=int, help='chunk_size', required=False)
     parser.add_argument('--temporal_agg', action='store_true')
 
+    # FAST tokenization args (set via args_override, but must be declared to avoid argparse error)
+    parser.add_argument('--use_fast_tokens', action='store_true')
+    parser.add_argument('--fast_tokenizer_path', type=str, default=None)
+
     return parser
 
 
