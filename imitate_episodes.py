@@ -104,17 +104,53 @@ def main(args):
         'camera_names': camera_names,
         'real_robot': not is_sim and not is_libero,
         'is_libero': is_libero,
+        'resume_ckpt': args.get('resume', None),
     }
 
     if is_eval:
-        ckpt_names = [f'policy_best.ckpt']
-        results = []
-        for ckpt_name in ckpt_names:
-            success_rate, avg_return = eval_bc(config, ckpt_name, save_episode=True)
-            results.append([ckpt_name, success_rate, avg_return])
+        ckpt_name = 'policy_best.ckpt'
 
-        for ckpt_name, success_rate, avg_return in results:
+        if is_libero:
+            # Evaluate across all tasks in the suite
+            from libero.libero import benchmark
+            benchmark_dict = benchmark.get_benchmark_dict()
+            suite_name = task_name if task_name in benchmark_dict else 'libero_90'
+            task_suite = benchmark_dict[suite_name]()
+            num_tasks = task_suite.n_tasks
+
+            all_results = []
+            for task_id in range(num_tasks):
+                task_desc = task_suite.get_task(task_id).language
+                print(f'\n{"="*60}')
+                print(f'Evaluating task {task_id}/{num_tasks}: {task_desc}')
+                print(f'{"="*60}')
+                success_rate, avg_return = eval_bc(config, ckpt_name, save_episode=True, task_id=task_id)
+                all_results.append([task_id, task_desc, success_rate, avg_return])
+
+            # Print summary table
+            print(f'\n{"="*60}')
+            print(f'EVALUATION SUMMARY — {suite_name} ({num_tasks} tasks)')
+            print(f'{"="*60}')
+            total_success = 0
+            for task_id, desc, sr, ar in all_results:
+                print(f'  Task {task_id:2d} | SR: {sr:.2f} | {desc}')
+                total_success += sr
+            avg_success = total_success / num_tasks
+            print(f'{"="*60}')
+            print(f'  Average success rate: {avg_success:.3f}')
+            print(f'{"="*60}')
+
+            # Save results
+            result_path = os.path.join(ckpt_dir, f'eval_all_tasks.txt')
+            with open(result_path, 'w') as f:
+                for task_id, desc, sr, ar in all_results:
+                    f.write(f'Task {task_id:2d} | SR: {sr:.2f} | Return: {ar:.2f} | {desc}\n')
+                f.write(f'\nAverage success rate: {avg_success:.3f}\n')
+            print(f'Results saved to {result_path}')
+        else:
+            success_rate, avg_return = eval_bc(config, ckpt_name, save_episode=True)
             print(f'{ckpt_name}: {success_rate=} {avg_return=}')
+
         print()
         exit()
 
@@ -192,7 +228,7 @@ def get_libero_image(obs, camera_names):
     return curr_image
 
 
-def eval_bc(config, ckpt_name, save_episode=True):
+def eval_bc(config, ckpt_name, save_episode=True, task_id=0):
     set_seed(1000)
     ckpt_dir = config['ckpt_dir']
     state_dim = config['state_dim']
@@ -237,7 +273,7 @@ def eval_bc(config, ckpt_name, save_episode=True):
             # Try extracting suite from task name, or default
             suite_name = 'libero_90'
         task_suite = benchmark_dict[suite_name]()
-        task_id = 0  # TODO: set this based on your specific task
+        # task_id is passed as a parameter
 
         task = task_suite.get_task(task_id)
         task_bddl_file = os.path.join(
@@ -270,7 +306,7 @@ def eval_bc(config, ckpt_name, save_episode=True):
 
     max_timesteps = int(max_timesteps * 1) # may increase for real-world tasks
 
-    num_rollouts = 50
+    num_rollouts = 20 if is_libero else 50
     episode_returns = []
     highest_rewards = []
     for rollout_id in range(num_rollouts):
@@ -434,6 +470,12 @@ def train_bc(train_dataloader, val_dataloader, config):
     set_seed(seed)
 
     policy = make_policy(policy_class, policy_config)
+    # Resume from pretrained checkpoint if provided
+    resume_ckpt = config.get('resume_ckpt', None)
+    if resume_ckpt is not None:
+        print(f'Loading pretrained checkpoint from: {resume_ckpt}')
+        loading_status = policy.load_state_dict(torch.load(resume_ckpt))
+        print(f'Resume status: {loading_status}')
     policy.cuda()
     optimizer = make_optimizer(policy_class, policy)
 
@@ -536,5 +578,6 @@ if __name__ == '__main__':
     parser.add_argument('--hidden_dim', action='store', type=int, help='hidden_dim', required=False)
     parser.add_argument('--dim_feedforward', action='store', type=int, help='dim_feedforward', required=False)
     parser.add_argument('--temporal_agg', action='store_true')
+    parser.add_argument('--resume', action='store', type=str, help='path to checkpoint to resume/finetune from', required=False, default=None)
 
     main(vars(parser.parse_args()))
