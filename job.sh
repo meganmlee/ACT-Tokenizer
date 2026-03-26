@@ -2,7 +2,7 @@
 #SBATCH --job-name=act_libero
 #SBATCH --partition=GPU-shared
 #SBATCH --gres=gpu:v100-32:1
-#SBATCH --time=48:00:00
+#SBATCH --time=8:00:00
 #SBATCH -A cis260038p
 #SBATCH --output=logs/act_libero_%j.out
 #SBATCH --error=logs/act_libero_%j.err
@@ -20,6 +20,7 @@ POLICY_ARGS="--policy_class ACT --kl_weight 10 --chunk_size 50 --hidden_dim 512 
 ###############################################################################
 # STEP 1: Pretrain on LIBERO-90  (~13-14 hours)
 #         Skip this if you already have checkpoints/libero_90_act/policy_best.ckpt
+# CHANGE the sbatch time only for this part, the longer time you request, the longer it takes to get a node assigned
 ###############################################################################
 
 # python3 imitate_episodes.py \
@@ -36,21 +37,6 @@ POLICY_ARGS="--policy_class ACT --kl_weight 10 --chunk_size 50 --hidden_dim 512 
 #         Uses fewer epochs and same or lower learning rate
 ###############################################################################
 
-python3 imitate_episodes.py \
-    --task_name libero_10 \
-    --ckpt_dir ./checkpoints/libero_10_finetuned \
-    $POLICY_ARGS \
-    --batch_size 32 \
-    --num_epochs 500 \
-    --lr 1e-5 \
-    --resume ./checkpoints/libero_90_act/policy_best.ckpt
-
-###############################################################################
-# STEP 3: Evaluate on LIBERO-10  (~2-4 hours)
-#         Runs the finetuned policy in the simulator across all 10 tasks
-#         Reports per-task and average success rates
-###############################################################################
-
 # python3 imitate_episodes.py \
 #     --task_name libero_10 \
 #     --ckpt_dir ./checkpoints/libero_10_finetuned \
@@ -58,4 +44,19 @@ python3 imitate_episodes.py \
 #     --batch_size 32 \
 #     --num_epochs 500 \
 #     --lr 1e-5 \
-#     --eval
+#     --resume ./checkpoints/libero_90_act/policy_best.ckpt
+
+###############################################################################
+# STEP 3: Evaluate on LIBERO-10  (~2-4 hours)
+#         Runs the finetuned policy in the simulator across all 10 tasks
+#         Reports per-task and average success rates
+###############################################################################
+
+python3 imitate_episodes.py \
+    --task_name libero_10 \
+    --ckpt_dir ./checkpoints/libero_10_finetuned \
+    $POLICY_ARGS \
+    --batch_size 32 \
+    --num_epochs 500 \
+    --lr 1e-5 \
+    --eval
