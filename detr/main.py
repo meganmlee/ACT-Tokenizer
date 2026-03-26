@@ -64,12 +64,16 @@ def get_args_parser():
     parser.add_argument('--chunk_size', action='store', type=int, help='chunk_size', required=False)
     parser.add_argument('--temporal_agg', action='store_true')
 
+    # FAST tokenization args (set via args_override, but must be declared to avoid argparse error)
+    parser.add_argument('--use_fast_tokens', action='store_true')
+    parser.add_argument('--fast_tokenizer_path', type=str, default=None)
+
     return parser
 
 
 def build_ACT_model_and_optimizer(args_override):
     parser = argparse.ArgumentParser('DETR training and evaluation script', parents=[get_args_parser()])
-    args = parser.parse_args()
+    args, _ = parser.parse_known_args()
 
     for k, v in args_override.items():
         setattr(args, k, v)
@@ -92,7 +96,7 @@ def build_ACT_model_and_optimizer(args_override):
 
 def build_CNNMLP_model_and_optimizer(args_override):
     parser = argparse.ArgumentParser('DETR training and evaluation script', parents=[get_args_parser()])
-    args = parser.parse_args()
+    args, _ = parser.parse_known_args()
 
     for k, v in args_override.items():
         setattr(args, k, v)
