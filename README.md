@@ -30,70 +30,54 @@ When running, make sure LIBERO is on your path:
 export PYTHONPATH=/path/to/LIBERO:$PYTHONPATH
 ```
 
-## Running ACT (original, continuous actions)
+## Evaluation Protocol
 
-Use `job.sh`. The three steps:
+Per-suite multi-task training and evaluation on LIBERO, following the protocol used by OpenVLA-OFT, pi0, Dream-VLA, and MM-ACT:
 
-```bash
-# Step 1: Pretrain on LIBERO-90
-python3 imitate_episodes.py \
-    --task_name libero_90 \
-    --ckpt_dir ./checkpoints/libero_90_act \
-    --policy_class ACT --kl_weight 10 --chunk_size 50 --hidden_dim 512 --dim_feedforward 3200 \
-    --batch_size 32 --num_epochs 800 --lr 1e-5 --seed 0
+- Train one policy on all 10 tasks within a single suite (50 demos per task)
+- Evaluate on the same 10 tasks with different initial conditions (20 rollouts per task)
+- Report per-task success rates and suite average
+- Repeat for each suite, then average across suites for the headline number
 
-# Step 2: Finetune on LIBERO-10
-python3 imitate_episodes.py \
-    --task_name libero_10 \
-    --ckpt_dir ./checkpoints/libero_10_finetuned \
-    --policy_class ACT --kl_weight 10 --chunk_size 50 --hidden_dim 512 --dim_feedforward 3200 \
-    --batch_size 32 --num_epochs 500 --lr 1e-5 --seed 0 \
-    --resume ./checkpoints/libero_90_act/policy_best.ckpt
+| Suite | # Tasks | Episode Length | Description |
+|---|---|---|---|
+| LIBERO-Spatial | 10 | 300 | Spatial relationship reasoning |
+| LIBERO-Object | 10 | 300 | Object recognition/manipulation |
+| LIBERO-Goal | 10 | 300 | Goal-conditioned manipulation |
+| LIBERO-Long | 10 | 600 | Long-horizon multi-step tasks |
 
-# Step 3: Evaluate on LIBERO-10
-python3 imitate_episodes.py \
-    --task_name libero_10 \
-    --ckpt_dir ./checkpoints/libero_10_finetuned \
-    --policy_class ACT --kl_weight 10 --chunk_size 50 --hidden_dim 512 --dim_feedforward 3200 \
-    --batch_size 32 --num_epochs 500 --lr 1e-5 --seed 0 --eval
-```
+## Running Experiments
 
-## Running ACT + FAST tokenizer
-
-Use `job_actFAST.sh`. Same structure but with an extra tokenizer training step:
+### Step 0: Train FAST tokenizer (once)
 
 ```bash
-# Step 0: Train FAST tokenizer on LIBERO-90 action data
 python tokenizer.py \
     --dataset_path /path/to/libero_90 \
     --save_path ./fast_tokenizer \
     --chunk_size 50 --action_dim 7
-
-# Step 1: Pretrain on LIBERO-90 with FAST tokens
-python3 imitate_episodes.py \
-    --task_name libero_90 \
-    --ckpt_dir ./checkpoints/libero_90_act_fast \
-    --policy_class ACT --kl_weight 10 --chunk_size 50 --hidden_dim 512 --dim_feedforward 3200 \
-    --batch_size 32 --num_epochs 800 --lr 1e-5 --seed 0 \
-    --use_fast_tokens --fast_tokenizer_path ./fast_tokenizer
-
-# Step 2: Finetune on LIBERO-10 with FAST tokens
-python3 imitate_episodes.py \
-    --task_name libero_10 \
-    --ckpt_dir ./checkpoints/libero_10_fast_finetuned \
-    --policy_class ACT --kl_weight 10 --chunk_size 50 --hidden_dim 512 --dim_feedforward 3200 \
-    --batch_size 32 --num_epochs 500 --lr 1e-5 --seed 0 \
-    --use_fast_tokens --fast_tokenizer_path ./fast_tokenizer \
-    --resume ./checkpoints/libero_90_act_fast/policy_best.ckpt
-
-# Step 3: Evaluate on LIBERO-10
-python3 imitate_episodes.py \
-    --task_name libero_10 \
-    --ckpt_dir ./checkpoints/libero_10_fast_finetuned \
-    --policy_class ACT --kl_weight 10 --chunk_size 50 --hidden_dim 512 --dim_feedforward 3200 \
-    --batch_size 32 --num_epochs 500 --lr 1e-5 --seed 0 \
-    --use_fast_tokens --fast_tokenizer_path ./fast_tokenizer --eval
 ```
+
+### Per-suite training + eval
+
+Both job scripts take a suite name as an argument and run training followed by evaluation.
+
+```bash
+# ACT baseline (continuous actions)
+sbatch job.sh libero_spatial
+sbatch job.sh libero_object
+sbatch job.sh libero_goal
+sbatch job.sh libero_10          # LIBERO-Long
+
+# ACT + FAST tokens
+sbatch job_actFAST.sh libero_spatial
+sbatch job_actFAST.sh libero_object
+sbatch job_actFAST.sh libero_goal
+sbatch job_actFAST.sh libero_10  # LIBERO-Long
+```
+
+Checkpoints are saved to `checkpoints/{suite}_act/` and `checkpoints/{suite}_act_fast/`.
+
+Evaluation results are written to `checkpoints/{suite}_{variant}/eval_all_tasks.txt`.
 
 ## Swapping tokenizers
 
@@ -106,5 +90,5 @@ The tokenizer is pluggable via the `ActionTokenizer` base class in `tokenizer.py
 - `detr/` — Model definitions (DETRVAE), modified from DETR
 - `constants.py` — Task configs and constants
 - `utils.py` — Data loading (continuous + tokenized)
-- `job.sh` — SLURM job for original ACT
-- `job_actFAST.sh` — SLURM job for ACT + FAST tokens
+- `job.sh` — SLURM job for ACT baseline (per-suite)
+- `job_actFAST.sh` — SLURM job for ACT + FAST tokens (per-suite)

@@ -19,57 +19,41 @@ POLICY_ARGS="--policy_class ACT --kl_weight 10 --chunk_size 50 --hidden_dim 512 
 FAST_ARGS="--use_fast_tokens --fast_tokenizer_path ./fast_tokenizer"
 
 ###############################################################################
-# STEP 0: Train FAST tokenizer on LIBERO-90 action data
+# STEP 0: Train FAST tokenizer on LIBERO action data (run once)
 #         Skip this if you already have ./fast_tokenizer/
 ###############################################################################
 
-python tokenizer.py \
-    --dataset_path /ocean/projects/cis260038p/shared/datasets/libero/libero_90 \
-    --save_path ./fast_tokenizer \
-    --chunk_size 50 \
-    --action_dim 7
+# python tokenizer.py \
+#     --dataset_path /ocean/projects/cis260038p/shared/datasets/libero/libero_90 \
+#     --save_path ./fast_tokenizer \
+#     --chunk_size 50 \
+#     --action_dim 7
 
 ###############################################################################
-# STEP 1: Pretrain on LIBERO-90 with FAST tokens  (~13-14 hours)
-#         Skip this if you already have checkpoints/libero_90_act_fast/policy_best.ckpt
-# CHANGE the sbatch time only for this part, the longer time you request, the longer it takes to get a node assigned
+# Per-suite multi-task training + evaluation
+# Train one policy per suite, evaluate on the same suite
+# Suites: libero_spatial, libero_object, libero_goal, libero_10 (Long)
 ###############################################################################
 
+SUITE=${1:-libero_spatial}
+
+# STEP 1: Train on suite
 python3 imitate_episodes.py \
-    --task_name libero_90 \
-    --ckpt_dir ./checkpoints/libero_90_act_fast \
+    --task_name ${SUITE} \
+    --ckpt_dir ./checkpoints/${SUITE}_act_fast \
     $POLICY_ARGS \
     $FAST_ARGS \
     --batch_size 32 \
     --num_epochs 800 \
     --lr 1e-5
 
-###############################################################################
-# STEP 2: Finetune on LIBERO-10 with FAST tokens  (~1-2 hours)
-#         Loads the pretrained LIBERO-90 checkpoint, then trains on LIBERO-10
-###############################################################################
-
-# python3 imitate_episodes.py \
-#     --task_name libero_10 \
-#     --ckpt_dir ./checkpoints/libero_10_fast_finetuned \
-#     $POLICY_ARGS \
-#     $FAST_ARGS \
-#     --batch_size 32 \
-#     --num_epochs 500 \
-#     --lr 1e-5 \
-#     --resume ./checkpoints/libero_90_act_fast/policy_best.ckpt
-
-###############################################################################
-# STEP 3: Evaluate on LIBERO-10  (~2-4 hours)
-#         Runs the finetuned policy in the simulator across all 10 tasks
-###############################################################################
-
-# python3 imitate_episodes.py \
-#     --task_name libero_10 \
-#     --ckpt_dir ./checkpoints/libero_10_fast_finetuned \
-#     $POLICY_ARGS \
-#     $FAST_ARGS \
-#     --batch_size 32 \
-#     --num_epochs 500 \
-#     --lr 1e-5 \
-#     --eval
+# STEP 2: Evaluate on suite
+python3 imitate_episodes.py \
+    --task_name ${SUITE} \
+    --ckpt_dir ./checkpoints/${SUITE}_act_fast \
+    $POLICY_ARGS \
+    $FAST_ARGS \
+    --batch_size 32 \
+    --num_epochs 800 \
+    --lr 1e-5 \
+    --eval
