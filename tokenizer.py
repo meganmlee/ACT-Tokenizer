@@ -154,13 +154,16 @@ class FASTTokenizerWrapper(ActionTokenizer):
     Wraps the FAST+ tokenizer for use with ACT.
     """
 
-    def __init__(self, tokenizer, max_token_len=128, action_dim=7, chunk_size=50):
+    def __init__(self, tokenizer, max_token_len=128, action_dim=7, chunk_size=50,
+                 fast_scale=10, fast_min_token=0):
         self.tokenizer = tokenizer
         self._max_token_len = max_token_len
         self._action_dim = action_dim
         self._chunk_size = chunk_size
         self._vocab_size = tokenizer.vocab_size if hasattr(tokenizer, 'vocab_size') else 30000
         self._pad_token_id = self._vocab_size
+        self.fast_scale = fast_scale
+        self.fast_min_token = fast_min_token
 
     @property
     def vocab_size(self): return self._vocab_size
@@ -219,8 +222,15 @@ class FASTTokenizerWrapper(ActionTokenizer):
         max_token_len = min(max_token_len, int(actual_max * 1.2) + 4)
         print(f"Max observed token length: {actual_max}, using max_token_len={max_token_len}")
 
-        wrapper = cls(tokenizer, max_token_len=max_token_len,
-                      action_dim=action_dim, chunk_size=chunk_size)
+        # Extract scale/min_token from the fitted UniversalActionProcessor,
+        # then unwrap to the raw bpe_tokenizer so save/load is stable.
+        fast_scale = tokenizer.scale
+        fast_min_token = tokenizer.min_token
+        bpe_tokenizer = tokenizer.bpe_tokenizer
+
+        wrapper = cls(bpe_tokenizer, max_token_len=max_token_len,
+                      action_dim=action_dim, chunk_size=chunk_size,
+                      fast_scale=fast_scale, fast_min_token=fast_min_token)
         # Store normalization params for encode/decode
         wrapper.action_offset = offset.astype(np.float32)
         wrapper.action_scale = scale.astype(np.float32)
@@ -231,15 +241,18 @@ class FASTTokenizerWrapper(ActionTokenizer):
     def load(cls, path):
         """Load a saved tokenizer wrapper."""
         import pickle
-        from transformers import AutoProcessor
-        tokenizer = AutoProcessor.from_pretrained(path, trust_remote_code=True)
+        from transformers import AutoTokenizer
+        # Load the raw BPE tokenizer directly — no custom code needed.
+        tokenizer = AutoTokenizer.from_pretrained(path)
         meta_path = os.path.join(path, 'wrapper_meta.pkl')
         with open(meta_path, 'rb') as f:
             meta = pickle.load(f)
         wrapper = cls(tokenizer,
                       max_token_len=meta['max_token_len'],
                       action_dim=meta['action_dim'],
-                      chunk_size=meta['chunk_size'])
+                      chunk_size=meta['chunk_size'],
+                      fast_scale=meta.get('fast_scale', 10),
+                      fast_min_token=meta.get('fast_min_token', 0))
         wrapper.action_offset = meta['action_offset']
         wrapper.action_scale = meta['action_scale']
         wrapper._vocab_size = meta['vocab_size']
@@ -260,6 +273,8 @@ class FASTTokenizerWrapper(ActionTokenizer):
             'action_scale': self.action_scale,
             'vocab_size': self.vocab_size,
             'pad_token_id': self.pad_token_id,
+            'fast_scale': self.fast_scale,
+            'fast_min_token': self.fast_min_token,
         }
         with open(os.path.join(path, 'wrapper_meta.pkl'), 'wb') as f:
             pickle.dump(meta, f)
@@ -280,12 +295,21 @@ class FASTTokenizerWrapper(ActionTokenizer):
         if single:
             action_chunks = action_chunks[np.newaxis]
 
+        from scipy.fft import dct as scipy_dct
+
         # Normalize to [-1, 1]
         normalized = (action_chunks - self.action_offset) / self.action_scale
         normalized = np.clip(normalized, -1.0, 1.0)
 
-        # Tokenize (returns list of variable-length lists)
-        token_lists = self.tokenizer(normalized)
+        # Replicate UniversalActionProcessor.__call__: DCT -> round -> chr -> BPE
+        dct_coeff = scipy_dct(normalized, axis=1, norm="ortho")
+        dct_coeff = np.around(dct_coeff * self.fast_scale)
+        token_lists = []
+        for elem in dct_coeff:
+            token_str = "".join(
+                map(chr, np.maximum(elem.flatten() - self.fast_min_token, 0).astype(int))
+            )
+            token_lists.append(self.tokenizer(token_str)["input_ids"])
 
         # Pad to fixed length
         batch_size = len(token_lists)
@@ -337,21 +361,20 @@ class FASTTokenizerWrapper(ActionTokenizer):
                 tlen = np.argmax(pad_mask) if pad_mask.any() else len(tokens_np[i])
             token_lists.append(tokens_np[i, :tlen].tolist())
 
-        # Decode with FAST
-        decoded = self.tokenizer.decode(token_lists)  # list of numpy arrays
+        from scipy.fft import idct as scipy_idct
 
-        # Denormalize back to original action space
+        # Replicate UniversalActionProcessor.decode: BPE decode -> ord -> IDCT -> denorm
         actions = []
-        for arr in decoded:
-            # arr shape: (chunk_size, action_dim) — but may differ slightly
-            arr = np.array(arr, dtype=np.float32)
-            # Pad or truncate to chunk_size
-            if arr.shape[0] < self.chunk_size:
-                pad = np.zeros((self.chunk_size - arr.shape[0], self.action_dim), dtype=np.float32)
-                arr = np.concatenate([arr, pad], axis=0)
-            elif arr.shape[0] > self.chunk_size:
-                arr = arr[:self.chunk_size]
-            # Denormalize
+        for toks in token_lists:
+            try:
+                text = self.tokenizer.decode(toks)
+                dct_coeff = np.array(list(map(ord, text)), dtype=np.float32) + self.fast_min_token
+                dct_coeff = dct_coeff.reshape(self.chunk_size, self.action_dim)
+                arr = scipy_idct(dct_coeff / self.fast_scale, axis=0, norm="ortho")
+                arr = arr.astype(np.float32)
+            except Exception:
+                arr = np.zeros((self.chunk_size, self.action_dim), dtype=np.float32)
+            # Denormalize back to original action space
             arr = arr * self.action_scale + self.action_offset
             actions.append(arr)
 
