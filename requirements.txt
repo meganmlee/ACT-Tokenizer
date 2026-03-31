@@ -1,0 +1,25 @@
+# Core
+torch>=2.0.0
+torchvision>=0.15.0
+numpy>=1.24
+h5py>=3.8
+einops>=0.6.0
+matplotlib>=3.7
+opencv-python>=4.7
+ipython>=8.12
+tqdm>=4.64
+pyquaternion>=0.9.9
+pyyaml>=6.0
+packaging>=23.0
+scipy
+
+# FAST tokenizer
+transformers
+
+# QueST tokenizer (SkillVAE)
+vector-quantize-pytorch>=1.14
+positional-encodings[torch]>=6.0
+
+# Simulation (optional — only needed for eval)
+# mujoco>=2.3
+# dm_control>=1.0

@@ -355,6 +355,7 @@ def load_libero_data_tokenized(dataset_path, camera_names, batch_size, fast_wrap
     train_size = int(0.9 * len(full_dataset))
     val_size = len(full_dataset) - train_size
     train_dataset, val_dataset = torch.utils.data.random_split(full_dataset, [train_size, val_size])
-    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=4, pin_memory=True)
-    val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False, num_workers=4, pin_memory=True)
+    mp_ctx = 'spawn' if torch.cuda.is_available() else None
+    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=4, pin_memory=True, multiprocessing_context=mp_ctx)
+    val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False, num_workers=4, pin_memory=True, multiprocessing_context=mp_ctx)
     return train_loader, val_loader, stats, full_dataset

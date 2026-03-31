@@ -2,6 +2,7 @@ import pathlib
 
 ### Task parameters
 DATA_DIR = '/ocean/projects/cis260038p/shared/datasets'
+DATA_DIR = '/home/snaak/Documents/ani/BIG/QueST/data'
 SIM_TASK_CONFIGS = {
     'sim_transfer_cube_scripted':{
         'dataset_dir': DATA_DIR + '/sim_transfer_cube_scripted',
