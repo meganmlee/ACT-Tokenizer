@@ -142,31 +142,51 @@ def main(args):
             task_suite = benchmark_dict[suite_name]()
             num_tasks = task_suite.n_tasks
 
+            # If --task_id is given, only evaluate that single task
+            eval_task_id = args.get('task_id', None)
+            if eval_task_id is not None:
+                task_ids_to_eval = [eval_task_id]
+            else:
+                task_ids_to_eval = list(range(num_tasks))
+
             all_results = []
-            for task_id in range(num_tasks):
-                task_desc = task_suite.get_task(task_id).language
-                print(f'\n{"="*60}')
-                print(f'Evaluating task {task_id}/{num_tasks}: {task_desc}')
-                print(f'{"="*60}')
-                success_rate, avg_return = eval_bc(config, ckpt_name, save_episode=True, task_id=task_id)
-                all_results.append([task_id, task_desc, success_rate, avg_return])
+            for tid in task_ids_to_eval:
+                # When using per-task checkpoints, load from task-specific dir
+                per_task_ckpt = os.path.join(ckpt_dir, f'task_{tid}', ckpt_name)
+                if os.path.exists(per_task_ckpt):
+                    task_config_copy = dict(config)
+                    task_config_copy['ckpt_dir'] = os.path.join(ckpt_dir, f'task_{tid}')
+                    task_desc = task_suite.get_task(tid).language
+                    print(f'\n{"="*60}')
+                    print(f'Evaluating task {tid}/{num_tasks}: {task_desc}')
+                    print(f'  checkpoint: {per_task_ckpt}')
+                    print(f'{"="*60}')
+                    success_rate, avg_return = eval_bc(task_config_copy, ckpt_name, save_episode=True, task_id=tid)
+                else:
+                    # Fallback: single checkpoint for all tasks (old behavior)
+                    task_desc = task_suite.get_task(tid).language
+                    print(f'\n{"="*60}')
+                    print(f'Evaluating task {tid}/{num_tasks}: {task_desc}')
+                    print(f'{"="*60}')
+                    success_rate, avg_return = eval_bc(config, ckpt_name, save_episode=True, task_id=tid)
+                all_results.append([tid, task_desc, success_rate, avg_return])
 
             print(f'\n{"="*60}')
-            print(f'EVALUATION SUMMARY — {suite_name} ({num_tasks} tasks)')
+            print(f'EVALUATION SUMMARY — {suite_name} ({len(all_results)} tasks)')
             print(f'{"="*60}')
             total_success = 0
-            for task_id, desc, sr, ar in all_results:
-                print(f'  Task {task_id:2d} | SR: {sr:.2f} | {desc}')
+            for tid, desc, sr, ar in all_results:
+                print(f'  Task {tid:2d} | SR: {sr:.2f} | {desc}')
                 total_success += sr
-            avg_success = total_success / num_tasks
+            avg_success = total_success / len(all_results)
             print(f'{"="*60}')
             print(f'  Average success rate: {avg_success:.3f}')
             print(f'{"="*60}')
 
             result_path = os.path.join(ckpt_dir, f'eval_all_tasks.txt')
             with open(result_path, 'w') as f:
-                for task_id, desc, sr, ar in all_results:
-                    f.write(f'Task {task_id:2d} | SR: {sr:.2f} | Return: {ar:.2f} | {desc}\n')
+                for tid, desc, sr, ar in all_results:
+                    f.write(f'Task {tid:2d} | SR: {sr:.2f} | Return: {ar:.2f} | {desc}\n')
                 f.write(f'\nAverage success rate: {avg_success:.3f}\n')
             print(f'Results saved to {result_path}')
         else:
@@ -176,6 +196,7 @@ def main(args):
         exit()
 
     # Load data
+    task_id = args.get('task_id', None)
     if is_libero:
         if use_fast_tokens:
             from utils import load_libero_data_tokenized
@@ -184,7 +205,8 @@ def main(args):
         else:
             from utils import load_libero_data
             train_dataloader, val_dataloader, stats, _ = load_libero_data(
-                dataset_path, camera_names, batch_size_train, chunk_size=args['chunk_size'])
+                dataset_path, camera_names, batch_size_train, chunk_size=args['chunk_size'],
+                task_id=task_id)
     else:
         from utils import load_data
         train_dataloader, val_dataloader, stats, _ = load_data(
@@ -581,6 +603,7 @@ if __name__ == '__main__':
     parser.add_argument('--hidden_dim', action='store', type=int, help='hidden_dim', required=False)
     parser.add_argument('--dim_feedforward', action='store', type=int, help='dim_feedforward', required=False)
     parser.add_argument('--temporal_agg', action='store_true')
+    parser.add_argument('--task_id', action='store', type=int, help='LIBERO task id (0-9) for per-task training', required=False, default=None)
     parser.add_argument('--resume', action='store', type=str, help='path to checkpoint to resume from', required=False, default=None)
 
     # for FAST tokenization

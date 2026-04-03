@@ -300,14 +300,17 @@ class LIBEROTokenizedDataset(Dataset):
         return all_cam_images, qpos, tokens, is_pad
 
 
-def get_libero_norm_stats(dataset_path, camera_names):
-    """Compute normalization statistics across all demos."""
+def get_libero_norm_stats(dataset_path, camera_names, task_id=None):
+    """Compute normalization statistics across all demos.
+    If task_id is given, only use the single HDF5 for that task."""
     all_qpos = []
     all_actions = []
     if os.path.isdir(dataset_path):
         hdf5_files = sorted(glob.glob(os.path.join(dataset_path, '*.hdf5')))
     else:
         hdf5_files = [dataset_path]
+    if task_id is not None:
+        hdf5_files = [hdf5_files[task_id]]
     for hdf5_path in hdf5_files:
         with h5py.File(hdf5_path, 'r') as f:
             for demo_key in sorted(f['data'].keys()):
@@ -331,12 +334,20 @@ def get_libero_norm_stats(dataset_path, camera_names):
     return stats
 
 
-def load_libero_data(dataset_path, camera_names, batch_size, chunk_size):
-    """Load LIBERO data with continuous actions (original mode)."""
-    print(f'\nLIBERO data from: {dataset_path}\n')
-    stats = get_libero_norm_stats(dataset_path, camera_names)
+def load_libero_data(dataset_path, camera_names, batch_size, chunk_size, task_id=None):
+    """Load LIBERO data with continuous actions (original mode).
+    If task_id is given, only load that task's HDF5 file."""
+    # Resolve the single HDF5 path when task_id is provided
+    if task_id is not None and os.path.isdir(dataset_path):
+        hdf5_files = sorted(glob.glob(os.path.join(dataset_path, '*.hdf5')))
+        single_hdf5 = hdf5_files[task_id]
+        print(f'\nLIBERO data from: {single_hdf5}  (task_id={task_id})\n')
+    else:
+        single_hdf5 = dataset_path
+        print(f'\nLIBERO data from: {dataset_path}\n')
+    stats = get_libero_norm_stats(dataset_path, camera_names, task_id=task_id)
     stats['action_chunk_size'] = chunk_size
-    full_dataset = LIBERODataset(dataset_path, camera_names, stats)
+    full_dataset = LIBERODataset(single_hdf5, camera_names, stats)
     print(f'Total LIBERO samples (demos): {len(full_dataset)}')
     train_size = int(0.9 * len(full_dataset))
     val_size = len(full_dataset) - train_size
