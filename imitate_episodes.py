@@ -27,6 +27,7 @@ def main(args):
     num_epochs = args['num_epochs']
     use_fast_tokens = args.get('use_fast_tokens', False)
     fast_tokenizer_path = args.get('fast_tokenizer_path', None)
+    use_language = args.get('use_language', False)
 
     # get task parameters
     is_sim = task_name[:4] == 'sim_'
@@ -99,6 +100,7 @@ def main(args):
                          'state_dim': state_dim,
                          'action_dim': action_dim,
                          'use_fast_tokens': use_fast_tokens,
+                         'use_language': use_language,
                          }
         if use_fast_tokens:
             # +1 because pad_token_id = vocab_size (out-of-vocab)
@@ -130,6 +132,7 @@ def main(args):
         'resume_ckpt': args.get('resume', None),
         'use_fast_tokens': use_fast_tokens,
         'fast_wrapper': fast_wrapper,
+        'use_language': use_language,
     }
 
     if is_eval:
@@ -202,12 +205,12 @@ def main(args):
             from utils import load_libero_data_tokenized
             train_dataloader, val_dataloader, stats, _ = load_libero_data_tokenized(
                 dataset_path, camera_names, batch_size_train, fast_wrapper,
-                task_id=task_id, task_name=task_name)
+                task_id=task_id, task_name=task_name, use_language=use_language)
         else:
             from utils import load_libero_data
             train_dataloader, val_dataloader, stats, _ = load_libero_data(
                 dataset_path, camera_names, batch_size_train, chunk_size=args['chunk_size'],
-                task_id=task_id, task_name=task_name)
+                task_id=task_id, task_name=task_name, use_language=use_language)
     else:
         from utils import load_data
         train_dataloader, val_dataloader, stats, _ = load_data(
@@ -290,6 +293,8 @@ def eval_bc(config, ckpt_name, save_episode=True, task_id=0):
     task_name = config['task_name']
     temporal_agg = config['temporal_agg']
 
+    use_language = config.get('use_language', False)
+
     ckpt_path = os.path.join(ckpt_dir, ckpt_name)
     policy = make_policy(policy_class, policy_config)
     loading_status = policy.load_state_dict(torch.load(ckpt_path))
@@ -317,15 +322,21 @@ def eval_bc(config, ckpt_name, save_episode=True, task_id=0):
         env.seed(0)
         init_states = task_suite.get_task_init_states(task_id)
         env_max_reward = 1
+        # Task description for language conditioning
+        eval_task_description = task.language if use_language else None
+        if eval_task_description:
+            print(f'  Language conditioning: "{eval_task_description}"')
     elif real_robot:
         from aloha_scripts.robot_utils import move_grippers
         from aloha_scripts.real_env import make_real_env
         env = make_real_env(init_node=True)
         env_max_reward = 0
+        eval_task_description = None
     else:
         from sim_env import make_sim_env
         env = make_sim_env(task_name)
         env_max_reward = env.task.max_reward
+        eval_task_description = None
 
     query_frequency = policy_config['num_queries']
     if use_fast_tokens:
@@ -400,7 +411,8 @@ def eval_bc(config, ckpt_name, save_episode=True, task_id=0):
                 if use_fast_tokens:
                     # Re-predict every chunk_size steps
                     if current_action_chunk is None or chunk_step >= fast_wrapper.chunk_size:
-                        predicted_tokens, token_lens = policy(qpos, curr_image)  # (1, max_token_len)
+                        td = [eval_task_description] if eval_task_description else None
+                        predicted_tokens, token_lens = policy(qpos, curr_image, task_description=td)  # (1, max_token_len)
                         # Detokenize to continuous actions
                         current_action_chunk = fast_wrapper.decode(predicted_tokens.cpu(), token_lens.cpu())[0]  # (chunk_size, action_dim)
                         chunk_step = 0
@@ -417,7 +429,8 @@ def eval_bc(config, ckpt_name, save_episode=True, task_id=0):
                     action = raw_action
                 elif config['policy_class'] == "ACT":
                     if t % query_frequency == 0:
-                        all_actions = policy(qpos, curr_image)
+                        td = [eval_task_description] if eval_task_description else None
+                        all_actions = policy(qpos, curr_image, task_description=td)
                     if temporal_agg:
                         all_time_actions[[t], t:t+num_queries] = all_actions
                         actions_for_curr_step = all_time_actions[:, t]
@@ -482,9 +495,13 @@ def eval_bc(config, ckpt_name, save_episode=True, task_id=0):
 
 
 def forward_pass(data, policy):
-    image_data, qpos_data, action_data, is_pad = data
+    if len(data) == 5:
+        image_data, qpos_data, action_data, is_pad, task_description = data
+    else:
+        image_data, qpos_data, action_data, is_pad = data
+        task_description = None
     image_data, qpos_data, action_data, is_pad = image_data.cuda(), qpos_data.cuda(), action_data.cuda(), is_pad.cuda()
-    return policy(qpos_data, image_data, action_data, is_pad)
+    return policy(qpos_data, image_data, action_data, is_pad, task_description=task_description)
 
 
 def train_bc(train_dataloader, val_dataloader, config):
@@ -604,5 +621,8 @@ if __name__ == '__main__':
     # for FAST tokenization
     parser.add_argument('--use_fast_tokens', action='store_true', help='Use FAST action tokenization')
     parser.add_argument('--fast_tokenizer_path', action='store', type=str, help='Path to trained FAST tokenizer', required=False, default=None)
+
+    # for language conditioning (LAV-ACT)
+    parser.add_argument('--use_language', action='store_true', help='Enable CLIP language conditioning (LAV-ACT)')
 
     main(vars(parser.parse_args()))

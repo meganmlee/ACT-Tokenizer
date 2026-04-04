@@ -52,3 +52,22 @@ python3 imitate_episodes.py \
     --batch_size 32 \
     --num_epochs 800 \
     --lr 5e-4
+
+###############################################################################
+# Evaluation — uncomment below to run after training
+###############################################################################
+
+# if [ "${TASK_ID}" == "0" ] || [ -z "${TASK_ID}" ]; then
+#     echo "========================================"
+#     echo "Evaluating all tasks for ${SUITE} (FAST tokens)"
+#     echo "========================================"
+#     python3 imitate_episodes.py \
+#         --task_name ${SUITE} \
+#         --ckpt_dir ./checkpoints/${SUITE}_act_fast \
+#         $POLICY_ARGS \
+#         $FAST_ARGS \
+#         --batch_size 32 \
+#         --num_epochs 800 \
+#         --lr 5e-4 \
+#         --eval
+# fi

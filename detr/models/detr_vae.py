@@ -15,6 +15,8 @@ from .transformer import build_transformer, TransformerEncoder, TransformerEncod
 
 import numpy as np
 
+from transformers import CLIPTextModel, CLIPTokenizer
+
 import IPython
 e = IPython.embed
 
@@ -131,16 +133,20 @@ def get_sinusoid_encoding_table(n_position, d_hid):
 class DETRVAE(nn.Module):
     def __init__(self, backbones, transformer, encoder, state_dim, action_dim,
                  num_queries, camera_names, use_fast_tokens=False,
-                 vocab_size=None, max_token_len=None, pad_token_id=None):
+                 vocab_size=None, max_token_len=None, pad_token_id=None,
+                 use_language=False, clip_model_name='openai/clip-vit-base-patch32'):
         """
         Args:
             use_fast_tokens: if True, encoder/decoder work in discrete token space
             vocab_size: FAST vocabulary size + 1 (for pad token)
             max_token_len: max token sequence length for the AR head
             pad_token_id: token ID used for padding (= vocab_size - 1)
+            use_language: if True, add frozen CLIP text conditioning (LAV-ACT)
+            clip_model_name: HuggingFace CLIP model identifier or local path
         """
         super().__init__()
         self.use_fast_tokens = use_fast_tokens
+        self.use_language = use_language
         self.camera_names = camera_names
         self.transformer = transformer
         self.encoder = encoder
@@ -172,16 +178,32 @@ class DETRVAE(nn.Module):
             self.pos = torch.nn.Embedding(2, hidden_dim)
             self.backbones = None
 
+        # --- Language conditioning (LAV-ACT) ---
+        if use_language:
+            self.clip_text_model = CLIPTextModel.from_pretrained(clip_model_name)
+            self.clip_tokenizer = CLIPTokenizer.from_pretrained(clip_model_name)
+            # Freeze CLIP
+            for p in self.clip_text_model.parameters():
+                p.requires_grad = False
+            self.clip_text_model.eval()
+            clip_embed_dim = self.clip_text_model.config.hidden_size  # 512
+            self.text_proj = nn.Linear(clip_embed_dim, hidden_dim)
+            self._clip_cache = {}  # cache frozen CLIP outputs by text string
+
         # encoder extra parameters
         self.latent_dim = 32
         self.cls_embed = nn.Embedding(1, hidden_dim)
 
+        # Encoder sequence: [CLS, (text), qpos, actions...]
+        # prefix_len = 2 (CLS + qpos) or 3 (CLS + text + qpos)
+        prefix_len = 3 if use_language else 2
+
         if use_fast_tokens:
             self.encoder_action_embed = nn.Embedding(vocab_size, hidden_dim)
-            encoder_seq_len = 1 + 1 + max_token_len
+            encoder_seq_len = prefix_len + max_token_len
         else:
             self.encoder_action_proj = nn.Linear(action_dim, hidden_dim)
-            encoder_seq_len = 1 + 1 + num_queries
+            encoder_seq_len = prefix_len + num_queries
 
         self.encoder_joint_proj = nn.Linear(state_dim, hidden_dim)
         self.latent_proj = nn.Linear(hidden_dim, self.latent_dim * 2)
@@ -189,9 +211,48 @@ class DETRVAE(nn.Module):
 
         # decoder extra parameters
         self.latent_out_proj = nn.Linear(self.latent_dim, hidden_dim)
-        self.additional_pos_embed = nn.Embedding(2, hidden_dim)
+        # additional tokens prepended to decoder memory: [latent, proprio, (text)]
+        num_additional = 3 if use_language else 2
+        self.additional_pos_embed = nn.Embedding(num_additional, hidden_dim)
 
-    def forward(self, qpos, image, env_state, actions=None, is_pad=None):
+    def _encode_text(self, task_descriptions):
+        """Encode task descriptions with frozen CLIP, then project to hidden_dim.
+        Caches the frozen CLIP outputs for efficiency (same text → same embedding).
+
+        Args:
+            task_descriptions: list of B strings
+        Returns:
+            (B, hidden_dim) projected text embeddings
+        """
+        device = next(self.parameters()).device
+        clip_embeds = [None] * len(task_descriptions)
+        uncached_texts = []
+        uncached_indices = []
+
+        for i, desc in enumerate(task_descriptions):
+            if desc in self._clip_cache:
+                clip_embeds[i] = self._clip_cache[desc]
+            else:
+                uncached_texts.append(desc)
+                uncached_indices.append(i)
+
+        if uncached_texts:
+            with torch.no_grad():
+                tokens = self.clip_tokenizer(
+                    uncached_texts, return_tensors='pt',
+                    padding=True, truncation=True, max_length=77
+                ).to(device)
+                out = self.clip_text_model(**tokens)
+                new_embeds = out.pooler_output  # (N, 512)
+            for j, idx in enumerate(uncached_indices):
+                embed = new_embeds[j].detach()
+                self._clip_cache[uncached_texts[j]] = embed
+                clip_embeds[idx] = embed
+
+        clip_embeds = torch.stack(clip_embeds).to(device)  # (B, 512)
+        return self.text_proj(clip_embeds)  # (B, hidden_dim)
+
+    def forward(self, qpos, image, env_state, actions=None, is_pad=None, task_description=None):
         """
         qpos: (batch, state_dim)
         image: (batch, num_cam, C, H, W)
@@ -199,9 +260,15 @@ class DETRVAE(nn.Module):
         actions: if use_fast_tokens: (batch, max_token_len) LongTensor
                  else: (batch, seq, action_dim) float
         is_pad: (batch, seq) bool
+        task_description: list of B strings (only used when use_language=True)
         """
         is_training = actions is not None
         bs, _ = qpos.shape
+
+        # Compute text embedding if using language conditioning
+        text_embed = None
+        if self.use_language and task_description is not None:
+            text_embed = self._encode_text(task_description)  # (B, hidden_dim)
 
         if is_training:
             if self.use_fast_tokens:
@@ -213,10 +280,18 @@ class DETRVAE(nn.Module):
             qpos_embed = torch.unsqueeze(qpos_embed, axis=1)
             cls_embed = self.cls_embed.weight
             cls_embed = torch.unsqueeze(cls_embed, axis=0).repeat(bs, 1, 1)
-            encoder_input = torch.cat([cls_embed, qpos_embed, action_embed], axis=1)
+
+            # Build encoder sequence: [CLS, (text), qpos, actions...]
+            if self.use_language and text_embed is not None:
+                text_seq = text_embed.unsqueeze(1)  # (B, 1, hidden_dim)
+                encoder_input = torch.cat([cls_embed, text_seq, qpos_embed, action_embed], axis=1)
+                prefix_len = 3  # CLS + text + qpos
+            else:
+                encoder_input = torch.cat([cls_embed, qpos_embed, action_embed], axis=1)
+                prefix_len = 2  # CLS + qpos
             encoder_input = encoder_input.permute(1, 0, 2)
 
-            cls_joint_is_pad = torch.full((bs, 2), False).to(qpos.device)
+            cls_joint_is_pad = torch.full((bs, prefix_len), False).to(qpos.device)
             is_pad = torch.cat([cls_joint_is_pad, is_pad], axis=1)
 
             pos_embed = self.pos_table.clone().detach()
@@ -246,7 +321,9 @@ class DETRVAE(nn.Module):
             proprio_input = self.input_proj_robot_state(qpos)
             src = torch.cat(all_cam_features, axis=3)
             pos = torch.cat(all_cam_pos, axis=3)
-            hs = self.transformer(src, None, self.query_embed.weight, pos, latent_input, proprio_input, self.additional_pos_embed.weight)[0]
+            hs = self.transformer(src, None, self.query_embed.weight, pos, latent_input, proprio_input,
+                                  self.additional_pos_embed.weight,
+                                  text_input=text_embed if self.use_language else None)[0]
         else:
             qpos = self.input_proj_robot_state(qpos)
             env_state = self.input_proj_env_state(env_state)
@@ -331,6 +408,8 @@ def build(args):
     vocab_size = getattr(args, 'fast_vocab_size', None)
     max_token_len = getattr(args, 'fast_max_token_len', None)
     pad_token_id = getattr(args, 'fast_pad_token_id', None)
+    use_language = getattr(args, 'use_language', False)
+    clip_model_name = getattr(args, 'clip_model_name', 'openai/clip-vit-base-patch32')
 
     backbones = []
     backbone = build_backbone(args)
@@ -345,6 +424,7 @@ def build(args):
         use_fast_tokens=use_fast_tokens,
         vocab_size=vocab_size, max_token_len=max_token_len,
         pad_token_id=pad_token_id,
+        use_language=use_language, clip_model_name=clip_model_name,
     )
     n_parameters = sum(p.numel() for p in model.parameters() if p.requires_grad)
     print("number of parameters: %.2fM" % (n_parameters / 1e6,))

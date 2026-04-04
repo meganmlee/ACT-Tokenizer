@@ -39,3 +39,23 @@ python3 imitate_episodes.py \
     --batch_size 8 \
     --num_epochs 2000 \
     --lr 1e-5
+
+###############################################################################
+# Evaluation — uncomment below to run after training
+# For array jobs, only run eval from one task (e.g. task 0) or submit separately:
+#   sbatch --dependency=afterok:<TRAIN_JOB_ID> job.sh libero_spatial
+###############################################################################
+
+# if [ "${TASK_ID}" == "0" ] || [ -z "${TASK_ID}" ]; then
+#     echo "========================================"
+#     echo "Evaluating all tasks for ${SUITE}"
+#     echo "========================================"
+#     python3 imitate_episodes.py \
+#         --task_name ${SUITE} \
+#         --ckpt_dir ./checkpoints/${SUITE}_act \
+#         $POLICY_ARGS \
+#         --batch_size 8 \
+#         --num_epochs 2000 \
+#         --lr 1e-5 \
+#         --eval
+# fi

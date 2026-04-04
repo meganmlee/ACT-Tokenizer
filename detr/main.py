@@ -68,6 +68,10 @@ def get_args_parser():
     parser.add_argument('--use_fast_tokens', action='store_true')
     parser.add_argument('--fast_tokenizer_path', type=str, default=None)
 
+    # Language conditioning (LAV-ACT)
+    parser.add_argument('--use_language', action='store_true')
+    parser.add_argument('--clip_model_name', type=str, default='openai/clip-vit-base-patch32')
+
     return parser
 
 
