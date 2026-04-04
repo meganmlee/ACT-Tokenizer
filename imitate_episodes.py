@@ -201,12 +201,13 @@ def main(args):
         if use_fast_tokens:
             from utils import load_libero_data_tokenized
             train_dataloader, val_dataloader, stats, _ = load_libero_data_tokenized(
-                dataset_path, camera_names, batch_size_train, fast_wrapper, task_id=task_id)
+                dataset_path, camera_names, batch_size_train, fast_wrapper,
+                task_id=task_id, task_name=task_name)
         else:
             from utils import load_libero_data
             train_dataloader, val_dataloader, stats, _ = load_libero_data(
                 dataset_path, camera_names, batch_size_train, chunk_size=args['chunk_size'],
-                task_id=task_id)
+                task_id=task_id, task_name=task_name)
     else:
         from utils import load_data
         train_dataloader, val_dataloader, stats, _ = load_data(
