@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 from copy import deepcopy
 from tqdm import tqdm
 from einops import rearrange
+import wandb
 
 from constants import DT
 from utils import compute_dict_mean, set_seed, detach_dict
@@ -133,6 +134,7 @@ def main(args):
         'use_fast_tokens': use_fast_tokens,
         'fast_wrapper': fast_wrapper,
         'use_language': use_language,
+        'task_id': args.get('task_id', None),
     }
 
     if is_eval:
@@ -511,6 +513,36 @@ def train_bc(train_dataloader, val_dataloader, config):
     policy_class = config['policy_class']
     policy_config = config['policy_config']
 
+    # Build run name: e.g. libero_spatial_lact or libero_spatial_act_fast_task3
+    task_name = config['task_name']
+    variant = 'act'
+    if config.get('use_language', False):
+        variant = 'lact'
+    if config.get('use_fast_tokens', False):
+        variant += '_fast'
+    task_id = config.get('task_id', None)
+    run_name = f'{task_name}_{variant}'
+    if task_id is not None:
+        run_name += f'_task{task_id}'
+
+    wandb.init(
+        entity='meganlee-cmu',
+        project='ACT',
+        name=run_name,
+        config={
+            'task_name': task_name,
+            'variant': variant,
+            'task_id': task_id,
+            'num_epochs': num_epochs,
+            'seed': seed,
+            'lr': config['lr'],
+            'policy_class': policy_class,
+            'use_fast_tokens': config.get('use_fast_tokens', False),
+            'use_language': config.get('use_language', False),
+            **{k: v for k, v in policy_config.items() if not callable(v)},
+        },
+    )
+
     set_seed(seed)
 
     policy = make_policy(policy_class, policy_config)
@@ -549,6 +581,7 @@ def train_bc(train_dataloader, val_dataloader, config):
         for k, v in epoch_summary.items():
             summary_string += f'{k}: {v.item():.3f} '
         print(summary_string)
+        wandb.log({f'val/{k}': v.item() for k, v in epoch_summary.items()}, step=epoch)
 
         policy.train()
         optimizer.zero_grad()
@@ -566,6 +599,7 @@ def train_bc(train_dataloader, val_dataloader, config):
         for k, v in epoch_summary.items():
             summary_string += f'{k}: {v.item():.3f} '
         print(summary_string)
+        wandb.log({f'train/{k}': v.item() for k, v in epoch_summary.items()}, step=epoch)
 
         if epoch % 100 == 0:
             ckpt_path = os.path.join(ckpt_dir, f'policy_epoch_{epoch}_seed_{seed}.ckpt')
@@ -579,6 +613,7 @@ def train_bc(train_dataloader, val_dataloader, config):
     torch.save(best_state_dict, ckpt_path)
     print(f'Training finished:\nSeed {seed}, val loss {min_val_loss:.6f} at epoch {best_epoch}')
     plot_history(train_history, validation_history, num_epochs, ckpt_dir, seed)
+    wandb.finish()
     return best_ckpt_info
 
 
