@@ -92,7 +92,7 @@ Per-suite training and evaluation on LIBERO, following the protocol used by Open
 python tokenizer.py \
     --dataset_path /path/to/libero_90 \
     --save_path ./fast_tokenizer \
-    --chunk_size 50 --action_dim 7
+    --chunk_size 100 --action_dim 7
 ```
 
 ### ACT baseline (per-task, continuous actions)
