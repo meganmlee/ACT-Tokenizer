@@ -175,4212 +175,3908 @@
       "": 140,
       "": 141,
       "": 142,
-      "Â": 143,
-      "Ā": 144,
-      "ā": 145,
-      "Ă": 146,
-      "ă": 147,
-      "Ą": 148,
-      "ą": 149,
-      "Ć": 150,
-      "ć": 151,
-      "Ĉ": 152,
-      "ĉ": 153,
-      "Ċ": 154,
-      "ċ": 155,
-      "Č": 156,
-      "č": 157,
-      "Ď": 158,
-      "ď": 159,
-      "Đ": 160,
-      "đ": 161,
-      "Ē": 162,
-      "ē": 163,
-      "Ĕ": 164,
-      "ĕ": 165,
-      "Ė": 166,
-      "ė": 167,
-      "Ę": 168,
-      "ę": 169,
-      "Ě": 170,
-      "ě": 171,
-      "Ĝ": 172,
-      "ĝ": 173,
-      "Ğ": 174,
-      "ğ": 175,
-      "Ġ": 176,
-      "ġ": 177,
-      "Ģ": 178,
-      "ģ": 179,
-      "Ĥ": 180,
-      "ĥ": 181,
-      "Ħ": 182,
-      "ħ": 183,
-      "Ĩ": 184,
-      "ĩ": 185,
-      "Ī": 186,
-      "ī": 187,
-      "Ĭ": 188,
-      "ĭ": 189,
-      "Į": 190,
-      "į": 191,
-      "İ": 192,
-      "GG": 193,
-      "GGGG": 194,
-      "GGGGGGGG": 195,
-      "GGGGGG": 196,
-      "GGGGGGGGGGGGGGGG": 197,
-      "GF": 198,
-      "GH": 199,
-      "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG": 200,
-      "GGGGGGF": 201,
-      "GGGGGGH": 202,
-      "GGGGGGE": 203,
-      "GGF": 204,
-      "GGH": 205,
-      "GGGGGGI": 206,
-      "GE": 207,
-      "GI": 208,
-      "GGGGGGGGGGGG": 209,
-      "GGGF": 210,
-      "GGGH": 211,
-      "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG": 212,
-      "FF": 213,
-      "HH": 214,
-      "GGGGF": 215,
-      "GGGGH": 216,
-      "GD": 217,
-      "GJ": 218,
-      "FH": 219,
-      "GC": 220,
-      "GGGGGGD": 221,
-      "GGGGGGJ": 222,
-      "GK": 223,
-      "FGF": 224,
-      "GGGGGGIGGGGGGE": 225,
-      "GGGGGGFGGGGGGF": 226,
-      "HF": 227,
-      "HGH": 228,
-      "GGGGGGHGGGGGGH": 229,
-      "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG": 230,
-      "GGGGGGEGGGGGGE": 231,
-      "GGI": 232,
-      "GGGGGGGGGGGGGF": 233,
-      "GGE": 234,
-      "GGGGGGGGGGGGGH": 235,
-      "GGGGGGIGGGGGGI": 236,
-      "HGF": 237,
-      "GB": 238,
-      "FGH": 239,
-      "GGGGGF": 240,
-      "FE": 241,
-      "GL": 242,
-      "HI": 243,
-      "GGGGGH": 244,
-      "FI": 245,
-      "HE": 246,
-      "GGGGGGHGGGGGGF": 247,
-      "GA": 248,
-      "GFGH": 249,
-      "GHGF": 250,
-      "GGGGGGIGGGGGGF": 251,
-      "GGD": 252,
-      "GGGE": 253,
-      "GM": 254,
-      "GGJ": 255,
-      "GGGI": 256,
-      "GGGGGGGGGGGGGI": 257,
-      "GGGGGGHGGGGGGGGGGGGGF": 258,
-      "FGGH": 259,
-      "GGGGGGIGGGGGGEGGGGGGIGGGGGGE": 260,
-      "GGGGGGGGGGGGGGGGGGGGGGGG": 261,
-      "HGGF": 262,
-      "GGGGGGGGGGGGGE": 263,
-      "GFGF": 264,
-      "EF": 265,
-      "EH": 266,
-      "GHGH": 267,
-      "IH": 268,
-      "GGFGGGH": 269,
-      "IF": 270,
-      "GGGGGGC": 271,
-      "GGHGGGF": 272,
-      "GGGGGGK": 273,
-      "FGGF": 274,
-      "HGGH": 275,
-      "HGGGG": 276,
-      "GGGGHGF": 277,
-      "FGE": 278,
-      "FGGGG": 279,
-      "EE": 280,
-      "GGGGFGH": 281,
-      "II": 282,
-      "GGC": 283,
-      "FD": 284,
-      "GGGGFGF": 285,
-      "GGGGGGEGGGGGGF": 286,
-      "HGI": 287,
-      "GGGGHGH": 288,
-      "FJ": 289,
-      "HD": 290,
-      "GN": 291,
-      "GGFGF": 292,
-      "HJ": 293,
-      "GGK": 294,
-      "GGHGH": 295,
-      "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG": 296,
-      "FGGGF": 297,
-      "HGGGH": 298,
-      "Âİ": 299,
-      "EI": 300,
-      "GGGGGGG": 301,
-      "HGE": 302,
-      "GGGGGGFGGGGGGGGGGGGGH": 303,
-      "FGI": 304,
-      "GO": 305,
-      "GGGGGGGF": 306,
-      "GGGGGGGGGF": 307,
-      "FC": 308,
-      "GGGGGGGH": 309,
-      "GGGGGGGGGH": 310,
-      "HGGGF": 311,
-      "IE": 312,
-      "HC": 313,
-      "GGGGGGDGGGGGGJ": 314,
-      "GGGGGGEGGGGGGEGGGGGGEGGGGGGE": 315,
-      "GGGGGGDGGGGGGD": 316,
-      "FGGGH": 317,
-      "GGGGGGHGGGGGGI": 318,
-      "GGGD": 319,
-      "HFF": 320,
-      "HFH": 321,
-      "FHH": 322,
-      "HK": 323,
-      "GGG": 324,
-      "GGGJ": 325,
-      "ED": 326,
-      "FK": 327,
-      "EJ": 328,
-      "GGGGGGEGGGGGGI": 329,
-      "IJ": 330,
-      "EGF": 331,
-      "GGHGGGH": 332,
-      "ID": 333,
-      "GGFGGGF": 334,
-      "GGHGF": 335,
-      "GGGGGGFGGGGGGFGGGGGGFGGGGGGF": 336,
-      "IGH": 337,
-      "GGGGHGE": 338,
-      "GGFGH": 339,
-      "FG": 340,
-      "IGF": 341,
-      "GGGGGGGGGGGGGGGGGGGGF": 342,
-      "GGGGGGIGGGGGGIGGGGGGIGGGGGGI": 343,
-      "HG": 344,
-      "GGGGFGI": 345,
-      "GGGGHGI": 346,
-      "GGGGFGE": 347,
-      "FGD": 348,
-      "EGH": 349,
-      "GGGGGGEGGGGGGGGGGGGGI": 350,
-      "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG": 351,
-      "GGGGGGGGGGGGGGGGGGGGH": 352,
-      "GGB": 353,
-      "GGL": 354,
-      "GGGGGGIGGGGGGEGGGGGGIGGGGGGF": 355,
-      "FGFGGGH": 356,
-      "HGJ": 357,
-      "GGGGGGGGGGGF": 358,
-      "HGGGGGF": 359,
-      "HGHGGGF": 360,
-      "GGGGHGD": 361,
-      "GGGC": 362,
-      "FGGGGGH": 363,
-      "FB": 364,
-      "GGGGGGIGGGGGGH": 365,
-      "EC": 366,
-      "GGGGGGGGGGGH": 367,
-      "GGGGFGJ": 368,
-      "EGE": 369,
-      "EG": 370,
-      "GGGGGGGGGGGGGHGGGGGGE": 371,
-      "DD": 372,
-      "HHGF": 373,
-      "IC": 374,
-      "GGGGGGGGGGF": 375,
-      "GGGK": 376,
-      "HB": 377,
-      "HGD": 378,
-      "FFGH": 379,
-      "GP": 380,
-      "FGJ": 381,
-      "JD": 382,
-      "HL": 383,
-      "FGGGGGF": 384,
-      "GGGGGGJGGGGGGJ": 385,
-      "GGFH": 386,
-      "GGGGGGGGGGH": 387,
-      "GFGGGG": 388,
-      "FL": 389,
-      "GGGGGGIGGGGGGGGGGGGGE": 390,
-      "GHGGGG": 391,
-      "FA": 392,
-      "GGGGGGHGGGGGGHGGGGGGHGGGGGGH": 393,
-      "IGI": 394,
-      "EK": 395,
-      "GGGGFGGGGGGGG": 396,
-      "IK": 397,
-      "GGA": 398,
-      "IG": 399,
-      "HGGGGGH": 400,
-      "GGGGGGEGGGGGGH": 401,
-      "GGGGGGEGGGGGGHGGGGGGH": 402,
-      "GGGGFGD": 403,
-      "GGGGGGGGGGGGGD": 404,
-      "JJ": 405,
-      "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG": 406,
-      "GGHF": 407,
-      "FGC": 408,
-      "GGM": 409,
-      "GGGGGGGGGGGGGJ": 410,
-      "GGGGHGGGGGGGG": 411,
-      "GHGGF": 412,
-      "GQ": 413,
-      "GGGGGGGGGGGGGGGGGGGG": 414,
-      "DJ": 415,
-      "GGGGGGFGGGGGGH": 416,
-      "IGE": 417,
-      "GGGGHGJ": 418,
-      "HM": 419,
-      "HA": 420,
-      "GGGGGGHGGGGGGFGGGGGGHGGGGGGF": 421,
-      "HGC": 422,
-      "IHH": 423,
-      "GGGGGGHGGGGGGGGGGGGGFGGGGGGIGGGGGGE": 424,
-      "GGGGGGGGGGGGGG": 425,
-      "EFF": 426,
-      "GGGGGGHGGGGGGE": 427,
-      "EB": 428,
-      "GGFGFGH": 429,
-      "EGI": 430,
-      "FHGF": 431,
-      "FGFGF": 432,
-      "HFGH": 433,
-      "FM": 434,
-      "HGK": 435,
-      "CD": 436,
-      "GGGFGGH": 437,
-      "HGHGH": 438,
-      "FGK": 439,
-      "GGHGGGE": 440,
-      "IB": 441,
-      "KD": 442,
-      "GGGGGGB": 443,
-      "GGGGGGL": 444,
-      "GGHGHGF": 445,
-      "GGGGGGJGGGGGGE": 446,
-      "GGGFGGF": 447,
-      "JC": 448,
-      "JE": 449,
-      "GGGGGGGGGGGGGGGGGGGGGGGGGGGH": 450,
-      "DG": 451,
-      "GGGHGGF": 452,
-      "FFGF": 453,
-      "EGD": 454,
-      "HGGI": 455,
-      "EL": 456,
-      "GGGGGGGFGF": 457,
-      "GGGGGGHGGGGGGHGGGGGGGGGGGGGF": 458,
-      "JI": 459,
-      "GGGGGGGHGH": 460,
-      "HHGH": 461,
-      "GGGGFF": 462,
-      "DC": 463,
-      "GGGGGGIGGGGGGEGGGGGGIGGGGGGEGGGGGGIGGGGGGEGGGGGGIGGGGGGE": 464,
-      "GGHGI": 465,
-      "FHGH": 466,
-      "GGGGGGJGGGGGGF": 467,
-      "GGFGGGI": 468,
-      "GGGGGGFGGGGGGFGGGGGGIGGGGGGE": 469,
-      "GGGGGGHGGGGGGHGGGGGGH": 470,
-      "GGGHGGH": 471,
-      "DK": 472,
-      "HGGE": 473,
-      "JK": 474,
-      "FGGE": 475,
-      "HO": 476,
-      "DI": 477,
-      "EA": 478,
-      "GGGGGGJGGGGGGI": 479,
-      "JG": 480,
-      "FGGI": 481,
-      "GGGGGGHGGGGGGFGGGGGGEGGGGGGE": 482,
-      "GEGH": 483,
-      "HN": 484,
-      "EGGH": 485,
-      "CG": 486,
-      "FO": 487,
-      "GGGGGGDGGGGGGF": 488,
-      "GGGGGGGGGGGGGHGGGGGGF": 489,
-      "GGGL": 490,
-      "GGGGGGDGGGGGGJGGGGGGDGGGGGGJ": 491,
-      "EHH": 492,
-      "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG": 493,
-      "GGGGGGFGGGGGGFGGGGGGF": 494,
-      "GGGFGGE": 495,
-      "GGGGHH": 496,
-      "GFFH": 497,
-      "IFF": 498,
-      "IGJ": 499,
-      "IL": 500,
-      "GGGGFGK": 501,
-      "GGFGGGHGGFGGGH": 502,
-      "GFGI": 503,
-      "GGGGGGEGGGGGGIGGGGGGF": 504,
-      "GGGGGGGGGGGGGHGGGGGGEGGGGGGIGGGGGGEGGGGGGIGGGGGGF": 505,
-      "CK": 506,
-      "GGGHGGI": 507,
-      "IGGF": 508,
-      "FN": 509,
-      "GFGGF": 510,
-      "EM": 511,
-      "CJ": 512,
-      "GGGB": 513,
-      "GFGGH": 514,
-      "GS": 515,
-      "GGGGGGJGGGGGGH": 516,
-      "IFH": 517,
-      "GGGGFGC": 518,
-      "GGGGGGGGGGGGGGGGGGGGGGGGGGGF": 519,
-      "GGGHGF": 520,
-      "GGGGGGGGGHGGGF": 521,
-      "GGGGHGC": 522,
-      "GGGGGGGGGGGGGGGGGGGGG": 523,
-      "BG": 524,
-      "GGHGGGFGGHGGGF": 525,
-      "GGGGGGGGGFGGGH": 526,
-      "GGGGHGFGGGGHGF": 527,
-      "GHGE": 528,
-      "EGC": 529,
-      "GHH": 530,
-      "GGGGGGHGGGGGGFGGGGGGH": 531,
-      "CC": 532,
-      "GR": 533,
-      "FGGGGGGF": 534,
-      "EGGF": 535,
-      "GHFF": 536,
-      "GGGGGGDGGGGGGI": 537,
-      "GGGGGGFGGGGGGFGGGGGGGGGGGGGH": 538,
-      "GFHH": 539,
-      "FGB": 540,
-      "GGGFGGI": 541,
-      "GGGFGGD": 542,
-      "EFE": 543,
-      "KK": 544,
-      "EGJ": 545,
-      "EFH": 546,
-      "GGGGGGGGGGGGGGGGGGGGGGGGGGGG": 547,
-      "HGGGGGE": 548,
-      "IA": 549,
-      "GGGHGGE": 550,
-      "GGN": 551,
-      "DB": 552,
-      "GGFGE": 553,
-      "JGH": 554,
-      "GGGFGH": 555,
-      "IHI": 556,
-      "GGHH": 557,
-      "JB": 558,
-      "GGGHGGJ": 559,
-      "FFFH": 560,
-      "FGL": 561,
-      "GGGGHGK": 562,
-      "GGGGGGEGGGGGGFGGGGGGGGGGGGGH": 563,
-      "IM": 564,
-      "IGD": 565,
-      "DL": 566,
-      "DGF": 567,
-      "GGHFH": 568,
-      "GGGGGGGGH": 569,
-      "KC": 570,
-      "KJ": 571,
-      "GGHGGF": 572,
-      "GGHGGGD": 573,
-      "FGGGGGI": 574,
-      "FGGGE": 575,
-      "GGFGGGJ": 576,
-      "DH": 577,
-      "GGGGGGFGGGGGGFGGGGGGI": 578,
-      "DE": 579,
-      "GGGGGGGGGGGGGEGGGGGGF": 580,
-      "FGGGGGE": 581,
-      "FGG": 582,
-      "IHF": 583,
-      "HGGGGGI": 584,
-      "GGFFF": 585,
-      "GGFGFGF": 586,
-      "GGHGHGH": 587,
-      "DA": 588,
-      "HGB": 589,
-      "GGGGGGGGF": 590,
-      "GGGGGGGHGHGGGF": 591,
-      "HGL": 592,
-      "GGHGGGI": 593,
-      "FGFGH": 594,
-      "DGH": 595,
-      "EHF": 596,
-      "KG": 597,
-      "GGGHGGD": 598,
-      "GGGGGGDGGGGGGE": 599,
-      "CB": 600,
-      "GGFGGGE": 601,
-      "GGHGHGE": 602,
-      "GGHHH": 603,
-      "GGHFF": 604,
-      "HGGGGGD": 605,
-      "HP": 606,
-      "DF": 607,
-      "GGGGGGGFGFGGGH": 608,
-      "HGGGGGGGGGGGG": 609,
-      "GGGGFGHGGGGFGH": 610,
-      "GHHF": 611,
-      "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG": 612,
-      "GGGGGGIGGGGGGEGGGGGGIGGGGGGEGGGGGGIGGGGGGF": 613,
-      "GGGGI": 614,
-      "HGGGGGGF": 615,
-      "JL": 616,
-      "HFGF": 617,
-      "JGI": 618,
-      "GGGFGGJ": 619,
-      "GGGGGGIGGGGGGEGGGGGGIGGGGGGEGGGGGGHGGGGGGF": 620,
-      "CA": 621,
-      "FGGGGGGGGGGGG": 622,
-      "GGFGGH": 623,
-      "GGGGGGJGGGGGGD": 624,
-      "DGE": 625,
-      "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG": 626,
-      "JA": 627,
-      "KB": 628,
-      "FGGGGGJ": 629,
-      "JGF": 630,
-      "FP": 631,
-      "GGFHF": 632,
-      "HQ": 633,
-      "GGGGGGEGGGGGGEGGGGGGEGGGGGGEGGGGGGEGGGGGGEGGGGGGEGGGGGGE": 634,
-      "GGGGGGFGGGGGGFGGGGGGFGGGGGGFGGGGGGFGGGGGGFGGGGGGFGGGGGGF": 635,
-      "CL": 636,
-      "FGGGGGGH": 637,
-      "FGFGFGH": 638,
-      "GGGGGGEGGGGGGHGGGGGGHGGGGGGEGGGGGGI": 639,
-      "GIGF": 640,
-      "GT": 641,
-      "GHGGH": 642,
-      "?Ā": 643,
-      "FGGGGGD": 644,
-      "IFI": 645,
-      "GGFGGF": 646,
-      "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG": 647,
-      "HGG": 648,
-      "IGGH": 649,
-      "AG": 650,
-      "CE": 651,
-      "FGA": 652,
-      "IGK": 653,
-      "EHE": 654,
-      "GGGGGGGGGGGGGFGGGGGGF": 655,
-      "HGGGGGJ": 656,
-      "GGGGGGHGGGGGGFGGGGGGF": 657,
-      "GGGGGGIGGGGGGIGGGGGGHGGGGGGFGGGGGGEGGGGGGE": 658,
-      "GGGGGGEGGGGGGFGGGGGGF": 659,
-      "GGGGGGHGGGGGGHGGGGGGF": 660,
-      "GGGGE": 661,
-      "HHGE": 662,
-      "FGGGGH": 663,
-      "FGGGI": 664,
-      "GGFGGGGGGGG": 665,
-      "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG": 666,
-      "DM": 667,
-      "HHHF": 668,
-      "GGGGGGIGGGGGGIGGGGGGHGGGGGGGGGGGGGF": 669,
-      "GFGE": 670,
-      "GGGGGGDGGGGGGDGGGGGGDGGGGGGD": 671,
-      "GGGGGGHGGGGGGGGGGGGGFGGGGGGIGGGGGGEGGGGGGHGGGGGGGGGGGGGFGGGGGGIGGGGGGE": 672,
-      "GHFH": 673,
-      "KL": 674,
-      "BJ": 675,
-      "GGGGGGIGGGGGGIGGGGGGI": 676,
-      "CI": 677,
-      "GGGGGI": 678,
-      "?@": 679,
-      "FQ": 680,
-      "EO": 681,
-      "HGGGGGGH": 682,
-      "GGGFGF": 683,
-      "EN": 684,
-      "GGHGGGGGGGG": 685,
-      "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG": 686,
-      "GGGGGGEGGGGGGD": 687,
-      "JM": 688,
-      "HGGGGF": 689,
-      "HGGGI": 690,
-      "IGC": 691,
-      "BD": 692,
-      "GGGA": 693,
-      "GGGGGGIGGGGGGEGGGGGGH": 694,
-      "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG": 695,
-      "IFE": 696,
-      "GGGGGGEGGGGGGFGGGGGGHGGGGGGI": 697,
-      "LL": 698,
-      "GHGI": 699,
-      "GGFHH": 700,
-      "FFGI": 701,
-      "??": 702,
-      "GGGGGE": 703,
-      "GGGGGGEGGGGGGJ": 704,
-      "GGGGGGHGGGGGGHGGGGGGGGGGGGGFGGGGGGF": 705,
-      "GGO": 706,
-      "HGHGHGF": 707,
-      "GGGGGGEGGGGGGEGGGGGGFGGGGGGGGGGGGGH": 708,
-      "HGA": 709,
-      "IN": 710,
-      "GEGF": 711,
-      "JF": 712,
-      "JHH": 713,
-      "GGFF": 714,
-      "EFI": 715,
-      "GGHGGGGGGF": 716,
-      "GGHGGGC": 717,
-      "BC": 718,
-      "IO": 719,
-      "GGGHHGF": 720,
-      "JGE": 721,
-      "GGGFFGH": 722,
-      "LC": 723,
-      "GGGM": 724,
-      "GGFGGGD": 725,
-      "GGGGGGEGGGGGGFGGGGGGH": 726,
-      "FFHH": 727,
-      "IHE": 728,
-      "KA": 729,
-      "GGGGFGGGGGGH": 730,
-      "GGGGGGGGGGGGGFGGGGGGGGGGGGGH": 731,
-      "JH": 732,
-      "HFGI": 733,
-      "HGGGHGF": 734,
-      "GGGGGGGGGGGHGF": 735,
-      "FGGGGGGGG": 736,
-      "LG": 737,
-      "HGHGI": 738,
-      "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGF": 739,
-      "EGK": 740,
-      "EHI": 741,
-      "GGGGGGGGGGGFGH": 742,
-      "BK": 743,
-      "FGM": 744,
-      "FFGGF": 745,
-      "HHGGGG": 746,
-      "FHGE": 747,
-      "FGHGF": 748,
-      "FFGGGG": 749,
-      "GGGGGGEGGGGGGIGGGGGGFGGGGGGFGGGGGGIGGGGGGE": 750,
-      "ÂĤ": 751,
-      "GGHGE": 752,
-      "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG": 753,
-      "CH": 754,
-      "LK": 755,
-      "GGGGGGFGF": 756,
-      "GGFGGGK": 757,
-      "GGHGGH": 758,
-      "GGGGGGIGGGGGGHGGGGGGF": 759,
-      "GGGGGGDGGGGGGGGGGGGGJ": 760,
-      "DFF": 761,
-      "GGGGGGGGGGGHGH": 762,
-      "CM": 763,
-      "DGD": 764,
-      "GV": 765,
-      "GGHGFGF": 766,
-      "GGGGGGGGGGGGG": 767,
-      "BA": 768,
-      "GGGHGH": 769,
-      "HHI": 770,
-      "HGHGF": 771,
-      "HGFGF": 772,
-      "GGGGGGIGGGGGGJ": 773,
-      "GGGFGGC": 774,
-      "GGGGGGA": 775,
-      "GGGGGGHGGGGGGEGGGGGGE": 776,
-      "HGGGGGC": 777,
-      "HGGGGGGGG": 778,
-      "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGH": 779,
-      "GGHGGGJ": 780,
-      "FGGGFGH": 781,
-      "GGGGGGGGGGGFGF": 782,
-      "GGGGGGCGGGGGGK": 783,
-      "CF": 784,
-      "HGGGE": 785,
-      "FGFGE": 786,
-      "GGGGGGIGGGGGGEGGGGGGHGGGGGGF": 787,
-      "GW": 788,
-      "GGFGFGI": 789,
-      "DGI": 790,
-      "DHH": 791,
-      "GU": 792,
-      "JGJ": 793,
-      "KE": 794,
-      "GGGGGGKGGGGGGK": 795,
-      "BM": 796,
-      "EGB": 797,
-      "GGGGGGHGGGGGGFGGGGGGIGGGGGGEGGGGGGIGGGGGGEGGGGGGIGGGGGGEGGGGGGIGGGGGGE": 798,
-      "LJ": 799,
-      "Âħ": 800,
-      "GGFGFGHGGFGFGH": 801,
-      "GGGGGGEGGGGGGFGGGGGGGGGGGGGHGGGGGGIGGGGGGI": 802,
-      "GGGGGGFGGGGGGGGGGGGGI": 803,
-      "GGFGI": 804,
-      "@@": 805,
-      "GGHGFGH": 806,
-      "GGGGHGHGGGGHGH": 807,
-      "GGGGGGIGGGGGGIGGGGGGIGGGGGGIGGGGGGI": 808,
-      "IHGF": 809,
-      "ÂĢ": 810,
-      "LA": 811,
-      "GGGGGGFGGGGGGHGGGGGGI": 812,
-      "GGGGGGGGGGGGGHGGGGGGEGGGGGGIGGGGGGEGGGGGGIGGGGGGFGGGGGGGGGGGGGHGGGGGGEGGGGGGIGGGGGGEGGGGGGIGGGGGGF": 813,
-      "HGM": 814,
-      "GGGGGGEGGGGGGHGGGGGGI": 815,
-      "HFHH": 816,
-      "GGGGGGHGGGGGGGGGGGGGFGGGGGGHGGGGGGE": 817,
-      "GGFGGGGGGH": 818,
-      "GGGGGGDGGGGGGH": 819,
-      "EFGH": 820,
-      "KI": 821,
-      "FGGGGGC": 822,
-      "LD": 823,
-      "GGGHGGC": 824,
-      "GGGGGGJGGGGGGDGGGGGGJ": 825,
-      "GGGGGGGGGGGGGGGGGGGGHGGGGGGF": 826,
-      "@?": 827,
-      "HS": 828,
-      "GGGGFGFGGGGFGF": 829,
-      "GGGHGGK": 830,
-      "CN": 831,
-      "KM": 832,
-      "FGFGGGHFGFGGGH": 833,
-      "FGGGGF": 834,
-      "DN": 835,
-      "DGC": 836,
-      "HR": 837,
-      "BF": 838,
-      "JGD": 839,
-      "FHFF": 840,
-      "GGGGGGCGGGGGGC": 841,
-      "GGFGGGGGGF": 842,
-      "GGGGGGJGGGGGGGGGGGGGD": 843,
-      "GFF": 844,
-      "GGGGGGGGGGGGGEGGGGGGI": 845,
-      "FGGGGGK": 846,
-      "EP": 847,
-      "FGHGH": 848,
-      "HGGGGGK": 849,
-      "GGIGH": 850,
-      "GGFGHGF": 851,
-      "GIGH": 852,
-      "BB": 853,
-      "IHGH": 854,
-      "FGGGHGF": 855,
-      "GGFGHGH": 856,
-      ">@": 857,
-      "HGGJ": 858,
-      "GGGHFGH": 859,
-      "FGGD": 860,
-      "AD": 861,
-      "ÂĪ": 862,
-      "GGGGGGGGGGGGGGGGGF": 863,
-      "HGFGH": 864,
-      "GGFGGGHGGHGGGF": 865,
-      "IGL": 866,
-      "JFF": 867,
-      "GGGGG": 868,
-      "GGGGGGM": 869,
-      "GGGGGGFGH": 870,
-      "GGFHGGH": 871,
-      "GGHFGGF": 872,
-      "GGGGGGIGGGGGGFGGGGGGGGGGGGGI": 873,
-      "BL": 874,
-      "Âĭ": 875,
-      "GGGGGGIGGGGGGD": 876,
-      "HHFF": 877,
-      "GGGGGGIGGGGGGEGGGGGGGGGGGGGI": 878,
-      "GGGGGGHGGGGGGFGGGGGGHGGGGGGFGGGGGGHGGGGGGFGGGGGGHGGGGGGF": 879,
-      "AC": 880,
-      "GGGGGGGGGGGGGGGGGH": 881,
-      "GGGGHGGGGGGH": 882,
-      "GGGGGGHGGGGGGHGGGGGGEGGGGGGIGGGGGGF": 883,
-      "GGGGGGGGGGGGGHGGGGGGH": 884,
-      "FGGJ": 885,
-      "GGHGGGGGGH": 886,
-      "GGGGGGHGGGGGGGGGGGGGFGGGGGGIGGGGGGEGGGGGGIGGGGGGE": 887,
-      "GGHGHGFGGHGHGF": 888,
-      "IQ": 889,
-      "FGFGGGI": 890,
-      "GGGGGGGGGGGGGGGGGGGGHGGGGGGH": 891,
-      "EGA": 892,
-      "MC": 893,
-      "GGGFHGF": 894,
-      "GGGFGGK": 895,
-      ">?": 896,
-      "DFE": 897,
-      "KGH": 898,
-      "FS": 899,
-      "JN": 900,
-      "HFGE": 901,
-      "HGGGFGH": 902,
-      "JO": 903,
-      "JFH": 904,
-      "JHI": 905,
-      "=?": 906,
-      "GEGI": 907,
-      "EGGGF": 908,
-      "GGEGF": 909,
-      "GGFGFGJ": 910,
-      "HGGGFGF": 911,
-      "GGGGGGHGGGGGGIGGGGGGGGGGGGGEGGGGGGF": 912,
-      "IGB": 913,
-      "GDGH": 914,
-      "DGJ": 915,
-      "FR": 916,
-      "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG": 917,
-      "GGGGGGGGGGGGF": 918,
-      "HGGGHGH": 919,
-      "AA": 920,
-      "GGGGGGEGGGGGGIGGGGGGE": 921,
-      "GGGGFGGGGGGGGF": 922,
-      "BN": 923,
-      "HGGGGH": 924,
-      "GGGGGGGGGGGGGGGGGGGH": 925,
-      "CGE": 926,
-      "DO": 927,
-      "DFH": 928,
-      "KGF": 929,
-      "HGHGGGFHGHGGGF": 930,
-      "CGH": 931,
-      "HHGGH": 932,
-      "GGGGGGFGGGGGGFGGGGGGFGGGGGGGGGGGGGH": 933,
-      "IGGI": 934,
-      "GGFGGGC": 935,
-      "GGHGHGD": 936,
-      "@>": 937,
-      "IP": 938,
-      "GGGGGGHGGGGGGGGGGGGGE": 939,
-      "MG": 940,
-      "FFGGH": 941,
-      "FGGGFGF": 942,
-      "GGGGGGHGGGGGGHGGGGGGHGGGGGGHGGGGGGHGGGGGGHGGGGGGHGGGGGGH": 943,
-      "EHGH": 944,
-      "LB": 945,
-      "GGGGGGDGGGGGGJGGGGGGE": 946,
-      "HGHGGGE": 947,
-      "CGF": 948,
-      "GGGGGGGGGGGGGGH": 949,
-      "FHGI": 950,
-      "EGGI": 951,
-      "GGGGGGGGGGGGH": 952,
-      "FEGH": 953,
-      "?>": 954,
-      "IFGH": 955,
-      "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG": 956,
-      "HHGI": 957,
-      "GGFGGGHGGGGGGGGGHGGGF": 958,
-      "NG": 959,
-      "GGGGGGHGGGGGGFGGGGGGGGGGGGGGGGGGGGF": 960,
-      "FGGGHGH": 961,
-      "GGGGGGHGGGGGGHGGGGGGHGGGGGGGGGGGGGGGGGGGGF": 962,
-      "JGK": 963,
-      "LM": 964,
-      "GGGGGGGGGGGGGGGGGGGF": 965,
-      "GGGGGGGGGGGGGC": 966,
-      "IGGE": 967,
-      "NA": 968,
-      "EFGF": 969,
-      "FGGC": 970,
-      "IS": 971,
-      "HHGGF": 972,
-      "BH": 973,
-      "EIF": 974,
-      "IFGF": 975,
-      "GGGGFGL": 976,
-      "GGFHGGF": 977,
-      "IGGGH": 978,
-      "MK": 979,
-      "FFGE": 980,
-      "HHJ": 981,
-      "GGHGGGK": 982,
-      "GGGFGGGGGGGG": 983,
-      "GGGGGGEGGGGGGEGGGGGGEGGGGGGFGGGGGGGGGGGGGHGGGGGGIGGGGGGI": 984,
-      "EGL": 985,
-      "HGGD": 986,
-      "HFGGH": 987,
-      "EGGGH": 988,
-      "GGGGGGIGGGGGGIGGGGGGH": 989,
-      "GGFGFGE": 990,
-      "GGGGFGGGGGGGGH": 991,
-      "=Ā": 992,
-      "?Âİ": 993,
-      "EEH": 994,
-      "AB": 995,
-      "BI": 996,
-      "EQ": 997,
-      "GGGGGGIGGGGGGEGGGGGGIGGGGGGEGGGGGGIGGGGGGEGGGGGGHGGGGGGF": 998,
-      "AM": 999,
-      "EFD": 1000,
-      ">Ā": 1001,
-      "GGGHHGH": 1002,
-      "GGGGFGGGGGGF": 1003,
-      "AJ": 1004,
-      "GFFI": 1005,
-      "GHF": 1006,
-      "GGGGGGIGGGGGGEGGGGGGIGGGGGGEGGGGGGIGGGGGGEGGGGGGIGGGGGGF": 1007,
-      "?=": 1008,
-      "EGGE": 1009,
-      "GFD": 1010,
-      "<?": 1011,
-      "@=": 1012,
-      "OG": 1013,
-      "GFFF": 1014,
-      "GGFFH": 1015,
-      "EIH": 1016,
-      "HT": 1017,
-      "GGGGGGEGGGGGGJGGGGGGE": 1018,
-      "GGFFGH": 1019,
-      "GGFFGGH": 1020,
-      "GGGGGGHGGGGGGFGGGGGGHGGGGGGG": 1021,
-      "AK": 1022,
-      "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG": 1023
+      "": 143,
+      "": 144,
+      "": 145,
+      "": 146,
+      "": 147,
+      "": 148,
+      "": 149,
+      "": 150,
+      "": 151,
+      "": 152,
+      "": 153,
+      "": 154,
+      "": 155,
+      "": 156,
+      "": 157,
+      "": 158,
+      "": 159,
+      " ": 160,
+      "¡": 161,
+      "¢": 162,
+      "£": 163,
+      "¤": 164,
+      "¥": 165,
+      "¦": 166,
+      "§": 167,
+      "¨": 168,
+      "©": 169,
+      "ª": 170,
+      "«": 171,
+      "¬": 172,
+      "­": 173,
+      "®": 174,
+      "¯": 175,
+      "°": 176,
+      "±": 177,
+      "²": 178,
+      "³": 179,
+      "´": 180,
+      "µ": 181,
+      "¶": 182,
+      "·": 183,
+      "¸": 184,
+      "¹": 185,
+      "º": 186,
+      "»": 187,
+      "¼": 188,
+      "½": 189,
+      "¾": 190,
+      "¿": 191,
+      "À": 192,
+      "Á": 193,
+      "Â": 194,
+      "Ã": 195,
+      "Ä": 196,
+      "Å": 197,
+      "Æ": 198,
+      "Ç": 199,
+      "È": 200,
+      "Ā": 201,
+      "ā": 202,
+      "Ă": 203,
+      "ă": 204,
+      "Ą": 205,
+      "ą": 206,
+      "Ć": 207,
+      "ć": 208,
+      "Ĉ": 209,
+      "ĉ": 210,
+      "Ċ": 211,
+      "ċ": 212,
+      "Č": 213,
+      "č": 214,
+      "Ď": 215,
+      "ď": 216,
+      "Đ": 217,
+      "đ": 218,
+      "Ē": 219,
+      "ē": 220,
+      "Ĕ": 221,
+      "ĕ": 222,
+      "Ė": 223,
+      "ė": 224,
+      "Ę": 225,
+      "ę": 226,
+      "Ě": 227,
+      "ě": 228,
+      "Ĝ": 229,
+      "ĝ": 230,
+      "Ğ": 231,
+      "ğ": 232,
+      "Ġ": 233,
+      "ġ": 234,
+      "Ģ": 235,
+      "ģ": 236,
+      "Ĥ": 237,
+      "ĥ": 238,
+      "Ħ": 239,
+      "ħ": 240,
+      "Ĩ": 241,
+      "ĩ": 242,
+      "Ī": 243,
+      "ī": 244,
+      "Ĭ": 245,
+      "ĭ": 246,
+      "Į": 247,
+      "į": 248,
+      "İ": 249,
+      "ı": 250,
+      "Ĳ": 251,
+      "ĳ": 252,
+      "Ĵ": 253,
+      "ĵ": 254,
+      "Ķ": 255,
+      "ķ": 256,
+      "ĸ": 257,
+      "Ĺ": 258,
+      "ĺ": 259,
+      "Ļ": 260,
+      "ļ": 261,
+      "Ľ": 262,
+      "ľ": 263,
+      "Ŀ": 264,
+      "ŀ": 265,
+      "Ł": 266,
+      "ł": 267,
+      "Ń": 268,
+      "dd": 269,
+      "dddd": 270,
+      "dddddd": 271,
+      "dddddddd": 272,
+      "dc": 273,
+      "de": 274,
+      "ddddddc": 275,
+      "dddddde": 276,
+      "dddddddddddd": 277,
+      "db": 278,
+      "df": 279,
+      "ddc": 280,
+      "dddddddddddddddd": 281,
+      "dde": 282,
+      "ddddddf": 283,
+      "ddddddb": 284,
+      "ddde": 285,
+      "dddc": 286,
+      "ddddddcddddddc": 287,
+      "ee": 288,
+      "cc": 289,
+      "ddddddedddddde": 290,
+      "ddddc": 291,
+      "dddde": 292,
+      "da": 293,
+      "dg": 294,
+      "dddddddddddddc": 295,
+      "ddddddddddddde": 296,
+      "ec": 297,
+      "dddddddddddddddddddddddddddddddd": 298,
+      "ce": 299,
+      "ede": 300,
+      "cdc": 301,
+      "dh": 302,
+      "dddddddddddddb": 303,
+      "dddddddddddddf": 304,
+      "dddddddddddddddddddd": 305,
+      "ddb": 306,
+      "ddf": 307,
+      "ddddddeddddddc": 308,
+      "ef": 309,
+      "bc": 310,
+      "ddddddg": 311,
+      "edc": 312,
+      "ddddddedddddddddddddc": 313,
+      "dddddda": 314,
+      "dedc": 315,
+      "dec": 316,
+      "ddddddeddddddf": 317,
+      "ddddddcddddddddddddde": 318,
+      "eb": 319,
+      "edddd": 320,
+      "di": 321,
+      "fc": 322,
+      "dddddddc": 323,
+      "dcc": 324,
+      "ddddddcddddddcddddddedddddde": 325,
+      "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd": 326,
+      "ddddddbddddddb": 327,
+      "ddddddde": 328,
+      "dcde": 329,
+      "cdddd": 330,
+      "ddddedc": 331,
+      "dda": 332,
+      "cb": 333,
+      "ddddcde": 334,
+      "fe": 335,
+      "ddg": 336,
+      "ddddddbddddddc": 337,
+      "ddddddfddddddf": 338,
+      "ddddcdc": 339,
+      "dddf": 340,
+      "dee": 341,
+      "dddb": 342,
+      "ddcddde": 343,
+      "be": 344,
+      "ddedddc": 345,
+      "ddddede": 346,
+      "dj": 347,
+      "cf": 348,
+      "cde": 349,
+      "ddddddcddddddcddddddcddddddc": 350,
+      "ff": 351,
+      "ddddddbdddddddddddddf": 352,
+      "bb": 353,
+      "eg": 354,
+      "ac": 355,
+      "ddcdc": 356,
+      "ddddddeddddddeddddddedddddde": 357,
+      "edf": 358,
+      "ddddddcddddddcddddddf": 359,
+      "ddede": 360,
+      "eddc": 361,
+      "ea": 362,
+      "dddddddddddddcddddddddddddde": 363,
+      "gc": 364,
+      "dddddddddddddddddddde": 365,
+      "ddddddcddddddedddddde": 366,
+      "fb": 367,
+      "ddddcdf": 368,
+      "ed": 369,
+      "ddddddddddddddddddddc": 370,
+      "cdde": 371,
+      "ddddddddde": 372,
+      "ddddddfdddddde": 373,
+      "edde": 374,
+      "dddddddddc": 375,
+      "ddddedb": 376,
+      "ddddddcddddddb": 377,
+      "dk": 378,
+      "eddde": 379,
+      "cdb": 380,
+      "dddddddddddddbdddddddddddddf": 381,
+      "dddddc": 382,
+      "ddd": 383,
+      "ddh": 384,
+      "bf": 385,
+      "ca": 386,
+      "ddddde": 387,
+      "cddc": 388,
+      "edb": 389,
+      "cg": 390,
+      "dcdc": 391,
+      "cd": 392,
+      "eh": 393,
+      "bd": 394,
+      "ddddedf": 395,
+      "ddddcdb": 396,
+      "edddc": 397,
+      "dede": 398,
+      "dddg": 399,
+      "cdddc": 400,
+      "ddddddbddddddf": 401,
+      "ecc": 402,
+      "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd": 403,
+      "ddda": 404,
+      "fa": 405,
+      "bg": 406,
+      "ddddedddddddd": 407,
+      "ddddddcddddddcddddddeddddddeddddddcddddddcddddddedddddde": 408,
+      "ba": 409,
+      "ddddcdddddddd": 410,
+      "fg": 411,
+      "dddddddddddc": 412,
+      "ddddddh": 413,
+      "bdc": 414,
+      "fd": 415,
+      "ddcdddc": 416,
+      "cdf": 417,
+      "fde": 418,
+      "edg": 419,
+      "cdcddde": 420,
+      "ddeddde": 421,
+      "ededddc": 422,
+      "cddde": 423,
+      "ddddddcddddddcddddddddddddde": 424,
+      "ch": 425,
+      "Âģ": 426,
+      "ddddddeddddddcddddddeddddddc": 427,
+      "dddddddddddddcddddddcddddddedddddde": 428,
+      "dedddd": 429,
+      "ddddddcddddddcddddddedddddddddddddc": 430,
+      "dl": 431,
+      "dddddddddddddbddddddc": 432,
+      "dcdddd": 433,
+      "aa": 434,
+      "ei": 435,
+      "ddedc": 436,
+      "deddc": 437,
+      "eedc": 438,
+      "fdc": 439,
+      "cec": 440,
+      "eda": 441,
+      "bdb": 442,
+      "cee": 443,
+      "fdf": 444,
+      "ad": 445,
+      "edddddc": 446,
+      "ÂĢ": 447,
+      "bh": 448,
+      "ddddddcdddddde": 449,
+      "ddddddddddde": 450,
+      "cda": 451,
+      "gg": 452,
+      "fh": 453,
+      "ÂĤ": 454,
+      "ddddddddddddda": 455,
+      "ag": 456,
+      "ddddddd": 457,
+      "bcc": 458,
+      "ddddddcddddddf": 459,
+      "dddddddddedddc": 460,
+      "ddcde": 461,
+      "ddec": 462,
+      "ddddcdg": 463,
+      "ddddddbddddddddddddde": 464,
+      "ae": 465,
+      "dddddddddcddde": 466,
+      "fee": 467,
+      "dddddddddddddg": 468,
+      "ddddddcddddddcddddddc": 469,
+      "bde": 470,
+      "ddi": 471,
+      "eddddde": 472,
+      "ddddeda": 473,
+      "ddededc": 474,
+      "dddddddddddddddddddddddddddd": 475,
+      "``": 476,
+      "ej": 477,
+      "ddddddfdddddddddddddb": 478,
+      "ddddddbddddddedddddde": 479,
+      "dm": 480,
+      "ddddddcdddddddddddddf": 481,
+      "ab": 482,
+      "ci": 483,
+      "dddddddddde": 484,
+      "cdg": 485,
+      "dedddc": 486,
+      "ddce": 487,
+      "dddh": 488,
+      "ddddddeddddddcddddddcddddddedddddde": 489,
+      "ddddedcddddedc": 490,
+      "deec": 491,
+      "Âĥ": 492,
+      "ddddddddddc": 493,
+      "af": 494,
+      "ah": 495,
+      "ddddddddddddddddddddddddddde": 496,
+      "dddeddc": 497,
+      "ccde": 498,
+      "ddcdddeddcddde": 499,
+      "dddddddddddddddddddddddddddc": 500,
+      "dddddddddddddbddddddddddddde": 501,
+      "dddcddc": 502,
+      "dddddddddddddcddddddedddddde": 503,
+      "fdb": 504,
+      "gd": 505,
+      "dddcddb": 506,
+      "ddddddcdddddddddddddeddddddcddddddddddddde": 507,
+      "ddddddeddddddedddddde": 508,
+      "gb": 509,
+      "ddddddbdddddde": 510,
+      "ddddcda": 511,
+      "dddddddddddddddddddddddddddddddddddddddddddddddd": 512,
+      "ddcdcde": 513,
+      "dddedde": 514,
+      "gf": 515,
+      "dcdde": 516,
+      "ddddcdeddddcde": 517,
+      "dedde": 518,
+      "dddeddf": 519,
+      "dddcdde": 520,
+      "ddddedg": 521,
+      "ddddddcddddddcddddddcddddddcddddddcddddddcddddddcddddddc": 522,
+      "ÂĦ": 523,
+      "_`": 524,
+      "bi": 525,
+      "dcddc": 526,
+      "ddddddeddddddcddddddddddddde": 527,
+      "ge": 528,
+      "dn": 529,
+      "Âħ": 530,
+      "dcddde": 531,
+      "dedb": 532,
+      "eeec": 533,
+      "ddedddcddedddc": 534,
+      "fdg": 535,
+      "fi": 536,
+      "gh": 537,
+      "bdf": 538,
+      "ga": 539,
+      "ddddddeddddddcddddddc": 540,
+      "decc": 541,
+      "ddcdddf": 542,
+      "dZ": 543,
+      "cj": 544,
+      "edh": 545,
+      "dcee": 546,
+      "bee": 547,
+      "ddedddb": 548,
+      "ek": 549,
+      "ÂĨ": 550,
+      "dddddddddddddbddddddedddddde": 551,
+      "dddddddddddddcdddddddddddddedddddddddddddcddddddddddddde": 552,
+      "bda": 553,
+      "bec": 554,
+      "dcdf": 555,
+      "dY": 556,
+      "ddddddbddddddcddddddeddddddf": 557,
+      "fcc": 558,
+      "fec": 559,
+      "dddddddddddddbdddddddddddddfdddddddddddddbdddddddddddddf": 560,
+      "dddeddb": 561,
+      "ddddddcddddddcdddddde": 562,
+      "ddddddcddddddcddddddeddddddeddddddcddddddddddddde": 563,
+      "dddddcc": 564,
+      "ddddddcddddddedddddddddddddc": 565,
+      "dddcddf": 566,
+      "ddddddcddddddbdddddddddddddf": 567,
+      "cddddde": 568,
+      "Âĩ": 569,
+      "cedc": 570,
+      "ddddddgddddddg": 571,
+      "ddcec": 572,
+      "`_": 573,
+      "ÂĪ": 574,
+      "edddddb": 575,
+      "do": 576,
+      "ddddddfddddddeddddddc": 577,
+      "ddddcdcddddcdc": 578,
+      "ddddddcddddddeddddddf": 579,
+      "ddddddbddddddedddddddddddddc": 580,
+      "ccc": 581,
+      "ddddddadddddda": 582,
+      "fef": 583,
+      "ddddddcddddddcddddddedddddddddddddcddddddddddddde": 584,
+      "ai": 585,
+      "hc": 586,
+      "^`": 587,
+      "ddddddeddddddedddddddddddddc": 588,
+      "ddddededdddede": 589,
+      "ddddddbddddddeddddddf": 590,
+      "ddedf": 591,
+      "fce": 592,
+      "cdddddc": 593,
+      "edd": 594,
+      "edddddf": 595,
+      "cdcdc": 596,
+      "hh": 597,
+      "gi": 598,
+      "fj": 599,
+      "bj": 600,
+      "ddcc": 601,
+      "el": 602,
+      "eddf": 603,
+      "dddddec": 604,
+      "ddddddeddddddeddddddeddddddeddddddeddddddeddddddedddddde": 605,
+      "cdddddf": 606,
+      "__": 607,
+      "ddcdb": 608,
+      "ÂĬ": 609,
+      "fda": 610,
+      "ddddddfdddddddddddddc": 611,
+      "ddddddeddddddb": 612,
+      "ddddddddc": 613,
+      "ddece": 614,
+      "ddddddcddddddcddddddfddddddcddddddcddddddf": 615,
+      "bdg": 616,
+      "dddded": 617,
+      "ddddddbddddddbddddddbddddddb": 618,
+      "dddddddddddddbddddddcddddddeddddddf": 619,
+      "dddddb": 620,
+      "ded": 621,
+      "hg": 622,
+      "hd": 623,
+      "ddj": 624,
+      "cdddddb": 625,
+      "adb": 626,
+      "ck": 627,
+      "ddddddfddddddc": 628,
+      "gee": 629,
+      "dcce": 630,
+      "Âī": 631,
+      "dddddf": 632,
+      "dedf": 633,
+      "Âĭ": 634,
+      "ddcdddg": 635,
+      "bdde": 636,
+      "eddb": 637,
+      "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd": 638,
+      "dddddddddddddcddddddcddddddeddddddedddddddddddddcddddddcddddddedddddde": 639,
+      "ddccc": 640,
+      "fdh": 641,
+      "`^": 642,
+      "adc": 643,
+      "hb": 644,
+      "acc": 645,
+      "dddddddde": 646,
+      "ecde": 647,
+      "ebc": 648,
+      "cdh": 649,
+      "bce": 650,
+      "dddcdda": 651,
+      "aj": 652,
+      "ddddddeddddddcdddddde": 653,
+      "gdf": 654,
+      "Âį": 655,
+      "ddcdcdc": 656,
+      "ddddddeddddddddddddddddddddc": 657,
+      "em": 658,
+      "ddcdddb": 659,
+      "^_": 660,
+      "dddeedc": 661,
+      "eedddd": 662,
+      "ddddddgddddddc": 663,
+      "ddddddeddddddcddddddcddddddddddddde": 664,
+      "ddddedddddde": 665,
+      "ccdc": 666,
+      "dfdc": 667,
+      "dddddddedc": 668,
+      "fddc": 669,
+      "dX": 670,
+      "]`": 671,
+      "eede": 672,
+      "eedb": 673,
+      "ddddcddddddc": 674,
+      "ddededcddededc": 675,
+      "cl": 676,
+      "dddddddddddddbddddddeddddddf": 677,
+      "dddddddddddddcddddddcddddddddddddde": 678,
+      "ddddddfddddddfddddddfddddddf": 679,
+      "ÂĲ": 680,
+      "cdd": 681,
+      "ha": 682,
+      "fk": 683,
+      "fdde": 684,
+      "ddddddbdddddddddddddfddddddcddddddcddddddf": 685,
+      "cdcdddecdcddde": 686,
+      "ddddddadddddde": 687,
+      "ddedede": 688,
+      "dddddddddddddcdddddddddddddeddddddeddddddcddddddcddddddedddddde": 689,
+      "ÂĮ": 690,
+      "ddeddda": 691,
+      "ddddcd": 692,
+      "ecdc": 693,
+      "ccce": 694,
+      "ddddddddddddddddddddeddddddc": 695,
+      "cdcdcde": 696,
+      "ig": 697,
+      "dddeddg": 698,
+      "ddddddedddddddddddddcddddddedddddddddddddc": 699,
+      "ddedddf": 700,
+      "dp": 701,
+      "ddddddddddddddddddddf": 702,
+      "dW": 703,
+      "dddddddddddddbddddddf": 704,
+      "eZ": 705,
+      "gde": 706,
+      "bk": 707,
+      "ic": 708,
+      "ddddddbddddddcddddddf": 709,
+      "eee": 710,
+      "ddcdde": 711,
+      "dddddddededddc": 712,
+      "ddddddbddddddcddddddddddddde": 713,
+      "ccdf": 714,
+      "ededddcededddc": 715,
+      "Âĳ": 716,
+      "dq": 717,
+      "ddddddcdddddddddddddddddddde": 718,
+      "gdc": 719,
+      "ddddcdddddde": 720,
+      "ddddcc": 721,
+      "ddddddcddddddcddddddedddddddddddddcddddddedddddde": 722,
+      "he": 723,
+      "_^": 724,
+      "gj": 725,
+      "eec": 726,
+      "ddddf": 727,
+      "hf": 728,
+      "ddddddi": 729,
+      "ecdf": 730,
+      "dddddddcdcddde": 731,
+      "ddddeddddddc": 732,
+      "ia": 733,
+      "ddddb": 734,
+      "ddddddfddddddedddddddddddddc": 735,
+      "Âİ": 736,
+      "ddddddbddddddcddddddfdddddde": 737,
+      "edededc": 738,
+      "dddddddddddddd": 739,
+      "ddddddcddddddcddddddeddddddeddddddcddddddcddddddeddddddeddddddcddddddcddddddedddddde": 740,
+      "beb": 741,
+      "gcc": 742,
+      "\\`": 743,
+      "dddddddddddddcddddddc": 744,
+      "deda": 745,
+      "eecc": 746,
+      "bef": 747,
+      "cbc": 748,
+      "en": 749,
+      "ddeddc": 750,
+      "ddddddcddddddcddddddeddddddf": 751,
+      "cZ": 752,
+      "ada": 753,
+      "hi": 754,
+      "ddecc": 755,
+      "dddedc": 756,
+      "ddddcdddddddde": 757,
+      "cddf": 758,
+      "eY": 759,
+      "edddddddddddd": 760,
+      "dddi": 761,
+      "dddcddg": 762,
+      "cY": 763,
+      "cdec": 764,
+      "dr": 765,
+      "fl": 766,
+      "ddddee": 767,
+      "edi": 768,
+      "ddddddgdddddde": 769,
+      "ak": 770,
+      "cddb": 771,
+      "gdg": 772,
+      "eo": 773,
+      "dddddddddddddddddddddddd": 774,
+      "bY": 775,
+      "`]": 776,
+      "ededc": 777,
+      "ddddddbddddddfddddddbddddddf": 778,
+      "bddc": 779,
+      "cecc": 780,
+      "ddddddbddddddcddddddedddddde": 781,
+      "ade": 782,
+      "bl": 783,
+      "ddedb": 784,
+      "Âı": 785,
+      "ecee": 786,
+      "ddddeddddddddc": 787,
+      "ddcdcdf": 788,
+      "ddededb": 789,
+      "aee": 790,
+      "bdh": 791,
+      "ds": 792,
+      "dV": 793,
+      "ddddddedddddddddddddcddddddcddddddddddddde": 794,
+      "eddddda": 795,
+      "ddeddd": 796,
+      "ddddddfddddddb": 797,
+      "hj": 798,
+      "ddddddaddddddc": 799,
+      "ddddddcddddddbddddddeddddddf": 800,
+      "ddddddddddddddddedddc": 801,
+      "dddddddddddddbdddddddddddddfdddddddddddddbddddddddddddde": 802,
+      "dddedda": 803,
+      "cdddddg": 804,
+      "cdddddddddddd": 805,
+      "cfc": 806,
+      "ddddddddddddddddddddddddddddddddddddddddde": 807,
+      "dddddddddddedb": 808,
+      "ddcdcdeddcdcde": 809,
+      "dddddddddddddbddddddcddddddedddddde": 810,
+      "ddddcddddddddb": 811,
+      "ddddcdh": 812,
+      "ddddddcddddddbddddddedddddde": 813,
+      "adf": 814,
+      "ddedddd": 815,
+      "ddddeddddddddf": 816,
+      "ddk": 817,
+      "bbc": 818,
+      "ddcdddd": 819,
+      "cdcdb": 820,
+      "edddddg": 821,
+      "dddddddddddcdf": 822,
+      "gdb": 823,
+      "cedb": 824,
+      "dddcdddddddd": 825,
+      "dddddddddcdddedddddddddedddc": 826,
+      "\\_": 827,
+      "dddccde": 828,
+      "ddddddddddddddddddddb": 829,
+      "bZ": 830,
+      "edddf": 831,
+      "deee": 832,
+      "ddcee": 833,
+      "gef": 834,
+      "dddedddddddd": 835,
+      "ddddddbddddddedddddddddddddcddddddf": 836,
+      "ddddddddddddddddcddde": 837,
+      "dcec": 838,
+      "if": 839,
+      "cede": 840,
+      "^^": 841,
+      "ddeee": 842,
+      "aec": 843,
+      "ced": 844,
+      "`\\": 845,
+      "edddddde": 846,
+      "dddcedc": 847,
+      "cn": 848,
+      "dddddddddddddddddddddddddddddddddddddddddddddddddddddddd": 849,
+      "dedddde": 850,
+      "ededf": 851,
+      "ccee": 852,
+      "dddddddddddddddddddddddddddddddddddddddddc": 853,
+      "]_": 854,
+      "ddddddeddddddcddddddeddddddcddddddeddddddcddddddeddddddc": 855,
+      "dddcdc": 856,
+      "dU": 857,
+      "ddddddeddddddg": 858,
+      "dddddddddddcdc": 859,
+      "ddcdf": 860,
+      "ddcdddedddddddddedddc": 861,
+      "cX": 862,
+      "fedc": 863,
+      "deedc": 864,
+      "ddddcddddddddc": 865,
+      "al": 866,
+      "ib": 867,
+      "fm": 868,
+      "gk": 869,
+      "id": 870,
+      "feb": 871,
+      "ddddedddddddde": 872,
+      "ih": 873,
+      "dddddddddddddde": 874,
+      "ccd": 875,
+      "gl": 876,
+      "ddddddbdddddda": 877,
+      "dddeede": 878,
+      "dddecde": 879,
+      "ecd": 880,
+      "bfc": 881,
+      "ddddddeddddddeddddddddddddddddddddc": 882,
+      "cm": 883,
+      "dddcde": 884,
+      "]^": 885,
+      "ep": 886,
+      "ecdb": 887,
+      "ddddeddddddddb": 888,
+      "fbc": 889,
+      "dddccdc": 890,
+      "ddddddgddddddf": 891,
+      "dcdb": 892,
+      "dcddddc": 893,
+      "deddddc": 894,
+      "cdddb": 895,
+      "ddddddeddddddcddddddedddddddddddddc": 896,
+      "dedg": 897,
+      "aY": 898,
+      "[`": 899,
+      "fY": 900,
+      "fZ": 901,
+      "dddddddddddedc": 902,
+      "ddddddcddddddcdddddddddddddddddddde": 903,
+      "ccdddd": 904,
+      "edddedc": 905,
+      "dcd": 906,
+      "eddg": 907,
+      "ddddddedddc": 908,
+      "ddedcdc": 909,
+      "ddddedcddddedcddddedcddddedc": 910,
+      "fdi": 911,
+      "_\\": 912,
+      "ddddddcddde": 913,
+      "ddddddcddddddbddddddb": 914,
+      "cddddda": 915,
+      "ddcdcdg": 916,
+      "dddddddddddddedddddde": 917,
+      "eq": 918,
+      "ddcdede": 919,
+      "bn": 920,
+      "hk": 921,
+      "dddcdd": 922,
+      "ffc": 923,
+      "decdc": 924,
+      "acb": 925,
+      "dece": 926,
+      "ddddedh": 927,
+      "bm": 928,
+      "dbdc": 929,
+      "dbee": 930,
+      "ddddddcdc": 931,
+      "deeb": 932,
+      "cccc": 933,
+      "ddddcddddddddf": 934,
+      "dddddddddddede": 935,
+      "edddddddd": 936,
+      "fn": 937,
+      "fcdc": 938,
+      "ij": 939,
+      "gce": 940,
+      "ddddddeddddddbddddddb": 941,
+      "eed": 942,
+      "ddddddaddddddf": 943,
+      "dddddddddddcdb": 944,
+      "adg": 945,
+      "cdedc": 946,
+      "ddededa": 947,
+      "co": 948,
+      "eX": 949,
+      "dfd": 950,
+      "ddcddc": 951,
+      "ddddddbdddddddddddddfddddddcddddddcddddddfdddddddddddddbddddddedddddde": 952,
+      "^]": 953,
+      "bdd": 954,
+      "gec": 955,
+      "ddddddeddddddcddddddbdddddddddddddf": 956,
+      "_]": 957,
+      "fo": 958,
+      "gY": 959,
+      "edddb": 960,
+      "ÂĴ": 961,
+      "deede": 962,
+      "\\^": 963,
+      "dbd": 964,
+      "ddddddeddddddcddddddddddddddddddddc": 965,
+      "fdec": 966,
+      "ddedddg": 967,
+      "Td": 968,
+      "eW": 969,
+      "[_": 970,
+      "ja": 971,
+      "ii": 972,
+      "dccc": 973,
+      "ddddddedddddddddddddcddddddddddddde": 974,
+      "cdddddcc": 975,
+      "jh": 976,
+      "eeee": 977,
+      "bede": 978,
+      "bo": 979,
+      "\\]": 980,
+      "cfe": 981,
+      "fdd": 982,
+      "gdh": 983,
+      "ccdde": 984,
+      "aZ": 985,
+      "am": 986,
+      "jd": 987,
+      "decdb": 988,
+      "aeb": 989,
+      "deddddb": 990,
+      "cW": 991,
+      "ddddddeddddddcddddddbddddddcddddddeddddddf": 992,
+      "`[": 993,
+      "ddddddedddddddddddddb": 994,
+      "eddddd": 995,
+      "bed": 996,
+      "ddddcdeddddcdeddddcdeddddcde": 997,
+      "ie": 998,
+      "dcede": 999,
+      "edddddee": 1000,
+      "edda": 1001,
+      "eedf": 1002,
+      "ddddddaddddddg": 1003,
+      "Âĵ": 1004,
+      "bdi": 1005,
+      "eU": 1006,
+      "gZ": 1007,
+      "ddddddeddddddcddddddcddddddeddddddeddddddcddddddcddddddedddddde": 1008,
+      "ddddddaddddddb": 1009,
+      "decde": 1010,
+      "hee": 1011,
+      "ecdg": 1012,
+      "decddde": 1013,
+      "ddddddddddddddc": 1014,
+      "deeddc": 1015,
+      "ddddda": 1016,
+      "ddddddfddddddedddddde": 1017,
+      "ddddcdfddddcdf": 1018,
+      "dddddddddddddddddddddddddd": 1019,
+      "ddedddcdddddddddcddde": 1020,
+      "dddddddddddedf": 1021,
+      "jj": 1022,
+      "dcdddde": 1023
     },
     "merges": [
       [
-        "G",
-        "G"
+        "d",
+        "d"
       ],
       [
-        "GG",
-        "GG"
+        "dd",
+        "dd"
       ],
       [
-        "GGGG",
-        "GGGG"
+        "dddd",
+        "dd"
       ],
       [
-        "GGGG",
-        "GG"
+        "dddd",
+        "dddd"
       ],
       [
-        "GGGGGGGG",
-        "GGGGGGGG"
+        "d",
+        "c"
       ],
       [
-        "G",
-        "F"
+        "d",
+        "e"
       ],
       [
-        "G",
-        "H"
+        "dddddd",
+        "c"
       ],
       [
-        "GGGGGGGGGGGGGGGG",
-        "GGGGGGGGGGGGGGGG"
+        "dddddd",
+        "e"
       ],
       [
-        "GGGGGG",
-        "F"
+        "dddddddd",
+        "dddd"
       ],
       [
-        "GGGGGG",
-        "H"
+        "d",
+        "b"
       ],
       [
-        "GGGGGG",
-        "E"
+        "d",
+        "f"
       ],
       [
-        "GG",
-        "F"
+        "dd",
+        "c"
       ],
       [
-        "GG",
-        "H"
+        "dddddddd",
+        "dddddddd"
       ],
       [
-        "GGGGGG",
-        "I"
+        "dd",
+        "e"
       ],
       [
-        "G",
-        "E"
+        "dddddd",
+        "f"
       ],
       [
-        "G",
-        "I"
+        "dddddd",
+        "b"
       ],
       [
-        "GGGGGGGG",
-        "GGGG"
+        "dd",
+        "de"
       ],
       [
-        "GG",
-        "GF"
+        "dd",
+        "dc"
       ],
       [
-        "GG",
-        "GH"
+        "ddddddc",
+        "ddddddc"
       ],
       [
-        "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
-        "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG"
+        "e",
+        "e"
       ],
       [
-        "F",
-        "F"
+        "c",
+        "c"
       ],
       [
-        "H",
-        "H"
+        "dddddde",
+        "dddddde"
       ],
       [
-        "GGGG",
-        "F"
+        "dddd",
+        "c"
       ],
       [
-        "GGGG",
-        "H"
+        "dddd",
+        "e"
       ],
       [
-        "G",
-        "D"
+        "d",
+        "a"
       ],
       [
-        "G",
-        "J"
+        "d",
+        "g"
       ],
       [
-        "F",
-        "H"
+        "dddddddddddd",
+        "dc"
       ],
       [
-        "G",
-        "C"
+        "dddddddddddd",
+        "de"
       ],
       [
-        "GGGGGG",
-        "D"
+        "e",
+        "c"
       ],
       [
-        "GGGGGG",
-        "J"
+        "dddddddddddddddd",
+        "dddddddddddddddd"
       ],
       [
-        "G",
-        "K"
+        "c",
+        "e"
       ],
       [
-        "F",
-        "GF"
+        "e",
+        "de"
       ],
       [
-        "GGGGGGI",
-        "GGGGGGE"
+        "c",
+        "dc"
       ],
       [
-        "GGGGGGF",
-        "GGGGGGF"
+        "d",
+        "h"
       ],
       [
-        "H",
-        "F"
+        "dddddddddddd",
+        "db"
       ],
       [
-        "H",
-        "GH"
+        "dddddddddddd",
+        "df"
       ],
       [
-        "GGGGGGH",
-        "GGGGGGH"
+        "dddddddd",
+        "dddddddddddd"
       ],
       [
-        "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
-        "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG"
+        "dd",
+        "b"
       ],
       [
-        "GGGGGGE",
-        "GGGGGGE"
+        "dd",
+        "f"
       ],
       [
-        "GG",
-        "I"
+        "dddddde",
+        "ddddddc"
       ],
       [
-        "GGGGGGGGGGGG",
-        "GF"
+        "e",
+        "f"
       ],
       [
-        "GG",
-        "E"
+        "b",
+        "c"
       ],
       [
-        "GGGGGGGGGGGG",
-        "GH"
+        "dddddd",
+        "g"
       ],
       [
-        "GGGGGGI",
-        "GGGGGGI"
+        "e",
+        "dc"
       ],
       [
-        "H",
-        "GF"
+        "dddddde",
+        "dddddddddddddc"
       ],
       [
-        "G",
-        "B"
+        "dddddd",
+        "a"
       ],
       [
-        "F",
-        "GH"
+        "de",
+        "dc"
       ],
       [
-        "GGGG",
-        "GF"
+        "de",
+        "c"
       ],
       [
-        "F",
-        "E"
+        "dddddde",
+        "ddddddf"
       ],
       [
-        "G",
-        "L"
+        "ddddddc",
+        "ddddddddddddde"
       ],
       [
-        "H",
-        "I"
+        "e",
+        "b"
       ],
       [
-        "GGGG",
-        "GH"
+        "e",
+        "dddd"
       ],
       [
-        "F",
-        "I"
+        "d",
+        "i"
       ],
       [
-        "H",
-        "E"
+        "f",
+        "c"
       ],
       [
-        "GGGGGGH",
-        "GGGGGGF"
+        "dddddd",
+        "dc"
       ],
       [
-        "G",
-        "A"
+        "dc",
+        "c"
       ],
       [
-        "GF",
-        "GH"
+        "ddddddcddddddc",
+        "ddddddedddddde"
       ],
       [
-        "GH",
-        "GF"
+        "dddddddddddddddddddddddddddddddd",
+        "dddddddddddddddddddddddddddddddd"
       ],
       [
-        "GGGGGGI",
-        "GGGGGGF"
+        "ddddddb",
+        "ddddddb"
       ],
       [
-        "GG",
-        "D"
+        "dddddd",
+        "de"
       ],
       [
-        "GG",
-        "GE"
+        "dc",
+        "de"
       ],
       [
-        "G",
-        "M"
+        "c",
+        "dddd"
       ],
       [
-        "GG",
-        "J"
+        "dddde",
+        "dc"
       ],
       [
-        "GG",
-        "GI"
+        "dd",
+        "a"
       ],
       [
-        "GGGGGGGGGGGG",
-        "GI"
+        "c",
+        "b"
       ],
       [
-        "GGGGGGH",
-        "GGGGGGGGGGGGGF"
+        "ddddc",
+        "de"
       ],
       [
-        "F",
-        "GGH"
+        "f",
+        "e"
       ],
       [
-        "GGGGGGIGGGGGGE",
-        "GGGGGGIGGGGGGE"
+        "dd",
+        "g"
       ],
       [
-        "GGGGGGGGGGGGGGGG",
-        "GGGGGGGG"
+        "ddddddb",
+        "ddddddc"
       ],
       [
-        "H",
-        "GGF"
+        "ddddddf",
+        "ddddddf"
       ],
       [
-        "GGGGGGGGGGGG",
-        "GE"
+        "ddddc",
+        "dc"
       ],
       [
-        "GF",
-        "GF"
+        "dd",
+        "df"
       ],
       [
-        "E",
-        "F"
+        "de",
+        "e"
       ],
       [
-        "E",
-        "H"
+        "dd",
+        "db"
       ],
       [
-        "GH",
-        "GH"
+        "ddc",
+        "ddde"
       ],
       [
-        "I",
-        "H"
+        "b",
+        "e"
       ],
       [
-        "GGF",
-        "GGGH"
+        "dde",
+        "dddc"
       ],
       [
-        "I",
-        "F"
+        "dddde",
+        "de"
       ],
       [
-        "GGGGGG",
-        "C"
+        "d",
+        "j"
       ],
       [
-        "GGH",
-        "GGGF"
+        "c",
+        "f"
       ],
       [
-        "GGGGGG",
-        "K"
+        "c",
+        "de"
       ],
       [
-        "F",
-        "GGF"
+        "ddddddcddddddc",
+        "ddddddcddddddc"
       ],
       [
-        "H",
-        "GGH"
+        "f",
+        "f"
       ],
       [
-        "H",
-        "GGGG"
+        "ddddddb",
+        "dddddddddddddf"
       ],
       [
-        "GGGGH",
-        "GF"
+        "b",
+        "b"
       ],
       [
-        "F",
-        "GE"
+        "e",
+        "g"
       ],
       [
-        "F",
-        "GGGG"
+        "a",
+        "c"
       ],
       [
-        "E",
-        "E"
+        "ddc",
+        "dc"
       ],
       [
-        "GGGGF",
-        "GH"
+        "ddddddedddddde",
+        "ddddddedddddde"
       ],
       [
-        "I",
-        "I"
+        "e",
+        "df"
       ],
       [
-        "GG",
-        "C"
+        "ddddddcddddddc",
+        "ddddddf"
       ],
       [
-        "F",
-        "D"
+        "dde",
+        "de"
       ],
       [
-        "GGGGF",
-        "GF"
+        "e",
+        "ddc"
       ],
       [
-        "GGGGGGE",
-        "GGGGGGF"
+        "e",
+        "a"
       ],
       [
-        "H",
-        "GI"
+        "dddddddddddddc",
+        "ddddddddddddde"
       ],
       [
-        "GGGGH",
-        "GH"
+        "g",
+        "c"
       ],
       [
-        "F",
-        "J"
+        "dddddddddddddddddddd",
+        "e"
       ],
       [
-        "H",
-        "D"
+        "ddddddc",
+        "ddddddedddddde"
       ],
       [
-        "G",
-        "N"
+        "f",
+        "b"
       ],
       [
-        "GGF",
-        "GF"
+        "ddddc",
+        "df"
       ],
       [
-        "H",
-        "J"
+        "e",
+        "d"
       ],
       [
-        "GG",
-        "K"
+        "dddddddddddddddddddd",
+        "c"
       ],
       [
-        "GGH",
-        "GH"
+        "c",
+        "dde"
       ],
       [
-        "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
-        "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG"
+        "dddddddd",
+        "de"
       ],
       [
-        "F",
-        "GGGF"
+        "ddddddf",
+        "dddddde"
       ],
       [
-        "H",
-        "GGGH"
+        "e",
+        "dde"
+      ],
+      [
+        "dddddddd",
+        "dc"
+      ],
+      [
+        "dddde",
+        "db"
+      ],
+      [
+        "ddddddc",
+        "ddddddb"
+      ],
+      [
+        "d",
+        "k"
+      ],
+      [
+        "e",
+        "ddde"
+      ],
+      [
+        "c",
+        "db"
+      ],
+      [
+        "dddddddddddddb",
+        "dddddddddddddf"
+      ],
+      [
+        "dddd",
+        "dc"
+      ],
+      [
+        "dd",
+        "d"
+      ],
+      [
+        "dd",
+        "h"
+      ],
+      [
+        "b",
+        "f"
+      ],
+      [
+        "c",
+        "a"
+      ],
+      [
+        "dddd",
+        "de"
+      ],
+      [
+        "c",
+        "ddc"
+      ],
+      [
+        "e",
+        "db"
+      ],
+      [
+        "c",
+        "g"
+      ],
+      [
+        "dc",
+        "dc"
+      ],
+      [
+        "c",
+        "d"
+      ],
+      [
+        "e",
+        "h"
+      ],
+      [
+        "b",
+        "d"
+      ],
+      [
+        "dddde",
+        "df"
+      ],
+      [
+        "ddddc",
+        "db"
+      ],
+      [
+        "e",
+        "dddc"
+      ],
+      [
+        "de",
+        "de"
+      ],
+      [
+        "dd",
+        "dg"
+      ],
+      [
+        "c",
+        "dddc"
+      ],
+      [
+        "ddddddb",
+        "ddddddf"
+      ],
+      [
+        "e",
+        "cc"
+      ],
+      [
+        "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+      ],
+      [
+        "dd",
+        "da"
+      ],
+      [
+        "f",
+        "a"
+      ],
+      [
+        "b",
+        "g"
+      ],
+      [
+        "dddde",
+        "dddddddd"
+      ],
+      [
+        "ddddddcddddddcddddddedddddde",
+        "ddddddcddddddcddddddedddddde"
+      ],
+      [
+        "b",
+        "a"
+      ],
+      [
+        "ddddc",
+        "dddddddd"
+      ],
+      [
+        "f",
+        "g"
+      ],
+      [
+        "dddd",
+        "dddddddc"
+      ],
+      [
+        "dddddd",
+        "h"
+      ],
+      [
+        "b",
+        "dc"
+      ],
+      [
+        "f",
+        "d"
+      ],
+      [
+        "ddc",
+        "dddc"
+      ],
+      [
+        "c",
+        "df"
+      ],
+      [
+        "f",
+        "de"
+      ],
+      [
+        "e",
+        "dg"
+      ],
+      [
+        "cdc",
+        "ddde"
+      ],
+      [
+        "dde",
+        "ddde"
+      ],
+      [
+        "ede",
+        "dddc"
+      ],
+      [
+        "c",
+        "ddde"
+      ],
+      [
+        "ddddddcddddddc",
+        "ddddddddddddde"
+      ],
+      [
+        "c",
+        "h"
       ],
       [
         "Â",
-        "İ"
+        "ģ"
       ],
       [
-        "E",
-        "I"
+        "ddddddeddddddc",
+        "ddddddeddddddc"
       ],
       [
-        "GGGGGG",
-        "G"
+        "dddddddddddddc",
+        "ddddddcddddddedddddde"
       ],
       [
-        "H",
-        "GE"
+        "de",
+        "dddd"
       ],
       [
-        "GGGGGGF",
-        "GGGGGGGGGGGGGH"
+        "ddddddcddddddc",
+        "ddddddedddddddddddddc"
       ],
       [
-        "F",
-        "GI"
+        "d",
+        "l"
       ],
       [
-        "G",
-        "O"
+        "dddddddddddddb",
+        "ddddddc"
       ],
       [
-        "GGGGGG",
-        "GF"
+        "dc",
+        "dddd"
       ],
       [
-        "GGGGGGGG",
-        "GF"
+        "a",
+        "a"
       ],
       [
-        "F",
-        "C"
+        "e",
+        "i"
       ],
       [
-        "GGGGGG",
-        "GH"
+        "dde",
+        "dc"
       ],
       [
-        "GGGGGGGG",
-        "GH"
+        "de",
+        "ddc"
       ],
       [
-        "H",
-        "GGGF"
+        "ee",
+        "dc"
       ],
       [
-        "I",
-        "E"
+        "f",
+        "dc"
       ],
       [
-        "H",
-        "C"
+        "c",
+        "ec"
       ],
       [
-        "GGGGGGD",
-        "GGGGGGJ"
+        "e",
+        "da"
       ],
       [
-        "GGGGGGEGGGGGGE",
-        "GGGGGGEGGGGGGE"
+        "b",
+        "db"
       ],
       [
-        "GGGGGGD",
-        "GGGGGGD"
+        "c",
+        "ee"
       ],
       [
-        "F",
-        "GGGH"
+        "f",
+        "df"
       ],
       [
-        "GGGGGGH",
-        "GGGGGGI"
+        "a",
+        "d"
       ],
       [
-        "GG",
-        "GD"
-      ],
-      [
-        "H",
-        "FF"
-      ],
-      [
-        "H",
-        "FH"
-      ],
-      [
-        "F",
-        "HH"
-      ],
-      [
-        "H",
-        "K"
-      ],
-      [
-        "GG",
-        "G"
-      ],
-      [
-        "GG",
-        "GJ"
-      ],
-      [
-        "E",
-        "D"
-      ],
-      [
-        "F",
-        "K"
-      ],
-      [
-        "E",
-        "J"
-      ],
-      [
-        "GGGGGGE",
-        "GGGGGGI"
-      ],
-      [
-        "I",
-        "J"
-      ],
-      [
-        "E",
-        "GF"
-      ],
-      [
-        "GGH",
-        "GGGH"
-      ],
-      [
-        "I",
-        "D"
-      ],
-      [
-        "GGF",
-        "GGGF"
-      ],
-      [
-        "GGH",
-        "GF"
-      ],
-      [
-        "GGGGGGFGGGGGGF",
-        "GGGGGGFGGGGGGF"
-      ],
-      [
-        "I",
-        "GH"
-      ],
-      [
-        "GGGGH",
-        "GE"
-      ],
-      [
-        "GGF",
-        "GH"
-      ],
-      [
-        "F",
-        "G"
-      ],
-      [
-        "I",
-        "GF"
-      ],
-      [
-        "GGGGGGGGGGGGGGGG",
-        "GGGGF"
-      ],
-      [
-        "GGGGGGIGGGGGGI",
-        "GGGGGGIGGGGGGI"
-      ],
-      [
-        "H",
-        "G"
-      ],
-      [
-        "GGGGF",
-        "GI"
-      ],
-      [
-        "GGGGH",
-        "GI"
-      ],
-      [
-        "GGGGF",
-        "GE"
-      ],
-      [
-        "F",
-        "GD"
-      ],
-      [
-        "E",
-        "GH"
-      ],
-      [
-        "GGGGGGE",
-        "GGGGGGGGGGGGGI"
-      ],
-      [
-        "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
-        "GGGGGGGGGGGGGGGG"
-      ],
-      [
-        "GGGGGGGGGGGGGGGG",
-        "GGGGH"
-      ],
-      [
-        "GG",
-        "B"
-      ],
-      [
-        "GG",
-        "L"
-      ],
-      [
-        "GGGGGGIGGGGGGE",
-        "GGGGGGIGGGGGGF"
-      ],
-      [
-        "FGF",
-        "GGGH"
-      ],
-      [
-        "H",
-        "GJ"
-      ],
-      [
-        "GGGGGGGG",
-        "GGGF"
-      ],
-      [
-        "H",
-        "GGGGGF"
-      ],
-      [
-        "HGH",
-        "GGGF"
-      ],
-      [
-        "GGGGH",
-        "GD"
-      ],
-      [
-        "GG",
-        "GC"
-      ],
-      [
-        "F",
-        "GGGGGH"
-      ],
-      [
-        "F",
-        "B"
-      ],
-      [
-        "GGGGGGI",
-        "GGGGGGH"
-      ],
-      [
-        "E",
-        "C"
-      ],
-      [
-        "GGGGGGGG",
-        "GGGH"
-      ],
-      [
-        "GGGGF",
-        "GJ"
-      ],
-      [
-        "E",
-        "GE"
-      ],
-      [
-        "E",
-        "G"
-      ],
-      [
-        "GGGGGGGGGGGGGH",
-        "GGGGGGE"
-      ],
-      [
-        "D",
-        "D"
-      ],
-      [
-        "HH",
-        "GF"
-      ],
-      [
-        "I",
-        "C"
-      ],
-      [
-        "GGGGGGGG",
-        "GGF"
-      ],
-      [
-        "GG",
-        "GK"
-      ],
-      [
-        "H",
-        "B"
-      ],
-      [
-        "H",
-        "GD"
-      ],
-      [
-        "FF",
-        "GH"
-      ],
-      [
-        "G",
-        "P"
-      ],
-      [
-        "F",
-        "GJ"
-      ],
-      [
-        "J",
-        "D"
-      ],
-      [
-        "H",
-        "L"
-      ],
-      [
-        "F",
-        "GGGGGF"
-      ],
-      [
-        "GGGGGGJ",
-        "GGGGGGJ"
-      ],
-      [
-        "GGF",
-        "H"
-      ],
-      [
-        "GGGGGGGG",
-        "GGH"
-      ],
-      [
-        "GF",
-        "GGGG"
-      ],
-      [
-        "F",
-        "L"
-      ],
-      [
-        "GGGGGGI",
-        "GGGGGGGGGGGGGE"
-      ],
-      [
-        "GH",
-        "GGGG"
-      ],
-      [
-        "F",
-        "A"
-      ],
-      [
-        "GGGGGGHGGGGGGH",
-        "GGGGGGHGGGGGGH"
-      ],
-      [
-        "I",
-        "GI"
-      ],
-      [
-        "E",
-        "K"
-      ],
-      [
-        "GGGGF",
-        "GGGGGGGG"
-      ],
-      [
-        "I",
-        "K"
-      ],
-      [
-        "GG",
-        "A"
-      ],
-      [
-        "I",
-        "G"
-      ],
-      [
-        "H",
-        "GGGGGH"
-      ],
-      [
-        "GGGGGGE",
-        "GGGGGGH"
-      ],
-      [
-        "GGGGGGE",
-        "GGGGGGHGGGGGGH"
-      ],
-      [
-        "GGGGF",
-        "GD"
-      ],
-      [
-        "GGGGGGGGGGGG",
-        "GD"
-      ],
-      [
-        "J",
-        "J"
-      ],
-      [
-        "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
-        "GGGGGGGGGGGGGGGGGGGGGGGG"
-      ],
-      [
-        "GGH",
-        "F"
-      ],
-      [
-        "F",
-        "GC"
-      ],
-      [
-        "GG",
-        "M"
-      ],
-      [
-        "GGGGGGGGGGGG",
-        "GJ"
-      ],
-      [
-        "GGGGH",
-        "GGGGGGGG"
-      ],
-      [
-        "GH",
-        "GGF"
-      ],
-      [
-        "G",
-        "Q"
-      ],
-      [
-        "GGGGGGGGGGGGGGGG",
-        "GGGG"
-      ],
-      [
-        "D",
-        "J"
-      ],
-      [
-        "GGGGGGF",
-        "GGGGGGH"
-      ],
-      [
-        "I",
-        "GE"
-      ],
-      [
-        "GGGGH",
-        "GJ"
-      ],
-      [
-        "H",
-        "M"
-      ],
-      [
-        "H",
-        "A"
-      ],
-      [
-        "GGGGGGHGGGGGGF",
-        "GGGGGGHGGGGGGF"
-      ],
-      [
-        "H",
-        "GC"
-      ],
-      [
-        "I",
-        "HH"
-      ],
-      [
-        "GGGGGGHGGGGGGGGGGGGGF",
-        "GGGGGGIGGGGGGE"
-      ],
-      [
-        "GGGGGGGG",
-        "GGGGGG"
-      ],
-      [
-        "E",
-        "FF"
-      ],
-      [
-        "GGGGGGH",
-        "GGGGGGE"
-      ],
-      [
-        "E",
-        "B"
-      ],
-      [
-        "GGF",
-        "GFGH"
-      ],
-      [
-        "E",
-        "GI"
-      ],
-      [
-        "FH",
-        "GF"
-      ],
-      [
-        "FGF",
-        "GF"
-      ],
-      [
-        "HF",
-        "GH"
-      ],
-      [
-        "F",
-        "M"
-      ],
-      [
-        "H",
-        "GK"
-      ],
-      [
-        "C",
-        "D"
-      ],
-      [
-        "GGGF",
-        "GGH"
-      ],
-      [
-        "HGH",
-        "GH"
-      ],
-      [
-        "F",
-        "GK"
-      ],
-      [
-        "GGH",
-        "GGGE"
-      ],
-      [
-        "I",
-        "B"
-      ],
-      [
-        "K",
-        "D"
-      ],
-      [
-        "GGGGGG",
-        "B"
-      ],
-      [
-        "GGGGGG",
-        "L"
-      ],
-      [
-        "GGH",
-        "GHGF"
-      ],
-      [
-        "GGGGGGJ",
-        "GGGGGGE"
-      ],
-      [
-        "GGGF",
-        "GGF"
-      ],
-      [
-        "J",
-        "C"
-      ],
-      [
-        "J",
-        "E"
-      ],
-      [
-        "GGGGGGGGGGGGGGGGGGGGGGGG",
-        "GGGH"
-      ],
-      [
-        "D",
-        "G"
-      ],
-      [
-        "GGGH",
-        "GGF"
-      ],
-      [
-        "FF",
-        "GF"
-      ],
-      [
-        "E",
-        "GD"
-      ],
-      [
-        "H",
-        "GGI"
-      ],
-      [
-        "E",
-        "L"
-      ],
-      [
-        "GGGGGG",
-        "GFGF"
-      ],
-      [
-        "GGGGGGHGGGGGGH",
-        "GGGGGGGGGGGGGF"
-      ],
-      [
-        "J",
-        "I"
-      ],
-      [
-        "GGGGGG",
-        "GHGH"
-      ],
-      [
-        "HH",
-        "GH"
-      ],
-      [
-        "GGGG",
-        "FF"
-      ],
-      [
-        "D",
-        "C"
-      ],
-      [
-        "GGGGGGIGGGGGGEGGGGGGIGGGGGGE",
-        "GGGGGGIGGGGGGEGGGGGGIGGGGGGE"
-      ],
-      [
-        "GGH",
-        "GI"
-      ],
-      [
-        "FH",
-        "GH"
-      ],
-      [
-        "GGGGGGJ",
-        "GGGGGGF"
-      ],
-      [
-        "GGF",
-        "GGGI"
-      ],
-      [
-        "GGGGGGFGGGGGGF",
-        "GGGGGGIGGGGGGE"
-      ],
-      [
-        "GGGGGGHGGGGGGH",
-        "GGGGGGH"
-      ],
-      [
-        "GGGH",
-        "GGH"
-      ],
-      [
-        "D",
-        "K"
-      ],
-      [
-        "H",
-        "GGE"
-      ],
-      [
-        "J",
-        "K"
-      ],
-      [
-        "F",
-        "GGE"
-      ],
-      [
-        "H",
-        "O"
-      ],
-      [
-        "D",
-        "I"
-      ],
-      [
-        "E",
-        "A"
-      ],
-      [
-        "GGGGGGJ",
-        "GGGGGGI"
-      ],
-      [
-        "J",
-        "G"
-      ],
-      [
-        "F",
-        "GGI"
-      ],
-      [
-        "GGGGGGHGGGGGGF",
-        "GGGGGGEGGGGGGE"
-      ],
-      [
-        "GE",
-        "GH"
-      ],
-      [
-        "H",
-        "N"
-      ],
-      [
-        "E",
-        "GGH"
-      ],
-      [
-        "C",
-        "G"
-      ],
-      [
-        "F",
-        "O"
-      ],
-      [
-        "GGGGGGD",
-        "GGGGGGF"
-      ],
-      [
-        "GGGGGGGGGGGGGH",
-        "GGGGGGF"
-      ],
-      [
-        "GG",
-        "GL"
-      ],
-      [
-        "GGGGGGDGGGGGGJ",
-        "GGGGGGDGGGGGGJ"
-      ],
-      [
-        "E",
-        "HH"
-      ],
-      [
-        "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
-        "GGGGGGGG"
-      ],
-      [
-        "GGGGGGFGGGGGGF",
-        "GGGGGGF"
-      ],
-      [
-        "GGGF",
-        "GGE"
-      ],
-      [
-        "GGGG",
-        "HH"
-      ],
-      [
-        "GF",
-        "FH"
-      ],
-      [
-        "I",
-        "FF"
-      ],
-      [
-        "I",
-        "GJ"
-      ],
-      [
-        "I",
-        "L"
-      ],
-      [
-        "GGGGF",
-        "GK"
-      ],
-      [
-        "GGFGGGH",
-        "GGFGGGH"
-      ],
-      [
-        "GF",
-        "GI"
-      ],
-      [
-        "GGGGGGE",
-        "GGGGGGIGGGGGGF"
-      ],
-      [
-        "GGGGGGGGGGGGGHGGGGGGE",
-        "GGGGGGIGGGGGGEGGGGGGIGGGGGGF"
-      ],
-      [
-        "C",
-        "K"
-      ],
-      [
-        "GGGH",
-        "GGI"
-      ],
-      [
-        "I",
-        "GGF"
-      ],
-      [
-        "F",
-        "N"
-      ],
-      [
-        "GF",
-        "GGF"
-      ],
-      [
-        "E",
-        "M"
-      ],
-      [
-        "C",
-        "J"
-      ],
-      [
-        "GG",
-        "GB"
-      ],
-      [
-        "GF",
-        "GGH"
-      ],
-      [
-        "G",
-        "S"
-      ],
-      [
-        "GGGGGGJ",
-        "GGGGGGH"
-      ],
-      [
-        "I",
-        "FH"
-      ],
-      [
-        "GGGGF",
-        "GC"
-      ],
-      [
-        "GGGGGGGGGGGGGGGGGGGGGGGG",
-        "GGGF"
-      ],
-      [
-        "GGGH",
-        "GF"
-      ],
-      [
-        "GGGGGGGGGH",
-        "GGGF"
-      ],
-      [
-        "GGGGH",
-        "GC"
-      ],
-      [
-        "GGGGGGGGGGGGGGGGGGGG",
-        "G"
-      ],
-      [
-        "B",
-        "G"
-      ],
-      [
-        "GGHGGGF",
-        "GGHGGGF"
-      ],
-      [
-        "GGGGGGGGGF",
-        "GGGH"
-      ],
-      [
-        "GGGGHGF",
-        "GGGGHGF"
-      ],
-      [
-        "GH",
-        "GE"
-      ],
-      [
-        "E",
-        "GC"
-      ],
-      [
-        "GH",
-        "H"
-      ],
-      [
-        "GGGGGGHGGGGGGF",
-        "GGGGGGH"
-      ],
-      [
-        "C",
-        "C"
-      ],
-      [
-        "G",
-        "R"
-      ],
-      [
-        "F",
-        "GGGGGGF"
-      ],
-      [
-        "E",
-        "GGF"
-      ],
-      [
-        "GH",
-        "FF"
-      ],
-      [
-        "GGGGGGD",
-        "GGGGGGI"
-      ],
-      [
-        "GGGGGGFGGGGGGF",
-        "GGGGGGGGGGGGGH"
-      ],
-      [
-        "GF",
-        "HH"
-      ],
-      [
-        "F",
-        "GB"
-      ],
-      [
-        "GGGF",
-        "GGI"
-      ],
-      [
-        "GGGF",
-        "GGD"
-      ],
-      [
-        "E",
-        "FE"
-      ],
-      [
-        "K",
-        "K"
-      ],
-      [
-        "E",
-        "GJ"
-      ],
-      [
-        "E",
-        "FH"
-      ],
-      [
-        "GGGGGGGGGGGGGGGG",
-        "GGGGGGGGGGGG"
-      ],
-      [
-        "HGGGG",
-        "GE"
-      ],
-      [
-        "I",
-        "A"
-      ],
-      [
-        "GGGH",
-        "GGE"
-      ],
-      [
-        "GG",
-        "N"
-      ],
-      [
-        "D",
-        "B"
-      ],
-      [
-        "GGF",
-        "GE"
-      ],
-      [
-        "J",
-        "GH"
-      ],
-      [
-        "GGGF",
-        "GH"
-      ],
-      [
-        "I",
-        "HI"
-      ],
-      [
-        "GGH",
-        "H"
-      ],
-      [
-        "J",
-        "B"
-      ],
-      [
-        "GGGH",
-        "GGJ"
-      ],
-      [
-        "FF",
-        "FH"
-      ],
-      [
-        "F",
-        "GL"
-      ],
-      [
-        "GGGGH",
-        "GK"
-      ],
-      [
-        "GGGGGGEGGGGGGF",
-        "GGGGGGGGGGGGGH"
-      ],
-      [
-        "I",
-        "M"
-      ],
-      [
-        "I",
-        "GD"
-      ],
-      [
-        "D",
-        "L"
-      ],
-      [
-        "D",
-        "GF"
-      ],
-      [
-        "GGH",
-        "FH"
-      ],
-      [
-        "GGGGGGGG",
-        "H"
-      ],
-      [
-        "K",
-        "C"
-      ],
-      [
-        "K",
-        "J"
-      ],
-      [
-        "GGH",
-        "GGF"
-      ],
-      [
-        "GGH",
-        "GGGD"
-      ],
-      [
-        "FGGGG",
-        "GI"
-      ],
-      [
-        "F",
-        "GGGE"
-      ],
-      [
-        "GGF",
-        "GGGJ"
-      ],
-      [
-        "D",
-        "H"
-      ],
-      [
-        "GGGGGGFGGGGGGF",
-        "GGGGGGI"
-      ],
-      [
-        "D",
-        "E"
-      ],
-      [
-        "GGGGGGGGGGGGGE",
-        "GGGGGGF"
-      ],
-      [
-        "FGGGG",
-        "GE"
-      ],
-      [
-        "F",
-        "GG"
-      ],
-      [
-        "I",
-        "HF"
-      ],
-      [
-        "HGGGG",
-        "GI"
-      ],
-      [
-        "GGF",
-        "FF"
-      ],
-      [
-        "GGF",
-        "GFGF"
-      ],
-      [
-        "GGH",
-        "GHGH"
-      ],
-      [
-        "D",
-        "A"
-      ],
-      [
-        "H",
-        "GB"
-      ],
-      [
-        "GGGGGGGG",
-        "F"
-      ],
-      [
-        "GGGGGGGHGH",
-        "GGGF"
-      ],
-      [
-        "H",
-        "GL"
-      ],
-      [
-        "GGH",
-        "GGGI"
-      ],
-      [
-        "FGF",
-        "GH"
-      ],
-      [
-        "D",
-        "GH"
-      ],
-      [
-        "E",
-        "HF"
-      ],
-      [
-        "K",
-        "G"
-      ],
-      [
-        "GGGH",
-        "GGD"
-      ],
-      [
-        "GGGGGGD",
-        "GGGGGGE"
-      ],
-      [
-        "C",
-        "B"
-      ],
-      [
-        "GGF",
-        "GGGE"
-      ],
-      [
-        "GGHGH",
-        "GE"
-      ],
-      [
-        "GGH",
-        "HH"
-      ],
-      [
-        "GGH",
-        "FF"
-      ],
-      [
-        "HGGGG",
-        "GD"
-      ],
-      [
-        "H",
-        "P"
-      ],
-      [
-        "D",
-        "F"
-      ],
-      [
-        "GGGGGGGFGF",
-        "GGGH"
-      ],
-      [
-        "H",
-        "GGGGGGGGGGGG"
-      ],
-      [
-        "GGGGFGH",
-        "GGGGFGH"
-      ],
-      [
-        "GH",
-        "HF"
-      ],
-      [
-        "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
-        "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG"
-      ],
-      [
-        "GGGGGGIGGGGGGEGGGGGGIGGGGGGE",
-        "GGGGGGIGGGGGGF"
-      ],
-      [
-        "GGGG",
-        "I"
-      ],
-      [
-        "H",
-        "GGGGGGF"
-      ],
-      [
-        "J",
-        "L"
-      ],
-      [
-        "H",
-        "FGF"
-      ],
-      [
-        "J",
-        "GI"
-      ],
-      [
-        "GGGF",
-        "GGJ"
-      ],
-      [
-        "GGGGGGIGGGGGGEGGGGGGIGGGGGGE",
-        "GGGGGGHGGGGGGF"
-      ],
-      [
-        "C",
-        "A"
-      ],
-      [
-        "F",
-        "GGGGGGGGGGGG"
-      ],
-      [
-        "GGF",
-        "GGH"
-      ],
-      [
-        "GGGGGGJ",
-        "GGGGGGD"
-      ],
-      [
-        "D",
-        "GE"
-      ],
-      [
-        "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
-        "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG"
-      ],
-      [
-        "J",
-        "A"
-      ],
-      [
-        "K",
-        "B"
-      ],
-      [
-        "FGGGG",
-        "GJ"
-      ],
-      [
-        "J",
-        "GF"
-      ],
-      [
-        "F",
-        "P"
-      ],
-      [
-        "GGF",
-        "HF"
-      ],
-      [
-        "H",
-        "Q"
-      ],
-      [
-        "GGGGGGEGGGGGGEGGGGGGEGGGGGGE",
-        "GGGGGGEGGGGGGEGGGGGGEGGGGGGE"
-      ],
-      [
-        "GGGGGGFGGGGGGFGGGGGGFGGGGGGF",
-        "GGGGGGFGGGGGGFGGGGGGFGGGGGGF"
-      ],
-      [
-        "C",
-        "L"
-      ],
-      [
-        "F",
-        "GGGGGGH"
-      ],
-      [
-        "FGF",
-        "GFGH"
-      ],
-      [
-        "GGGGGGEGGGGGGHGGGGGGH",
-        "GGGGGGEGGGGGGI"
-      ],
-      [
-        "GI",
-        "GF"
-      ],
-      [
-        "G",
-        "T"
-      ],
-      [
-        "GH",
-        "GGH"
-      ],
-      [
-        "?",
-        "Ā"
-      ],
-      [
-        "FGGGG",
-        "GD"
-      ],
-      [
-        "I",
-        "FI"
-      ],
-      [
-        "GGF",
-        "GGF"
-      ],
-      [
-        "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
-        "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG"
-      ],
-      [
-        "H",
-        "GG"
-      ],
-      [
-        "I",
-        "GGH"
-      ],
-      [
-        "A",
-        "G"
-      ],
-      [
-        "C",
-        "E"
-      ],
-      [
-        "F",
-        "GA"
-      ],
-      [
-        "I",
-        "GK"
-      ],
-      [
-        "E",
-        "HE"
-      ],
-      [
-        "GGGGGGGGGGGGGF",
-        "GGGGGGF"
-      ],
-      [
-        "HGGGG",
-        "GJ"
-      ],
-      [
-        "GGGGGGH",
-        "GGGGGGFGGGGGGF"
-      ],
-      [
-        "GGGGGGIGGGGGGI",
-        "GGGGGGHGGGGGGFGGGGGGEGGGGGGE"
-      ],
-      [
-        "GGGGGGE",
-        "GGGGGGFGGGGGGF"
-      ],
-      [
-        "GGGGGGHGGGGGGH",
-        "GGGGGGF"
-      ],
-      [
-        "GGGG",
-        "E"
-      ],
-      [
-        "HH",
-        "GE"
-      ],
-      [
-        "F",
-        "GGGGH"
-      ],
-      [
-        "F",
-        "GGGI"
-      ],
-      [
-        "GGF",
-        "GGGGGGGG"
-      ],
-      [
-        "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
-        "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG"
-      ],
-      [
-        "D",
-        "M"
-      ],
-      [
-        "HH",
-        "HF"
-      ],
-      [
-        "GGGGGGIGGGGGGI",
-        "GGGGGGHGGGGGGGGGGGGGF"
-      ],
-      [
-        "GF",
-        "GE"
-      ],
-      [
-        "GGGGGGDGGGGGGD",
-        "GGGGGGDGGGGGGD"
-      ],
-      [
-        "GGGGGGHGGGGGGGGGGGGGFGGGGGGIGGGGGGE",
-        "GGGGGGHGGGGGGGGGGGGGFGGGGGGIGGGGGGE"
-      ],
-      [
-        "GH",
-        "FH"
-      ],
-      [
-        "K",
-        "L"
-      ],
-      [
-        "B",
-        "J"
-      ],
-      [
-        "GGGGGGIGGGGGGI",
-        "GGGGGGI"
-      ],
-      [
-        "C",
-        "I"
-      ],
-      [
-        "GGGG",
-        "GI"
-      ],
-      [
-        "?",
-        "@"
-      ],
-      [
-        "F",
-        "Q"
-      ],
-      [
-        "E",
-        "O"
-      ],
-      [
-        "H",
-        "GGGGGGH"
-      ],
-      [
-        "GGGF",
-        "GF"
-      ],
-      [
-        "E",
-        "N"
-      ],
-      [
-        "GGH",
-        "GGGGGGGG"
-      ],
-      [
-        "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
-        "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG"
-      ],
-      [
-        "GGGGGGE",
-        "GGGGGGD"
-      ],
-      [
-        "J",
-        "M"
-      ],
-      [
-        "H",
-        "GGGGF"
-      ],
-      [
-        "H",
-        "GGGI"
-      ],
-      [
-        "I",
-        "GC"
-      ],
-      [
-        "B",
-        "D"
-      ],
-      [
-        "GG",
-        "GA"
-      ],
-      [
-        "GGGGGGIGGGGGGE",
-        "GGGGGGH"
-      ],
-      [
-        "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
-        "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG"
-      ],
-      [
-        "I",
-        "FE"
-      ],
-      [
-        "GGGGGGEGGGGGGF",
-        "GGGGGGHGGGGGGI"
-      ],
-      [
-        "L",
-        "L"
-      ],
-      [
-        "GH",
-        "GI"
-      ],
-      [
-        "GGF",
-        "HH"
-      ],
-      [
-        "FF",
-        "GI"
-      ],
-      [
-        "?",
-        "?"
-      ],
-      [
-        "GGGG",
-        "GE"
-      ],
-      [
-        "GGGGGGE",
-        "GGGGGGJ"
-      ],
-      [
-        "GGGGGGHGGGGGGHGGGGGGGGGGGGGF",
-        "GGGGGGF"
-      ],
-      [
-        "GG",
-        "O"
-      ],
-      [
-        "HGH",
-        "GHGF"
-      ],
-      [
-        "GGGGGGEGGGGGGE",
-        "GGGGGGFGGGGGGGGGGGGGH"
-      ],
-      [
-        "H",
-        "GA"
-      ],
-      [
-        "I",
-        "N"
-      ],
-      [
-        "GE",
-        "GF"
-      ],
-      [
-        "J",
-        "F"
-      ],
-      [
-        "J",
-        "HH"
-      ],
-      [
-        "GGF",
-        "F"
-      ],
-      [
-        "E",
-        "FI"
-      ],
-      [
-        "GGH",
-        "GGGGGGF"
-      ],
-      [
-        "GGH",
-        "GGGC"
-      ],
-      [
-        "B",
-        "C"
-      ],
-      [
-        "I",
-        "O"
-      ],
-      [
-        "GGGH",
-        "HGF"
-      ],
-      [
-        "J",
-        "GE"
-      ],
-      [
-        "GGGF",
-        "FGH"
-      ],
-      [
-        "L",
-        "C"
-      ],
-      [
-        "GG",
-        "GM"
-      ],
-      [
-        "GGF",
-        "GGGD"
-      ],
-      [
-        "GGGGGGEGGGGGGF",
-        "GGGGGGH"
-      ],
-      [
-        "FF",
-        "HH"
-      ],
-      [
-        "I",
-        "HE"
-      ],
-      [
-        "K",
-        "A"
-      ],
-      [
-        "GGGGF",
-        "GGGGGGH"
-      ],
-      [
-        "GGGGGGGGGGGGGF",
-        "GGGGGGGGGGGGGH"
-      ],
-      [
-        "J",
-        "H"
-      ],
-      [
-        "HF",
-        "GI"
-      ],
-      [
-        "HGGGH",
-        "GF"
-      ],
-      [
-        "GGGGGGGGGGGH",
-        "GF"
-      ],
-      [
-        "F",
-        "GGGGGGGG"
-      ],
-      [
-        "L",
-        "G"
-      ],
-      [
-        "HGH",
-        "GI"
-      ],
-      [
-        "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
-        "GGF"
-      ],
-      [
-        "E",
-        "GK"
-      ],
-      [
-        "E",
-        "HI"
-      ],
-      [
-        "GGGGGGGGGGGF",
-        "GH"
-      ],
-      [
-        "B",
-        "K"
-      ],
-      [
-        "F",
-        "GM"
-      ],
-      [
-        "FF",
-        "GGF"
-      ],
-      [
-        "HH",
-        "GGGG"
-      ],
-      [
-        "FH",
-        "GE"
-      ],
-      [
-        "FGH",
-        "GF"
-      ],
-      [
-        "FF",
-        "GGGG"
-      ],
-      [
-        "GGGGGGEGGGGGGI",
-        "GGGGGGFGGGGGGFGGGGGGIGGGGGGE"
-      ],
-      [
-        "Â",
-        "Ĥ"
-      ],
-      [
-        "GGH",
-        "GE"
-      ],
-      [
-        "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
-        "GGGGGGGGGGGGGGGGGGGGGGGG"
-      ],
-      [
-        "C",
-        "H"
-      ],
-      [
-        "L",
-        "K"
-      ],
-      [
-        "GGGGGGF",
-        "GF"
-      ],
-      [
-        "GGF",
-        "GGGK"
-      ],
-      [
-        "GGH",
-        "GGH"
-      ],
-      [
-        "GGGGGGI",
-        "GGGGGGHGGGGGGF"
-      ],
-      [
-        "GGGGGGD",
-        "GGGGGGGGGGGGGJ"
-      ],
-      [
-        "D",
-        "FF"
-      ],
-      [
-        "GGGGGGGGGGGH",
-        "GH"
-      ],
-      [
-        "C",
-        "M"
-      ],
-      [
-        "D",
-        "GD"
-      ],
-      [
-        "G",
-        "V"
-      ],
-      [
-        "GGH",
-        "GFGF"
-      ],
-      [
-        "GGGGGGGGGGGG",
-        "G"
-      ],
-      [
-        "B",
-        "A"
-      ],
-      [
-        "GGGH",
-        "GH"
-      ],
-      [
-        "HH",
-        "I"
-      ],
-      [
-        "HGH",
-        "GF"
-      ],
-      [
-        "HGF",
-        "GF"
-      ],
-      [
-        "GGGGGGI",
-        "GGGGGGJ"
-      ],
-      [
-        "GGGF",
-        "GGC"
-      ],
-      [
-        "GGGGGG",
-        "A"
-      ],
-      [
-        "GGGGGGH",
-        "GGGGGGEGGGGGGE"
-      ],
-      [
-        "HGGGG",
-        "GC"
-      ],
-      [
-        "H",
-        "GGGGGGGG"
-      ],
-      [
-        "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
-        "GGH"
-      ],
-      [
-        "GGH",
-        "GGGJ"
-      ],
-      [
-        "FGGGF",
-        "GH"
-      ],
-      [
-        "GGGGGGGGGGGF",
-        "GF"
-      ],
-      [
-        "GGGGGGC",
-        "GGGGGGK"
-      ],
-      [
-        "C",
-        "F"
-      ],
-      [
-        "H",
-        "GGGE"
-      ],
-      [
-        "FGF",
-        "GE"
-      ],
-      [
-        "GGGGGGIGGGGGGE",
-        "GGGGGGHGGGGGGF"
-      ],
-      [
-        "G",
-        "W"
-      ],
-      [
-        "GGFGF",
-        "GI"
-      ],
-      [
-        "D",
-        "GI"
-      ],
-      [
-        "D",
-        "HH"
-      ],
-      [
-        "G",
-        "U"
-      ],
-      [
-        "J",
-        "GJ"
-      ],
-      [
-        "K",
-        "E"
-      ],
-      [
-        "GGGGGGK",
-        "GGGGGGK"
-      ],
-      [
-        "B",
-        "M"
-      ],
-      [
-        "E",
-        "GB"
-      ],
-      [
-        "GGGGGGHGGGGGGF",
-        "GGGGGGIGGGGGGEGGGGGGIGGGGGGEGGGGGGIGGGGGGEGGGGGGIGGGGGGE"
-      ],
-      [
-        "L",
-        "J"
-      ],
-      [
-        "Â",
-        "ħ"
-      ],
-      [
-        "GGFGFGH",
-        "GGFGFGH"
-      ],
-      [
-        "GGGGGGEGGGGGGFGGGGGGGGGGGGGH",
-        "GGGGGGIGGGGGGI"
-      ],
-      [
-        "GGGGGGF",
-        "GGGGGGGGGGGGGI"
-      ],
-      [
-        "GGF",
-        "GI"
-      ],
-      [
-        "@",
-        "@"
-      ],
-      [
-        "GGH",
-        "GFGH"
-      ],
-      [
-        "GGGGHGH",
-        "GGGGHGH"
-      ],
-      [
-        "GGGGGGIGGGGGGIGGGGGGIGGGGGGI",
-        "GGGGGGI"
-      ],
-      [
-        "I",
-        "HGF"
+        "edddd",
+        "dc"
       ],
       [
         "Â",
         "Ģ"
       ],
       [
-        "L",
-        "A"
+        "b",
+        "h"
       ],
       [
-        "GGGGGGF",
-        "GGGGGGHGGGGGGI"
+        "ddddddc",
+        "dddddde"
       ],
       [
-        "GGGGGGGGGGGGGHGGGGGGEGGGGGGIGGGGGGEGGGGGGIGGGGGGF",
-        "GGGGGGGGGGGGGHGGGGGGEGGGGGGIGGGGGGEGGGGGGIGGGGGGF"
+        "dddd",
+        "ddddddde"
       ],
       [
-        "H",
-        "GM"
+        "c",
+        "da"
       ],
       [
-        "GGGGGGE",
-        "GGGGGGHGGGGGGI"
+        "g",
+        "g"
       ],
       [
-        "HF",
-        "HH"
+        "f",
+        "h"
       ],
       [
-        "GGGGGGHGGGGGGGGGGGGGF",
-        "GGGGGGHGGGGGGE"
+        "Â",
+        "Ĥ"
       ],
       [
-        "GGF",
-        "GGGGGGH"
+        "dddddddddddd",
+        "da"
       ],
       [
-        "GGGGGGD",
-        "GGGGGGH"
+        "a",
+        "g"
       ],
       [
-        "E",
-        "FGH"
+        "dddddd",
+        "d"
       ],
       [
-        "K",
-        "I"
+        "b",
+        "cc"
       ],
       [
-        "FGGGG",
-        "GC"
+        "ddddddc",
+        "ddddddf"
       ],
       [
-        "L",
-        "D"
+        "ddddddddde",
+        "dddc"
       ],
       [
-        "GGGH",
-        "GGC"
+        "ddc",
+        "de"
       ],
       [
-        "GGGGGGJ",
-        "GGGGGGDGGGGGGJ"
+        "dde",
+        "c"
       ],
       [
-        "GGGGGGGGGGGGGGGGGGGGH",
-        "GGGGGGF"
+        "ddddc",
+        "dg"
       ],
       [
-        "@",
-        "?"
+        "ddddddb",
+        "ddddddddddddde"
       ],
       [
-        "H",
-        "S"
+        "a",
+        "e"
       ],
       [
-        "GGGGFGF",
-        "GGGGFGF"
+        "dddddddddc",
+        "ddde"
       ],
       [
-        "GGGH",
-        "GGK"
+        "f",
+        "ee"
       ],
       [
-        "C",
-        "N"
+        "dddddddddddd",
+        "dg"
       ],
       [
-        "K",
-        "M"
+        "ddddddcddddddc",
+        "ddddddc"
       ],
       [
-        "FGFGGGH",
-        "FGFGGGH"
+        "b",
+        "de"
       ],
       [
-        "F",
-        "GGGGF"
+        "dd",
+        "i"
       ],
       [
-        "D",
-        "N"
+        "edddd",
+        "de"
       ],
       [
-        "D",
-        "GC"
+        "dddde",
+        "da"
       ],
       [
-        "H",
-        "R"
+        "dde",
+        "dedc"
       ],
       [
-        "B",
-        "F"
+        "dddddddddddddddd",
+        "dddddddddddd"
       ],
       [
-        "J",
-        "GD"
+        "`",
+        "`"
       ],
       [
-        "FH",
-        "FF"
+        "e",
+        "j"
       ],
       [
-        "GGGGGGC",
-        "GGGGGGC"
+        "ddddddf",
+        "dddddddddddddb"
       ],
       [
-        "GGF",
-        "GGGGGGF"
+        "ddddddb",
+        "ddddddedddddde"
       ],
       [
-        "GGGGGGJ",
-        "GGGGGGGGGGGGGD"
+        "d",
+        "m"
       ],
       [
-        "GF",
-        "F"
+        "ddddddc",
+        "dddddddddddddf"
       ],
       [
-        "GGGGGGGGGGGGGE",
-        "GGGGGGI"
+        "a",
+        "b"
       ],
       [
-        "FGGGG",
-        "GK"
+        "c",
+        "i"
       ],
       [
-        "E",
-        "P"
+        "dddd",
+        "dddddde"
       ],
       [
-        "FGH",
-        "GH"
+        "c",
+        "dg"
       ],
       [
-        "HGGGG",
-        "GK"
+        "de",
+        "dddc"
       ],
       [
-        "GGI",
-        "GH"
+        "ddc",
+        "e"
       ],
       [
-        "GGF",
-        "GHGF"
+        "dd",
+        "dh"
       ],
       [
-        "GI",
-        "GH"
+        "dddddde",
+        "ddddddcddddddcddddddedddddde"
       ],
       [
-        "B",
-        "B"
+        "ddddedc",
+        "ddddedc"
       ],
       [
-        "I",
-        "HGH"
+        "de",
+        "ec"
       ],
       [
-        "FGGGH",
-        "GF"
+        "Â",
+        "ĥ"
       ],
       [
-        "GGF",
-        "GHGH"
+        "dddd",
+        "ddddddc"
       ],
       [
-        ">",
-        "@"
+        "a",
+        "f"
       ],
       [
-        "H",
-        "GGJ"
+        "a",
+        "h"
       ],
       [
-        "GGGH",
-        "FGH"
+        "dddddddddddddddddddd",
+        "ddddddde"
       ],
       [
-        "F",
-        "GGD"
+        "ddde",
+        "ddc"
       ],
       [
-        "A",
-        "D"
+        "cc",
+        "de"
+      ],
+      [
+        "ddcddde",
+        "ddcddde"
+      ],
+      [
+        "dddddddddddddddddddd",
+        "dddddddc"
+      ],
+      [
+        "dddddddddddddb",
+        "ddddddddddddde"
+      ],
+      [
+        "dddc",
+        "ddc"
+      ],
+      [
+        "dddddddddddddc",
+        "ddddddedddddde"
+      ],
+      [
+        "f",
+        "db"
+      ],
+      [
+        "g",
+        "d"
+      ],
+      [
+        "dddc",
+        "ddb"
+      ],
+      [
+        "ddddddcddddddddddddde",
+        "ddddddcddddddddddddde"
+      ],
+      [
+        "ddddddedddddde",
+        "dddddde"
+      ],
+      [
+        "g",
+        "b"
+      ],
+      [
+        "ddddddb",
+        "dddddde"
+      ],
+      [
+        "ddddc",
+        "da"
+      ],
+      [
+        "dddddddddddddddddddddddddddddddd",
+        "dddddddddddddddd"
+      ],
+      [
+        "ddc",
+        "dcde"
+      ],
+      [
+        "ddde",
+        "dde"
+      ],
+      [
+        "g",
+        "f"
+      ],
+      [
+        "dc",
+        "dde"
+      ],
+      [
+        "ddddcde",
+        "ddddcde"
+      ],
+      [
+        "de",
+        "dde"
+      ],
+      [
+        "ddde",
+        "ddf"
+      ],
+      [
+        "dddc",
+        "dde"
+      ],
+      [
+        "dddde",
+        "dg"
+      ],
+      [
+        "ddddddcddddddcddddddcddddddc",
+        "ddddddcddddddcddddddcddddddc"
+      ],
+      [
+        "Â",
+        "Ħ"
+      ],
+      [
+        "_",
+        "`"
+      ],
+      [
+        "b",
+        "i"
+      ],
+      [
+        "dc",
+        "ddc"
+      ],
+      [
+        "ddddddeddddddc",
+        "ddddddddddddde"
+      ],
+      [
+        "g",
+        "e"
+      ],
+      [
+        "d",
+        "n"
+      ],
+      [
+        "Â",
+        "ħ"
+      ],
+      [
+        "dc",
+        "ddde"
+      ],
+      [
+        "de",
+        "db"
+      ],
+      [
+        "ee",
+        "ec"
+      ],
+      [
+        "ddedddc",
+        "ddedddc"
+      ],
+      [
+        "f",
+        "dg"
+      ],
+      [
+        "f",
+        "i"
+      ],
+      [
+        "g",
+        "h"
+      ],
+      [
+        "b",
+        "df"
+      ],
+      [
+        "g",
+        "a"
+      ],
+      [
+        "dddddde",
+        "ddddddcddddddc"
+      ],
+      [
+        "de",
+        "cc"
+      ],
+      [
+        "ddc",
+        "dddf"
+      ],
+      [
+        "d",
+        "Z"
+      ],
+      [
+        "c",
+        "j"
+      ],
+      [
+        "e",
+        "dh"
+      ],
+      [
+        "dc",
+        "ee"
+      ],
+      [
+        "b",
+        "ee"
+      ],
+      [
+        "dde",
+        "dddb"
+      ],
+      [
+        "e",
+        "k"
+      ],
+      [
+        "Â",
+        "Ĩ"
+      ],
+      [
+        "dddddddddddddb",
+        "ddddddedddddde"
+      ],
+      [
+        "dddddddddddddcddddddddddddde",
+        "dddddddddddddcddddddddddddde"
+      ],
+      [
+        "b",
+        "da"
+      ],
+      [
+        "b",
+        "ec"
+      ],
+      [
+        "dc",
+        "df"
+      ],
+      [
+        "d",
+        "Y"
+      ],
+      [
+        "ddddddbddddddc",
+        "ddddddeddddddf"
+      ],
+      [
+        "f",
+        "cc"
+      ],
+      [
+        "f",
+        "ec"
+      ],
+      [
+        "dddddddddddddbdddddddddddddf",
+        "dddddddddddddbdddddddddddddf"
+      ],
+      [
+        "ddde",
+        "ddb"
+      ],
+      [
+        "ddddddcddddddc",
+        "dddddde"
+      ],
+      [
+        "ddddddcddddddcddddddedddddde",
+        "ddddddcddddddddddddde"
+      ],
+      [
+        "dddd",
+        "dcc"
+      ],
+      [
+        "ddddddc",
+        "ddddddedddddddddddddc"
+      ],
+      [
+        "dddc",
+        "ddf"
+      ],
+      [
+        "ddddddc",
+        "ddddddbdddddddddddddf"
+      ],
+      [
+        "cdddd",
+        "de"
+      ],
+      [
+        "Â",
+        "ĩ"
+      ],
+      [
+        "ce",
+        "dc"
+      ],
+      [
+        "ddddddg",
+        "ddddddg"
+      ],
+      [
+        "ddc",
+        "ec"
+      ],
+      [
+        "`",
+        "_"
       ],
       [
         "Â",
         "Ī"
       ],
       [
-        "GGGGGGGGGGGGGGGG",
-        "GF"
+        "edddd",
+        "db"
       ],
       [
-        "HGF",
-        "GH"
+        "d",
+        "o"
       ],
       [
-        "GGFGGGH",
-        "GGHGGGF"
+        "ddddddf",
+        "ddddddeddddddc"
       ],
       [
-        "I",
-        "GL"
+        "ddddcdc",
+        "ddddcdc"
       ],
       [
-        "J",
-        "FF"
+        "ddddddc",
+        "ddddddeddddddf"
       ],
       [
-        "GGGG",
-        "G"
+        "ddddddb",
+        "ddddddedddddddddddddc"
       ],
       [
-        "GGGGGG",
-        "M"
+        "cc",
+        "c"
       ],
       [
-        "GGGGGGF",
-        "GH"
+        "dddddda",
+        "dddddda"
       ],
       [
-        "GGF",
-        "HGGH"
+        "f",
+        "ef"
       ],
       [
-        "GGH",
-        "FGGF"
+        "ddddddcddddddcddddddedddddddddddddc",
+        "ddddddddddddde"
       ],
       [
-        "GGGGGGIGGGGGGF",
-        "GGGGGGGGGGGGGI"
+        "a",
+        "i"
       ],
       [
-        "B",
-        "L"
+        "h",
+        "c"
+      ],
+      [
+        "^",
+        "`"
+      ],
+      [
+        "ddddddedddddde",
+        "dddddddddddddc"
+      ],
+      [
+        "ddddede",
+        "ddddede"
+      ],
+      [
+        "ddddddb",
+        "ddddddeddddddf"
+      ],
+      [
+        "dde",
+        "df"
+      ],
+      [
+        "f",
+        "ce"
+      ],
+      [
+        "cdddd",
+        "dc"
+      ],
+      [
+        "e",
+        "dd"
+      ],
+      [
+        "edddd",
+        "df"
+      ],
+      [
+        "cdc",
+        "dc"
+      ],
+      [
+        "h",
+        "h"
+      ],
+      [
+        "g",
+        "i"
+      ],
+      [
+        "f",
+        "j"
+      ],
+      [
+        "b",
+        "j"
+      ],
+      [
+        "ddc",
+        "c"
+      ],
+      [
+        "e",
+        "l"
+      ],
+      [
+        "e",
+        "ddf"
+      ],
+      [
+        "dddd",
+        "dec"
+      ],
+      [
+        "ddddddeddddddeddddddedddddde",
+        "ddddddeddddddeddddddedddddde"
+      ],
+      [
+        "cdddd",
+        "df"
+      ],
+      [
+        "_",
+        "_"
+      ],
+      [
+        "ddc",
+        "db"
+      ],
+      [
+        "Â",
+        "Ĭ"
+      ],
+      [
+        "f",
+        "da"
+      ],
+      [
+        "ddddddf",
+        "dddddddddddddc"
+      ],
+      [
+        "dddddde",
+        "ddddddb"
+      ],
+      [
+        "dddddddd",
+        "c"
+      ],
+      [
+        "dde",
+        "ce"
+      ],
+      [
+        "ddddddcddddddcddddddf",
+        "ddddddcddddddcddddddf"
+      ],
+      [
+        "b",
+        "dg"
+      ],
+      [
+        "dddde",
+        "d"
+      ],
+      [
+        "ddddddbddddddb",
+        "ddddddbddddddb"
+      ],
+      [
+        "dddddddddddddbddddddc",
+        "ddddddeddddddf"
+      ],
+      [
+        "dddd",
+        "db"
+      ],
+      [
+        "de",
+        "d"
+      ],
+      [
+        "h",
+        "g"
+      ],
+      [
+        "h",
+        "d"
+      ],
+      [
+        "dd",
+        "j"
+      ],
+      [
+        "cdddd",
+        "db"
+      ],
+      [
+        "a",
+        "db"
+      ],
+      [
+        "c",
+        "k"
+      ],
+      [
+        "ddddddf",
+        "ddddddc"
+      ],
+      [
+        "g",
+        "ee"
+      ],
+      [
+        "dc",
+        "ce"
+      ],
+      [
+        "Â",
+        "ī"
+      ],
+      [
+        "dddd",
+        "df"
+      ],
+      [
+        "de",
+        "df"
       ],
       [
         "Â",
         "ĭ"
       ],
       [
-        "GGGGGGI",
-        "GGGGGGD"
+        "ddc",
+        "dddg"
       ],
       [
-        "HH",
-        "FF"
+        "b",
+        "dde"
       ],
       [
-        "GGGGGGIGGGGGGE",
-        "GGGGGGGGGGGGGI"
+        "e",
+        "ddb"
       ],
       [
-        "GGGGGGHGGGGGGFGGGGGGHGGGGGGF",
-        "GGGGGGHGGGGGGFGGGGGGHGGGGGGF"
+        "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
       ],
       [
-        "A",
-        "C"
+        "dddddddddddddcddddddcddddddedddddde",
+        "dddddddddddddcddddddcddddddedddddde"
       ],
       [
-        "GGGGGGGGGGGGGGGG",
-        "GH"
+        "ddc",
+        "cc"
       ],
       [
-        "GGGGH",
-        "GGGGGGH"
+        "f",
+        "dh"
       ],
       [
-        "GGGGGGHGGGGGGH",
-        "GGGGGGEGGGGGGIGGGGGGF"
+        "`",
+        "^"
       ],
       [
-        "GGGGGGGGGGGGGH",
-        "GGGGGGH"
+        "a",
+        "dc"
       ],
       [
-        "F",
-        "GGJ"
+        "h",
+        "b"
       ],
       [
-        "GGH",
-        "GGGGGGH"
+        "a",
+        "cc"
       ],
       [
-        "GGGGGGHGGGGGGGGGGGGGF",
-        "GGGGGGIGGGGGGEGGGGGGIGGGGGGE"
+        "dddddddd",
+        "e"
       ],
       [
-        "GGHGHGF",
-        "GGHGHGF"
+        "ec",
+        "de"
       ],
       [
-        "I",
-        "Q"
+        "e",
+        "bc"
       ],
       [
-        "FGF",
-        "GGGI"
+        "c",
+        "dh"
       ],
       [
-        "GGGGGGGGGGGGGGGGGGGGH",
-        "GGGGGGH"
+        "b",
+        "ce"
       ],
       [
-        "E",
-        "GA"
+        "dddc",
+        "dda"
       ],
       [
-        "M",
-        "C"
+        "a",
+        "j"
       ],
       [
-        "GGGF",
-        "HGF"
+        "ddddddeddddddc",
+        "dddddde"
       ],
       [
-        "GGGF",
-        "GGK"
+        "g",
+        "df"
       ],
       [
-        ">",
-        "?"
+        "Â",
+        "į"
       ],
       [
-        "D",
-        "FE"
+        "ddcdc",
+        "dc"
       ],
       [
-        "K",
-        "GH"
+        "dddddde",
+        "ddddddddddddddddddddc"
       ],
       [
-        "F",
-        "S"
+        "e",
+        "m"
       ],
       [
-        "J",
-        "N"
+        "ddc",
+        "dddb"
       ],
       [
-        "HF",
-        "GE"
+        "^",
+        "_"
       ],
       [
-        "HGGGF",
-        "GH"
+        "ddde",
+        "edc"
       ],
       [
-        "J",
-        "O"
+        "ee",
+        "dddd"
       ],
       [
-        "J",
-        "FH"
+        "ddddddg",
+        "ddddddc"
       ],
       [
-        "J",
-        "HI"
+        "dddddde",
+        "ddddddcddddddcddddddddddddde"
       ],
       [
-        "=",
-        "?"
+        "dddde",
+        "dddddde"
       ],
       [
-        "GE",
-        "GI"
+        "cc",
+        "dc"
       ],
       [
-        "E",
-        "GGGF"
+        "df",
+        "dc"
       ],
       [
-        "GGE",
-        "GF"
+        "dddddd",
+        "dedc"
       ],
       [
-        "GGFGF",
-        "GJ"
+        "f",
+        "ddc"
       ],
       [
-        "HGGGF",
-        "GF"
+        "d",
+        "X"
       ],
       [
-        "GGGGGGHGGGGGGI",
-        "GGGGGGGGGGGGGEGGGGGGF"
+        "]",
+        "`"
       ],
       [
-        "I",
-        "GB"
+        "ee",
+        "de"
       ],
       [
-        "GD",
-        "GH"
+        "ee",
+        "db"
       ],
       [
-        "D",
-        "GJ"
+        "ddddc",
+        "ddddddc"
       ],
       [
-        "F",
-        "R"
+        "ddededc",
+        "ddededc"
       ],
       [
-        "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
-        "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG"
+        "c",
+        "l"
       ],
       [
-        "GGGGGGGGGGGG",
-        "F"
+        "dddddddddddddb",
+        "ddddddeddddddf"
       ],
       [
-        "HGGGH",
-        "GH"
+        "dddddddddddddc",
+        "ddddddcddddddddddddde"
       ],
       [
-        "A",
-        "A"
+        "ddddddfddddddf",
+        "ddddddfddddddf"
       ],
       [
-        "GGGGGGE",
-        "GGGGGGIGGGGGGE"
+        "Â",
+        "Ĳ"
       ],
       [
-        "GGGGFGGGGGGGG",
-        "F"
+        "c",
+        "dd"
       ],
       [
-        "B",
-        "N"
+        "h",
+        "a"
       ],
       [
-        "H",
-        "GGGGH"
+        "f",
+        "k"
       ],
       [
-        "GGGGGGGGGGGGGGGG",
-        "GGGH"
+        "f",
+        "dde"
       ],
       [
-        "C",
-        "GE"
+        "ddddddbdddddddddddddf",
+        "ddddddcddddddcddddddf"
       ],
       [
-        "D",
-        "O"
+        "cdcddde",
+        "cdcddde"
       ],
       [
-        "D",
-        "FH"
+        "dddddda",
+        "dddddde"
       ],
       [
-        "K",
-        "GF"
+        "ddede",
+        "de"
       ],
       [
-        "HGHGGGF",
-        "HGHGGGF"
+        "dddddddddddddcddddddddddddde",
+        "ddddddeddddddcddddddcddddddedddddde"
       ],
       [
-        "C",
-        "GH"
+        "Â",
+        "Į"
       ],
       [
-        "HH",
-        "GGH"
+        "dde",
+        "ddda"
       ],
       [
-        "GGGGGGFGGGGGGF",
-        "GGGGGGFGGGGGGGGGGGGGH"
+        "ddddc",
+        "d"
       ],
       [
-        "I",
-        "GGI"
+        "ec",
+        "dc"
       ],
       [
-        "GGF",
-        "GGGC"
+        "cc",
+        "ce"
       ],
       [
-        "GGHGH",
-        "GD"
+        "dddddddddddddddddddde",
+        "ddddddc"
       ],
       [
-        "@",
-        ">"
+        "cdc",
+        "dcde"
       ],
       [
-        "I",
-        "P"
+        "i",
+        "g"
       ],
       [
-        "GGGGGGH",
-        "GGGGGGGGGGGGGE"
+        "ddde",
+        "ddg"
       ],
       [
-        "M",
-        "G"
+        "ddddddedddddddddddddc",
+        "ddddddedddddddddddddc"
       ],
       [
-        "FF",
-        "GGH"
+        "dde",
+        "dddf"
       ],
       [
-        "FGGGF",
-        "GF"
+        "d",
+        "p"
       ],
       [
-        "GGGGGGHGGGGGGHGGGGGGHGGGGGGH",
-        "GGGGGGHGGGGGGHGGGGGGHGGGGGGH"
+        "dddddddddddddddddddd",
+        "f"
       ],
       [
-        "E",
-        "HGH"
+        "d",
+        "W"
       ],
       [
-        "L",
-        "B"
+        "dddddddddddddb",
+        "ddddddf"
       ],
       [
-        "GGGGGGDGGGGGGJ",
-        "GGGGGGE"
+        "e",
+        "Z"
       ],
       [
-        "HGH",
-        "GGGE"
+        "g",
+        "de"
       ],
       [
-        "C",
-        "GF"
+        "b",
+        "k"
       ],
       [
-        "GGGGGGGG",
-        "GGGGGGH"
+        "i",
+        "c"
       ],
       [
-        "FH",
-        "GI"
+        "ddddddbddddddc",
+        "ddddddf"
       ],
       [
-        "E",
-        "GGI"
+        "ee",
+        "e"
       ],
       [
-        "GGGGGGGGGGGG",
-        "H"
+        "ddc",
+        "dde"
       ],
       [
-        "FE",
-        "GH"
+        "ddddddde",
+        "dedddc"
       ],
       [
-        "?",
-        ">"
+        "ddddddb",
+        "ddddddcddddddddddddde"
       ],
       [
-        "I",
-        "FGH"
+        "cc",
+        "df"
       ],
       [
-        "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
-        "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG"
+        "ededddc",
+        "ededddc"
       ],
       [
-        "HH",
-        "GI"
+        "Â",
+        "ĳ"
       ],
       [
-        "GGFGGGH",
-        "GGGGGGGGGHGGGF"
+        "d",
+        "q"
       ],
       [
-        "N",
-        "G"
+        "ddddddc",
+        "dddddddddddddddddddde"
       ],
       [
-        "GGGGGGHGGGGGGF",
-        "GGGGGGGGGGGGGGGGGGGGF"
+        "g",
+        "dc"
       ],
       [
-        "FGGGH",
-        "GH"
+        "ddddc",
+        "dddddde"
       ],
       [
-        "GGGGGGHGGGGGGHGGGGGGH",
-        "GGGGGGGGGGGGGGGGGGGGF"
+        "dddd",
+        "cc"
       ],
       [
-        "J",
-        "GK"
+        "ddddddcddddddcddddddedddddddddddddc",
+        "ddddddedddddde"
       ],
       [
-        "L",
-        "M"
+        "h",
+        "e"
       ],
       [
-        "GGGGGGGGGGGGGGGG",
-        "GGGF"
+        "_",
+        "^"
       ],
       [
-        "GGGGGGGGGGGG",
-        "GC"
+        "g",
+        "j"
       ],
       [
-        "I",
-        "GGE"
+        "ee",
+        "c"
       ],
       [
-        "N",
-        "A"
+        "dddd",
+        "f"
       ],
       [
-        "E",
-        "FGF"
+        "h",
+        "f"
       ],
       [
-        "F",
-        "GGC"
+        "dddddd",
+        "i"
       ],
       [
-        "I",
-        "S"
+        "ec",
+        "df"
       ],
       [
-        "HH",
-        "GGF"
+        "dddddddc",
+        "dcddde"
       ],
       [
-        "B",
-        "H"
+        "dddde",
+        "ddddddc"
       ],
       [
-        "E",
-        "IF"
+        "i",
+        "a"
       ],
       [
-        "I",
-        "FGF"
+        "dddd",
+        "b"
       ],
       [
-        "GGGGF",
-        "GL"
+        "ddddddf",
+        "ddddddedddddddddddddc"
       ],
       [
-        "GGF",
-        "HGGF"
+        "Â",
+        "İ"
       ],
       [
-        "I",
-        "GGGH"
+        "ddddddbddddddc",
+        "ddddddfdddddde"
       ],
       [
-        "M",
-        "K"
+        "ede",
+        "dedc"
       ],
       [
-        "FF",
-        "GE"
+        "dddddddd",
+        "dddddd"
       ],
       [
-        "HH",
-        "J"
+        "ddddddcddddddcddddddeddddddeddddddcddddddcddddddedddddde",
+        "ddddddcddddddcddddddedddddde"
       ],
       [
-        "GGH",
-        "GGGK"
+        "b",
+        "eb"
       ],
       [
-        "GGGF",
-        "GGGGGGGG"
+        "g",
+        "cc"
       ],
       [
-        "GGGGGGEGGGGGGE",
-        "GGGGGGEGGGGGGFGGGGGGGGGGGGGHGGGGGGIGGGGGGI"
+        "\\",
+        "`"
       ],
       [
-        "E",
-        "GL"
+        "dddddddddddddc",
+        "ddddddc"
       ],
       [
-        "H",
-        "GGD"
+        "de",
+        "da"
       ],
       [
-        "HF",
-        "GGH"
+        "ee",
+        "cc"
       ],
       [
-        "E",
-        "GGGH"
+        "b",
+        "ef"
       ],
       [
-        "GGGGGGIGGGGGGI",
-        "GGGGGGH"
+        "c",
+        "bc"
       ],
       [
-        "GGFGF",
-        "GE"
+        "e",
+        "n"
       ],
       [
-        "GGGGFGGGGGGGG",
-        "H"
+        "dde",
+        "ddc"
       ],
       [
-        "=",
-        "Ā"
+        "ddddddcddddddc",
+        "ddddddeddddddf"
       ],
       [
-        "?",
-        "Âİ"
+        "c",
+        "Z"
       ],
       [
-        "E",
-        "EH"
+        "a",
+        "da"
       ],
       [
-        "A",
-        "B"
+        "h",
+        "i"
       ],
       [
-        "B",
-        "I"
+        "dde",
+        "cc"
       ],
       [
-        "E",
-        "Q"
+        "ddde",
+        "dc"
       ],
       [
-        "GGGGGGIGGGGGGEGGGGGGIGGGGGGE",
-        "GGGGGGIGGGGGGEGGGGGGHGGGGGGF"
+        "ddddcdddddddd",
+        "e"
       ],
       [
-        "A",
-        "M"
+        "c",
+        "ddf"
       ],
       [
-        "EF",
-        "D"
+        "e",
+        "Y"
       ],
       [
-        ">",
-        "Ā"
+        "e",
+        "dddddddddddd"
       ],
       [
-        "GGGH",
-        "HGH"
+        "dd",
+        "di"
       ],
       [
-        "GGGGF",
-        "GGGGGGF"
+        "dddc",
+        "ddg"
       ],
       [
-        "A",
-        "J"
+        "c",
+        "Y"
       ],
       [
-        "GF",
-        "FI"
+        "c",
+        "dec"
       ],
       [
-        "GH",
-        "F"
+        "d",
+        "r"
       ],
       [
-        "GGGGGGIGGGGGGEGGGGGGIGGGGGGE",
-        "GGGGGGIGGGGGGEGGGGGGIGGGGGGF"
+        "f",
+        "l"
       ],
       [
-        "?",
-        "="
+        "dddd",
+        "ee"
       ],
       [
-        "E",
-        "GGE"
+        "e",
+        "di"
       ],
       [
-        "GF",
-        "D"
+        "ddddddg",
+        "dddddde"
       ],
       [
-        "<",
-        "?"
+        "a",
+        "k"
       ],
       [
-        "@",
-        "="
+        "c",
+        "ddb"
       ],
       [
-        "O",
-        "G"
+        "g",
+        "dg"
       ],
       [
-        "GF",
-        "FF"
+        "e",
+        "o"
       ],
       [
-        "GGF",
-        "FH"
+        "dddddddddddddddd",
+        "dddddddd"
       ],
       [
-        "E",
-        "IH"
+        "b",
+        "Y"
       ],
       [
-        "H",
-        "T"
+        "`",
+        "]"
       ],
       [
-        "GGGGGGE",
-        "GGGGGGJGGGGGGE"
+        "ede",
+        "dc"
       ],
       [
-        "GGF",
-        "FGH"
+        "ddddddbddddddf",
+        "ddddddbddddddf"
       ],
       [
-        "GGF",
-        "FGGH"
+        "b",
+        "ddc"
       ],
       [
-        "GGGGGGHGGGGGGFGGGGGGH",
-        "GGGGGGG"
+        "ce",
+        "cc"
       ],
       [
-        "A",
-        "K"
+        "ddddddbddddddc",
+        "ddddddedddddde"
       ],
       [
-        "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
-        "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG"
+        "a",
+        "de"
+      ],
+      [
+        "b",
+        "l"
+      ],
+      [
+        "dde",
+        "db"
+      ],
+      [
+        "Â",
+        "ı"
+      ],
+      [
+        "ec",
+        "ee"
+      ],
+      [
+        "ddddedddddddd",
+        "c"
+      ],
+      [
+        "ddcdc",
+        "df"
+      ],
+      [
+        "ddede",
+        "db"
+      ],
+      [
+        "a",
+        "ee"
+      ],
+      [
+        "b",
+        "dh"
+      ],
+      [
+        "d",
+        "s"
+      ],
+      [
+        "d",
+        "V"
+      ],
+      [
+        "ddddddedddddddddddddc",
+        "ddddddcddddddddddddde"
+      ],
+      [
+        "edddd",
+        "da"
+      ],
+      [
+        "dde",
+        "ddd"
+      ],
+      [
+        "ddddddf",
+        "ddddddb"
+      ],
+      [
+        "h",
+        "j"
+      ],
+      [
+        "dddddda",
+        "ddddddc"
+      ],
+      [
+        "ddddddcddddddb",
+        "ddddddeddddddf"
+      ],
+      [
+        "dddddddddddddddd",
+        "edddc"
+      ],
+      [
+        "dddddddddddddbdddddddddddddf",
+        "dddddddddddddbddddddddddddde"
+      ],
+      [
+        "ddde",
+        "dda"
+      ],
+      [
+        "cdddd",
+        "dg"
+      ],
+      [
+        "c",
+        "dddddddddddd"
+      ],
+      [
+        "c",
+        "fc"
+      ],
+      [
+        "dddddddddddddddddddddddddddddddd",
+        "ddddddddde"
+      ],
+      [
+        "ddddddddddde",
+        "db"
+      ],
+      [
+        "ddcdcde",
+        "ddcdcde"
+      ],
+      [
+        "dddddddddddddb",
+        "ddddddcddddddedddddde"
+      ],
+      [
+        "ddddcdddddddd",
+        "b"
+      ],
+      [
+        "ddddc",
+        "dh"
+      ],
+      [
+        "ddddddcddddddb",
+        "ddddddedddddde"
+      ],
+      [
+        "a",
+        "df"
+      ],
+      [
+        "dde",
+        "dddd"
+      ],
+      [
+        "ddddedddddddd",
+        "f"
+      ],
+      [
+        "dd",
+        "k"
+      ],
+      [
+        "b",
+        "bc"
+      ],
+      [
+        "ddc",
+        "dddd"
+      ],
+      [
+        "cdc",
+        "db"
+      ],
+      [
+        "edddd",
+        "dg"
+      ],
+      [
+        "dddddddddddc",
+        "df"
+      ],
+      [
+        "g",
+        "db"
+      ],
+      [
+        "ce",
+        "db"
+      ],
+      [
+        "dddc",
+        "dddddddd"
+      ],
+      [
+        "dddddddddcddde",
+        "dddddddddedddc"
+      ],
+      [
+        "\\",
+        "_"
+      ],
+      [
+        "dddc",
+        "cde"
+      ],
+      [
+        "dddddddddddddddddddd",
+        "b"
+      ],
+      [
+        "b",
+        "Z"
+      ],
+      [
+        "e",
+        "dddf"
+      ],
+      [
+        "de",
+        "ee"
+      ],
+      [
+        "ddc",
+        "ee"
+      ],
+      [
+        "g",
+        "ef"
+      ],
+      [
+        "ddde",
+        "dddddddd"
+      ],
+      [
+        "ddddddbddddddedddddddddddddc",
+        "ddddddf"
+      ],
+      [
+        "dddddddddddddddd",
+        "cddde"
+      ],
+      [
+        "dc",
+        "ec"
+      ],
+      [
+        "i",
+        "f"
+      ],
+      [
+        "ce",
+        "de"
+      ],
+      [
+        "^",
+        "^"
+      ],
+      [
+        "dde",
+        "ee"
+      ],
+      [
+        "a",
+        "ec"
+      ],
+      [
+        "ce",
+        "d"
+      ],
+      [
+        "`",
+        "\\"
+      ],
+      [
+        "e",
+        "dddddde"
+      ],
+      [
+        "dddc",
+        "edc"
+      ],
+      [
+        "c",
+        "n"
+      ],
+      [
+        "dddddddddddddddddddddddddddddddddddddddddddddddd",
+        "dddddddd"
+      ],
+      [
+        "de",
+        "dddde"
+      ],
+      [
+        "ede",
+        "df"
+      ],
+      [
+        "cc",
+        "ee"
+      ],
+      [
+        "dddddddddddddddddddddddddddddddd",
+        "dddddddddc"
+      ],
+      [
+        "]",
+        "_"
+      ],
+      [
+        "ddddddeddddddcddddddeddddddc",
+        "ddddddeddddddcddddddeddddddc"
+      ],
+      [
+        "dddc",
+        "dc"
+      ],
+      [
+        "d",
+        "U"
+      ],
+      [
+        "dddddde",
+        "ddddddg"
+      ],
+      [
+        "dddddddddddc",
+        "dc"
+      ],
+      [
+        "ddc",
+        "df"
+      ],
+      [
+        "ddcddde",
+        "dddddddddedddc"
+      ],
+      [
+        "c",
+        "X"
+      ],
+      [
+        "f",
+        "edc"
+      ],
+      [
+        "de",
+        "edc"
+      ],
+      [
+        "ddddcdddddddd",
+        "c"
+      ],
+      [
+        "a",
+        "l"
+      ],
+      [
+        "i",
+        "b"
+      ],
+      [
+        "f",
+        "m"
+      ],
+      [
+        "g",
+        "k"
+      ],
+      [
+        "i",
+        "d"
+      ],
+      [
+        "f",
+        "eb"
+      ],
+      [
+        "ddddedddddddd",
+        "e"
+      ],
+      [
+        "i",
+        "h"
+      ],
+      [
+        "dddddddd",
+        "dddddde"
+      ],
+      [
+        "cc",
+        "d"
+      ],
+      [
+        "g",
+        "l"
+      ],
+      [
+        "ddddddb",
+        "dddddda"
+      ],
+      [
+        "ddde",
+        "ede"
+      ],
+      [
+        "ddde",
+        "cde"
+      ],
+      [
+        "ec",
+        "d"
+      ],
+      [
+        "b",
+        "fc"
+      ],
+      [
+        "ddddddedddddde",
+        "ddddddddddddddddddddc"
+      ],
+      [
+        "c",
+        "m"
+      ],
+      [
+        "dddc",
+        "de"
+      ],
+      [
+        "]",
+        "^"
+      ],
+      [
+        "e",
+        "p"
+      ],
+      [
+        "ec",
+        "db"
+      ],
+      [
+        "ddddedddddddd",
+        "b"
+      ],
+      [
+        "f",
+        "bc"
+      ],
+      [
+        "dddc",
+        "cdc"
+      ],
+      [
+        "ddddddg",
+        "ddddddf"
+      ],
+      [
+        "dc",
+        "db"
+      ],
+      [
+        "dc",
+        "ddddc"
+      ],
+      [
+        "de",
+        "ddddc"
+      ],
+      [
+        "c",
+        "dddb"
+      ],
+      [
+        "ddddddeddddddc",
+        "ddddddedddddddddddddc"
+      ],
+      [
+        "de",
+        "dg"
+      ],
+      [
+        "a",
+        "Y"
+      ],
+      [
+        "[",
+        "`"
+      ],
+      [
+        "f",
+        "Y"
+      ],
+      [
+        "f",
+        "Z"
+      ],
+      [
+        "dddd",
+        "dddddddedc"
+      ],
+      [
+        "ddddddcddddddc",
+        "dddddddddddddddddddde"
+      ],
+      [
+        "cc",
+        "dddd"
+      ],
+      [
+        "eddde",
+        "dc"
+      ],
+      [
+        "dc",
+        "d"
+      ],
+      [
+        "e",
+        "ddg"
+      ],
+      [
+        "dddddde",
+        "dddc"
+      ],
+      [
+        "dde",
+        "dcdc"
+      ],
+      [
+        "ddddedcddddedc",
+        "ddddedcddddedc"
+      ],
+      [
+        "f",
+        "di"
+      ],
+      [
+        "_",
+        "\\"
+      ],
+      [
+        "ddddddc",
+        "ddde"
+      ],
+      [
+        "ddddddc",
+        "ddddddbddddddb"
+      ],
+      [
+        "cdddd",
+        "da"
+      ],
+      [
+        "ddcdc",
+        "dg"
+      ],
+      [
+        "ddddddddddddde",
+        "dddddde"
+      ],
+      [
+        "e",
+        "q"
+      ],
+      [
+        "ddc",
+        "dede"
+      ],
+      [
+        "b",
+        "n"
+      ],
+      [
+        "h",
+        "k"
+      ],
+      [
+        "dddc",
+        "dd"
+      ],
+      [
+        "f",
+        "fc"
+      ],
+      [
+        "de",
+        "cdc"
+      ],
+      [
+        "a",
+        "cb"
+      ],
+      [
+        "de",
+        "ce"
+      ],
+      [
+        "dddde",
+        "dh"
+      ],
+      [
+        "b",
+        "m"
+      ],
+      [
+        "db",
+        "dc"
+      ],
+      [
+        "db",
+        "ee"
+      ],
+      [
+        "ddddddc",
+        "dc"
+      ],
+      [
+        "de",
+        "eb"
+      ],
+      [
+        "cc",
+        "cc"
+      ],
+      [
+        "ddddcdddddddd",
+        "f"
+      ],
+      [
+        "ddddddddddde",
+        "de"
+      ],
+      [
+        "e",
+        "dddddddd"
+      ],
+      [
+        "f",
+        "n"
+      ],
+      [
+        "f",
+        "cdc"
+      ],
+      [
+        "i",
+        "j"
+      ],
+      [
+        "g",
+        "ce"
+      ],
+      [
+        "dddddde",
+        "ddddddbddddddb"
+      ],
+      [
+        "ee",
+        "d"
+      ],
+      [
+        "dddddda",
+        "ddddddf"
+      ],
+      [
+        "dddddddddddc",
+        "db"
+      ],
+      [
+        "a",
+        "dg"
+      ],
+      [
+        "c",
+        "dedc"
+      ],
+      [
+        "ddede",
+        "da"
+      ],
+      [
+        "c",
+        "o"
+      ],
+      [
+        "e",
+        "X"
+      ],
+      [
+        "df",
+        "d"
+      ],
+      [
+        "ddc",
+        "ddc"
+      ],
+      [
+        "ddddddbdddddddddddddfddddddcddddddcddddddf",
+        "dddddddddddddbddddddedddddde"
+      ],
+      [
+        "^",
+        "]"
+      ],
+      [
+        "b",
+        "dd"
+      ],
+      [
+        "g",
+        "ec"
+      ],
+      [
+        "ddddddeddddddc",
+        "ddddddbdddddddddddddf"
+      ],
+      [
+        "_",
+        "]"
+      ],
+      [
+        "f",
+        "o"
+      ],
+      [
+        "g",
+        "Y"
+      ],
+      [
+        "e",
+        "dddb"
+      ],
+      [
+        "Â",
+        "Ĵ"
+      ],
+      [
+        "de",
+        "ede"
+      ],
+      [
+        "\\",
+        "^"
+      ],
+      [
+        "db",
+        "d"
+      ],
+      [
+        "ddddddeddddddc",
+        "ddddddddddddddddddddc"
+      ],
+      [
+        "f",
+        "dec"
+      ],
+      [
+        "dde",
+        "dddg"
+      ],
+      [
+        "T",
+        "d"
+      ],
+      [
+        "e",
+        "W"
+      ],
+      [
+        "[",
+        "_"
+      ],
+      [
+        "j",
+        "a"
+      ],
+      [
+        "i",
+        "i"
+      ],
+      [
+        "dc",
+        "cc"
+      ],
+      [
+        "ddddddedddddddddddddc",
+        "ddddddddddddde"
+      ],
+      [
+        "cdddd",
+        "dcc"
+      ],
+      [
+        "j",
+        "h"
+      ],
+      [
+        "ee",
+        "ee"
+      ],
+      [
+        "b",
+        "ede"
+      ],
+      [
+        "b",
+        "o"
+      ],
+      [
+        "\\",
+        "]"
+      ],
+      [
+        "c",
+        "fe"
+      ],
+      [
+        "f",
+        "dd"
+      ],
+      [
+        "g",
+        "dh"
+      ],
+      [
+        "cc",
+        "dde"
+      ],
+      [
+        "a",
+        "Z"
+      ],
+      [
+        "a",
+        "m"
+      ],
+      [
+        "j",
+        "d"
+      ],
+      [
+        "dec",
+        "db"
+      ],
+      [
+        "a",
+        "eb"
+      ],
+      [
+        "dedddd",
+        "b"
+      ],
+      [
+        "c",
+        "W"
+      ],
+      [
+        "ddddddeddddddc",
+        "ddddddbddddddcddddddeddddddf"
+      ],
+      [
+        "`",
+        "["
+      ],
+      [
+        "dddddde",
+        "dddddddddddddb"
+      ],
+      [
+        "edddd",
+        "d"
+      ],
+      [
+        "be",
+        "d"
+      ],
+      [
+        "ddddcdeddddcde",
+        "ddddcdeddddcde"
+      ],
+      [
+        "i",
+        "e"
+      ],
+      [
+        "dc",
+        "ede"
+      ],
+      [
+        "edddd",
+        "dee"
+      ],
+      [
+        "e",
+        "dda"
+      ],
+      [
+        "ee",
+        "df"
+      ],
+      [
+        "dddddda",
+        "ddddddg"
+      ],
+      [
+        "Â",
+        "ĵ"
+      ],
+      [
+        "b",
+        "di"
+      ],
+      [
+        "e",
+        "U"
+      ],
+      [
+        "g",
+        "Z"
+      ],
+      [
+        "dddddde",
+        "ddddddcddddddcddddddeddddddeddddddcddddddcddddddedddddde"
+      ],
+      [
+        "dddddda",
+        "ddddddb"
+      ],
+      [
+        "dec",
+        "de"
+      ],
+      [
+        "h",
+        "ee"
+      ],
+      [
+        "ec",
+        "dg"
+      ],
+      [
+        "dec",
+        "ddde"
+      ],
+      [
+        "dddddddd",
+        "ddddddc"
+      ],
+      [
+        "dee",
+        "ddc"
+      ],
+      [
+        "dddd",
+        "da"
+      ],
+      [
+        "ddddddf",
+        "ddddddedddddde"
+      ],
+      [
+        "ddddcdf",
+        "ddddcdf"
+      ],
+      [
+        "dddddddddddddddddddd",
+        "dddddd"
+      ],
+      [
+        "ddedddc",
+        "dddddddddcddde"
+      ],
+      [
+        "ddddddddddde",
+        "df"
+      ],
+      [
+        "j",
+        "j"
+      ],
+      [
+        "dc",
+        "dddde"
       ]
     ]
   }

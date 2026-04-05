@@ -15,7 +15,7 @@ conda activate /ocean/projects/cis260038p/mlee12/envs/aloha
 export PYTHONPATH=/ocean/projects/cis260038p/mlee12/ACT-Tokenizer/detr:/ocean/projects/cis260038p/mlee12/LIBERO:$PYTHONPATH
 
 # Shared args — FAST discrete tokens + language conditioning
-POLICY_ARGS="--policy_class ACT --kl_weight 10 --chunk_size 100 --hidden_dim 512 --dim_feedforward 3200 --seed 0 --temporal_agg"
+POLICY_ARGS="--policy_class ACT --kl_weight 0.01 --chunk_size 100 --hidden_dim 512 --dim_feedforward 3200 --seed 0 --temporal_agg"
 FAST_ARGS="--use_fast_tokens --fast_tokenizer_path ./fast_tokenizer"
 LANG_ARGS="--use_language"
 

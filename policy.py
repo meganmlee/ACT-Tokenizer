@@ -48,6 +48,7 @@ class ACTPolicy(nn.Module):
                 ce_loss = F.cross_entropy(
                     logits.reshape(B * S, V),
                     actions.reshape(B * S),
+                    ignore_index=self.fast_pad_token_id,
                 )
 
                 loss_dict['ce'] = ce_loss
