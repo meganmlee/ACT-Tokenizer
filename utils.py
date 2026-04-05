@@ -167,14 +167,42 @@ def set_seed(seed):
 # LIBERO dataset utilities
 ###############################################################################
 
+def get_libero_task_descriptions(dataset_path, task_name):
+    """Build a mapping from HDF5 file path → task description string
+    using the LIBERO benchmark API."""
+    from libero.libero import benchmark
+    benchmark_dict = benchmark.get_benchmark_dict()
+    suite_name = task_name if task_name in benchmark_dict else 'libero_90'
+    task_suite = benchmark_dict[suite_name]()
+
+    hdf5_files = sorted(glob.glob(os.path.join(dataset_path, '*.hdf5')))
+    desc_map = {}
+    for tid in range(task_suite.n_tasks):
+        task_desc = task_suite.get_task(tid).language
+        task_key = task_desc.replace(' ', '_').lower()
+        for hdf5_path in hdf5_files:
+            fname = os.path.basename(hdf5_path).lower()
+            if task_key in fname:
+                desc_map[hdf5_path] = task_desc
+                break
+    # Fallback: assign by index for any unmatched files
+    for i, hdf5_path in enumerate(hdf5_files):
+        if hdf5_path not in desc_map and i < task_suite.n_tasks:
+            desc_map[hdf5_path] = task_suite.get_task(i).language
+    return desc_map
+
+
 class LIBERODataset(Dataset):
     """
     Original LIBERO dataset — returns continuous actions.
+    When task_descriptions is provided (dict mapping hdf5_path → str),
+    also returns the task description string as a 5th element.
     """
-    def __init__(self, dataset_path, camera_names, norm_stats):
+    def __init__(self, dataset_path, camera_names, norm_stats, task_descriptions=None):
         super().__init__()
         self.camera_names = camera_names
         self.norm_stats = norm_stats
+        self.task_descriptions = task_descriptions
         self.samples = []
         if os.path.isdir(dataset_path):
             hdf5_files = sorted(glob.glob(os.path.join(dataset_path, '*.hdf5')))
@@ -185,13 +213,14 @@ class LIBERODataset(Dataset):
                 demos = sorted(f['data'].keys())
                 for demo_key in demos:
                     ep_len = f[f'data/{demo_key}/actions'].shape[0]
-                    self.samples.append((hdf5_path, demo_key, ep_len))
+                    desc = task_descriptions.get(hdf5_path, '') if task_descriptions else None
+                    self.samples.append((hdf5_path, demo_key, ep_len, desc))
 
     def __len__(self):
         return len(self.samples)
 
     def __getitem__(self, index):
-        hdf5_path, demo_key, ep_len = self.samples[index]
+        hdf5_path, demo_key, ep_len, task_desc = self.samples[index]
         start_ts = np.random.choice(ep_len)
         with h5py.File(hdf5_path, 'r') as root:
             demo = root[f'data/{demo_key}']
@@ -219,6 +248,8 @@ class LIBERODataset(Dataset):
         padded_action = torch.from_numpy(padded_action).float()
         is_pad = torch.from_numpy(is_pad).bool()
         all_cam_images = torch.from_numpy(all_cam_images).float()
+        if task_desc is not None:
+            return all_cam_images, qpos, padded_action, is_pad, task_desc
         return all_cam_images, qpos, padded_action, is_pad
 
 
@@ -232,12 +263,14 @@ class LIBEROTokenizedDataset(Dataset):
         qpos: (state_dim,) — normalized
         action_tokens: (max_token_len,) LongTensor — padded FAST token IDs
         is_pad: (max_token_len,) bool — True at pad positions
+        task_description: str (only when task_descriptions is provided)
     """
-    def __init__(self, dataset_path, camera_names, norm_stats, fast_wrapper):
+    def __init__(self, dataset_path, camera_names, norm_stats, fast_wrapper, task_descriptions=None):
         super().__init__()
         self.camera_names = camera_names
         self.norm_stats = norm_stats
         self.fast_wrapper = fast_wrapper
+        self.task_descriptions = task_descriptions
         self.samples = []
         if os.path.isdir(dataset_path):
             hdf5_files = sorted(glob.glob(os.path.join(dataset_path, '*.hdf5')))
@@ -248,13 +281,14 @@ class LIBEROTokenizedDataset(Dataset):
                 demos = sorted(f['data'].keys())
                 for demo_key in demos:
                     ep_len = f[f'data/{demo_key}/actions'].shape[0]
-                    self.samples.append((hdf5_path, demo_key, ep_len))
+                    desc = task_descriptions.get(hdf5_path, '') if task_descriptions else None
+                    self.samples.append((hdf5_path, demo_key, ep_len, desc))
 
     def __len__(self):
         return len(self.samples)
 
     def __getitem__(self, index):
-        hdf5_path, demo_key, ep_len = self.samples[index]
+        hdf5_path, demo_key, ep_len, task_desc = self.samples[index]
         start_ts = np.random.choice(ep_len)
         chunk_size = self.fast_wrapper.chunk_size
 
@@ -297,17 +331,48 @@ class LIBEROTokenizedDataset(Dataset):
         qpos = torch.from_numpy(qpos).float()
         all_cam_images = torch.from_numpy(all_cam_images).float()
 
+        if task_desc is not None:
+            return all_cam_images, qpos, tokens, is_pad, task_desc
         return all_cam_images, qpos, tokens, is_pad
 
 
-def get_libero_norm_stats(dataset_path, camera_names):
-    """Compute normalization statistics across all demos."""
+def get_libero_hdf5_for_task(dataset_path, task_name, task_id):
+    """Map a LIBERO benchmark task_id to the correct HDF5 file by matching
+    the task description from the benchmark API to filenames."""
+    from libero.libero import benchmark
+    benchmark_dict = benchmark.get_benchmark_dict()
+    suite_name = task_name if task_name in benchmark_dict else 'libero_90'
+    task_suite = benchmark_dict[suite_name]()
+    task_desc = task_suite.get_task(task_id).language
+    # Convert description to the filename pattern: spaces→underscores, lowercase
+    task_key = task_desc.replace(' ', '_').lower()
+
+    hdf5_files = sorted(glob.glob(os.path.join(dataset_path, '*.hdf5')))
+    for hdf5_path in hdf5_files:
+        fname = os.path.basename(hdf5_path).lower()
+        if task_key in fname:
+            print(f'  Matched task_id={task_id} ("{task_desc}") -> {os.path.basename(hdf5_path)}')
+            return hdf5_path
+
+    # Fallback to index-based if no match found (shouldn't happen)
+    print(f'  WARNING: No filename match for task_id={task_id} ("{task_desc}"), falling back to index')
+    return hdf5_files[task_id]
+
+
+def get_libero_norm_stats(dataset_path, camera_names, task_id=None, task_name=None):
+    """Compute normalization statistics across all demos.
+    If task_id is given, only use the single HDF5 for that task."""
     all_qpos = []
     all_actions = []
     if os.path.isdir(dataset_path):
         hdf5_files = sorted(glob.glob(os.path.join(dataset_path, '*.hdf5')))
     else:
         hdf5_files = [dataset_path]
+    if task_id is not None:
+        if task_name is not None:
+            hdf5_files = [get_libero_hdf5_for_task(dataset_path, task_name, task_id)]
+        else:
+            hdf5_files = [hdf5_files[task_id]]
     for hdf5_path in hdf5_files:
         with h5py.File(hdf5_path, 'r') as f:
             for demo_key in sorted(f['data'].keys()):
@@ -331,12 +396,44 @@ def get_libero_norm_stats(dataset_path, camera_names):
     return stats
 
 
-def load_libero_data(dataset_path, camera_names, batch_size, chunk_size):
-    """Load LIBERO data with continuous actions (original mode)."""
-    print(f'\nLIBERO data from: {dataset_path}\n')
-    stats = get_libero_norm_stats(dataset_path, camera_names)
+def _resolve_task_descriptions(dataset_path, task_name, task_id, single_hdf5, use_language):
+    """Helper to build task_descriptions dict when use_language=True."""
+    if not use_language:
+        return None
+    if task_id is not None and task_name is not None:
+        # Per-task: single description for the resolved HDF5
+        from libero.libero import benchmark
+        benchmark_dict = benchmark.get_benchmark_dict()
+        suite_name = task_name if task_name in benchmark_dict else 'libero_90'
+        task_suite = benchmark_dict[suite_name]()
+        desc = task_suite.get_task(task_id).language
+        task_descriptions = {single_hdf5: desc}
+        print(f'  Language conditioning: "{desc}"')
+    else:
+        # Multi-task: build mapping for all HDF5 files
+        task_descriptions = get_libero_task_descriptions(dataset_path, task_name)
+        print(f'  Language conditioning: {len(task_descriptions)} task descriptions loaded')
+    return task_descriptions
+
+
+def load_libero_data(dataset_path, camera_names, batch_size, chunk_size, task_id=None, task_name=None, use_language=False):
+    """Load LIBERO data with continuous actions (original mode).
+    If task_id is given, only load that task's HDF5 file."""
+    # Resolve the single HDF5 path when task_id is provided
+    if task_id is not None and os.path.isdir(dataset_path):
+        if task_name is not None:
+            single_hdf5 = get_libero_hdf5_for_task(dataset_path, task_name, task_id)
+        else:
+            hdf5_files = sorted(glob.glob(os.path.join(dataset_path, '*.hdf5')))
+            single_hdf5 = hdf5_files[task_id]
+        print(f'\nLIBERO data from: {single_hdf5}  (task_id={task_id})\n')
+    else:
+        single_hdf5 = dataset_path
+        print(f'\nLIBERO data from: {dataset_path}\n')
+    stats = get_libero_norm_stats(dataset_path, camera_names, task_id=task_id, task_name=task_name)
     stats['action_chunk_size'] = chunk_size
-    full_dataset = LIBERODataset(dataset_path, camera_names, stats)
+    task_descriptions = _resolve_task_descriptions(dataset_path, task_name, task_id, single_hdf5, use_language)
+    full_dataset = LIBERODataset(single_hdf5, camera_names, stats, task_descriptions=task_descriptions)
     print(f'Total LIBERO samples (demos): {len(full_dataset)}')
     train_size = int(0.9 * len(full_dataset))
     val_size = len(full_dataset) - train_size
@@ -346,11 +443,22 @@ def load_libero_data(dataset_path, camera_names, batch_size, chunk_size):
     return train_loader, val_loader, stats, full_dataset
 
 
-def load_libero_data_tokenized(dataset_path, camera_names, batch_size, fast_wrapper):
-    """Load LIBERO data with FAST-tokenized actions."""
-    print(f'\nLIBERO FAST-tokenized data from: {dataset_path}\n')
-    stats = get_libero_norm_stats(dataset_path, camera_names)
-    full_dataset = LIBEROTokenizedDataset(dataset_path, camera_names, stats, fast_wrapper)
+def load_libero_data_tokenized(dataset_path, camera_names, batch_size, fast_wrapper, task_id=None, task_name=None, use_language=False):
+    """Load LIBERO data with FAST-tokenized actions.
+    If task_id is given, only load that task's HDF5 file."""
+    if task_id is not None and os.path.isdir(dataset_path):
+        if task_name is not None:
+            single_hdf5 = get_libero_hdf5_for_task(dataset_path, task_name, task_id)
+        else:
+            hdf5_files = sorted(glob.glob(os.path.join(dataset_path, '*.hdf5')))
+            single_hdf5 = hdf5_files[task_id]
+        print(f'\nLIBERO FAST-tokenized data from: {single_hdf5}  (task_id={task_id})\n')
+    else:
+        single_hdf5 = dataset_path
+        print(f'\nLIBERO FAST-tokenized data from: {dataset_path}\n')
+    stats = get_libero_norm_stats(dataset_path, camera_names, task_id=task_id, task_name=task_name)
+    task_descriptions = _resolve_task_descriptions(dataset_path, task_name, task_id, single_hdf5, use_language)
+    full_dataset = LIBEROTokenizedDataset(single_hdf5, camera_names, stats, fast_wrapper, task_descriptions=task_descriptions)
     print(f'Total LIBERO tokenized samples (demos): {len(full_dataset)}')
     train_size = int(0.9 * len(full_dataset))
     val_size = len(full_dataset) - train_size

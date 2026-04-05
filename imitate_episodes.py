@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 from copy import deepcopy
 from tqdm import tqdm
 from einops import rearrange
+import wandb
 
 from constants import DT
 from utils import compute_dict_mean, set_seed, detach_dict
@@ -27,6 +28,7 @@ def main(args):
     num_epochs = args['num_epochs']
     use_fast_tokens = args.get('use_fast_tokens', False)
     fast_tokenizer_path = args.get('fast_tokenizer_path', None)
+    use_language = args.get('use_language', False)
 
     # get task parameters
     is_sim = task_name[:4] == 'sim_'
@@ -99,6 +101,7 @@ def main(args):
                          'state_dim': state_dim,
                          'action_dim': action_dim,
                          'use_fast_tokens': use_fast_tokens,
+                         'use_language': use_language,
                          }
         if use_fast_tokens:
             # +1 because pad_token_id = vocab_size (out-of-vocab)
@@ -130,6 +133,8 @@ def main(args):
         'resume_ckpt': args.get('resume', None),
         'use_fast_tokens': use_fast_tokens,
         'fast_wrapper': fast_wrapper,
+        'use_language': use_language,
+        'task_id': args.get('task_id', None),
     }
 
     if is_eval:
@@ -142,31 +147,51 @@ def main(args):
             task_suite = benchmark_dict[suite_name]()
             num_tasks = task_suite.n_tasks
 
+            # If --task_id is given, only evaluate that single task
+            eval_task_id = args.get('task_id', None)
+            if eval_task_id is not None:
+                task_ids_to_eval = [eval_task_id]
+            else:
+                task_ids_to_eval = list(range(num_tasks))
+
             all_results = []
-            for task_id in range(num_tasks):
-                task_desc = task_suite.get_task(task_id).language
-                print(f'\n{"="*60}')
-                print(f'Evaluating task {task_id}/{num_tasks}: {task_desc}')
-                print(f'{"="*60}')
-                success_rate, avg_return = eval_bc(config, ckpt_name, save_episode=True, task_id=task_id)
-                all_results.append([task_id, task_desc, success_rate, avg_return])
+            for tid in task_ids_to_eval:
+                # When using per-task checkpoints, load from task-specific dir
+                per_task_ckpt = os.path.join(ckpt_dir, f'task_{tid}', ckpt_name)
+                if os.path.exists(per_task_ckpt):
+                    task_config_copy = dict(config)
+                    task_config_copy['ckpt_dir'] = os.path.join(ckpt_dir, f'task_{tid}')
+                    task_desc = task_suite.get_task(tid).language
+                    print(f'\n{"="*60}')
+                    print(f'Evaluating task {tid}/{num_tasks}: {task_desc}')
+                    print(f'  checkpoint: {per_task_ckpt}')
+                    print(f'{"="*60}')
+                    success_rate, avg_return = eval_bc(task_config_copy, ckpt_name, save_episode=True, task_id=tid)
+                else:
+                    # Fallback: single checkpoint for all tasks (old behavior)
+                    task_desc = task_suite.get_task(tid).language
+                    print(f'\n{"="*60}')
+                    print(f'Evaluating task {tid}/{num_tasks}: {task_desc}')
+                    print(f'{"="*60}')
+                    success_rate, avg_return = eval_bc(config, ckpt_name, save_episode=True, task_id=tid)
+                all_results.append([tid, task_desc, success_rate, avg_return])
 
             print(f'\n{"="*60}')
-            print(f'EVALUATION SUMMARY — {suite_name} ({num_tasks} tasks)')
+            print(f'EVALUATION SUMMARY — {suite_name} ({len(all_results)} tasks)')
             print(f'{"="*60}')
             total_success = 0
-            for task_id, desc, sr, ar in all_results:
-                print(f'  Task {task_id:2d} | SR: {sr:.2f} | {desc}')
+            for tid, desc, sr, _ in all_results:
+                print(f'  Task {tid:2d} | SR: {sr:.2f} | {desc}')
                 total_success += sr
-            avg_success = total_success / num_tasks
+            avg_success = total_success / len(all_results)
             print(f'{"="*60}')
             print(f'  Average success rate: {avg_success:.3f}')
             print(f'{"="*60}')
 
             result_path = os.path.join(ckpt_dir, f'eval_all_tasks.txt')
             with open(result_path, 'w') as f:
-                for task_id, desc, sr, ar in all_results:
-                    f.write(f'Task {task_id:2d} | SR: {sr:.2f} | Return: {ar:.2f} | {desc}\n')
+                for tid, desc, sr, _ in all_results:
+                    f.write(f'Task {tid:2d} | SR: {sr:.2f} | {desc}\n')
                 f.write(f'\nAverage success rate: {avg_success:.3f}\n')
             print(f'Results saved to {result_path}')
         else:
@@ -176,15 +201,18 @@ def main(args):
         exit()
 
     # Load data
+    task_id = args.get('task_id', None)
     if is_libero:
         if use_fast_tokens:
             from utils import load_libero_data_tokenized
             train_dataloader, val_dataloader, stats, _ = load_libero_data_tokenized(
-                dataset_path, camera_names, batch_size_train, fast_wrapper)
+                dataset_path, camera_names, batch_size_train, fast_wrapper,
+                task_id=task_id, task_name=task_name, use_language=use_language)
         else:
             from utils import load_libero_data
             train_dataloader, val_dataloader, stats, _ = load_libero_data(
-                dataset_path, camera_names, batch_size_train, chunk_size=args['chunk_size'])
+                dataset_path, camera_names, batch_size_train, chunk_size=args['chunk_size'],
+                task_id=task_id, task_name=task_name, use_language=use_language)
     else:
         from utils import load_data
         train_dataloader, val_dataloader, stats, _ = load_data(
@@ -267,6 +295,8 @@ def eval_bc(config, ckpt_name, save_episode=True, task_id=0):
     task_name = config['task_name']
     temporal_agg = config['temporal_agg']
 
+    use_language = config.get('use_language', False)
+
     ckpt_path = os.path.join(ckpt_dir, ckpt_name)
     policy = make_policy(policy_class, policy_config)
     loading_status = policy.load_state_dict(torch.load(ckpt_path))
@@ -294,15 +324,21 @@ def eval_bc(config, ckpt_name, save_episode=True, task_id=0):
         env.seed(0)
         init_states = task_suite.get_task_init_states(task_id)
         env_max_reward = 1
+        # Task description for language conditioning
+        eval_task_description = task.language if use_language else None
+        if eval_task_description:
+            print(f'  Language conditioning: "{eval_task_description}"')
     elif real_robot:
         from aloha_scripts.robot_utils import move_grippers
         from aloha_scripts.real_env import make_real_env
         env = make_real_env(init_node=True)
         env_max_reward = 0
+        eval_task_description = None
     else:
         from sim_env import make_sim_env
         env = make_sim_env(task_name)
         env_max_reward = env.task.max_reward
+        eval_task_description = None
 
     query_frequency = policy_config['num_queries']
     if use_fast_tokens:
@@ -314,7 +350,7 @@ def eval_bc(config, ckpt_name, save_episode=True, task_id=0):
 
     max_timesteps = int(max_timesteps * 1)
 
-    num_rollouts = 20 if is_libero else 50
+    num_rollouts = 50
     episode_returns = []
     highest_rewards = []
     for rollout_id in range(num_rollouts):
@@ -377,7 +413,8 @@ def eval_bc(config, ckpt_name, save_episode=True, task_id=0):
                 if use_fast_tokens:
                     # Re-predict every chunk_size steps
                     if current_action_chunk is None or chunk_step >= fast_wrapper.chunk_size:
-                        predicted_tokens, token_lens = policy(qpos, curr_image)  # (1, max_token_len)
+                        td = [eval_task_description] if eval_task_description else None
+                        predicted_tokens, token_lens = policy(qpos, curr_image, task_description=td)  # (1, max_token_len)
                         # Detokenize to continuous actions
                         current_action_chunk = fast_wrapper.decode(predicted_tokens.cpu(), token_lens.cpu())[0]  # (chunk_size, action_dim)
                         chunk_step = 0
@@ -394,7 +431,8 @@ def eval_bc(config, ckpt_name, save_episode=True, task_id=0):
                     action = raw_action
                 elif config['policy_class'] == "ACT":
                     if t % query_frequency == 0:
-                        all_actions = policy(qpos, curr_image)
+                        td = [eval_task_description] if eval_task_description else None
+                        all_actions = policy(qpos, curr_image, task_description=td)
                     if temporal_agg:
                         all_time_actions[[t], t:t+num_queries] = all_actions
                         actions_for_curr_step = all_time_actions[:, t]
@@ -441,33 +479,31 @@ def eval_bc(config, ckpt_name, save_episode=True, task_id=0):
         episode_returns.append(episode_return)
         episode_highest_reward = np.max(rewards)
         highest_rewards.append(episode_highest_reward)
-        print(f'Rollout {rollout_id}\n{episode_return=}, {episode_highest_reward=}, {env_max_reward=}, Success: {episode_highest_reward==env_max_reward}')
+        print(f'Rollout {rollout_id}\nSuccess: {episode_highest_reward==env_max_reward}')
 
     if is_libero:
         env.close()
 
     success_rate = np.mean(np.array(highest_rewards) == env_max_reward)
-    avg_return = np.mean(episode_returns)
-    summary_str = f'\nSuccess rate: {success_rate}\nAverage return: {avg_return}\n\n'
-    for r in range(int(env_max_reward)+1):
-        more_or_equal_r = (np.array(highest_rewards) >= r).sum()
-        more_or_equal_r_rate = more_or_equal_r / num_rollouts
-        summary_str += f'Reward >= {r}: {more_or_equal_r}/{num_rollouts} = {more_or_equal_r_rate*100}%\n'
+    num_success = int(np.sum(np.array(highest_rewards) == env_max_reward))
+    summary_str = f'\nSuccess rate: {success_rate} ({num_success}/{num_rollouts})\n'
     print(summary_str)
 
     result_file_name = 'result_' + ckpt_name.split('.')[0] + '.txt'
     with open(os.path.join(ckpt_dir, result_file_name), 'w') as f:
         f.write(summary_str)
-        f.write(repr(episode_returns))
-        f.write('\n\n')
         f.write(repr(highest_rewards))
-    return success_rate, avg_return
+    return success_rate, success_rate
 
 
 def forward_pass(data, policy):
-    image_data, qpos_data, action_data, is_pad = data
+    if len(data) == 5:
+        image_data, qpos_data, action_data, is_pad, task_description = data
+    else:
+        image_data, qpos_data, action_data, is_pad = data
+        task_description = None
     image_data, qpos_data, action_data, is_pad = image_data.cuda(), qpos_data.cuda(), action_data.cuda(), is_pad.cuda()
-    return policy(qpos_data, image_data, action_data, is_pad)
+    return policy(qpos_data, image_data, action_data, is_pad, task_description=task_description)
 
 
 def train_bc(train_dataloader, val_dataloader, config):
@@ -476,6 +512,36 @@ def train_bc(train_dataloader, val_dataloader, config):
     seed = config['seed']
     policy_class = config['policy_class']
     policy_config = config['policy_config']
+
+    # Build run name: e.g. libero_spatial_lact or libero_spatial_act_fast_task3
+    task_name = config['task_name']
+    variant = 'act'
+    if config.get('use_language', False):
+        variant = 'lact'
+    if config.get('use_fast_tokens', False):
+        variant += '_fast'
+    task_id = config.get('task_id', None)
+    run_name = f'{task_name}_{variant}'
+    if task_id is not None:
+        run_name += f'_task{task_id}'
+
+    wandb.init(
+        entity='meganlee-cmu',
+        project='ACT',
+        name=run_name,
+        config={
+            'task_name': task_name,
+            'variant': variant,
+            'task_id': task_id,
+            'num_epochs': num_epochs,
+            'seed': seed,
+            'lr': config['lr'],
+            'policy_class': policy_class,
+            'use_fast_tokens': config.get('use_fast_tokens', False),
+            'use_language': config.get('use_language', False),
+            **{k: v for k, v in policy_config.items() if not callable(v)},
+        },
+    )
 
     set_seed(seed)
 
@@ -515,6 +581,7 @@ def train_bc(train_dataloader, val_dataloader, config):
         for k, v in epoch_summary.items():
             summary_string += f'{k}: {v.item():.3f} '
         print(summary_string)
+        wandb.log({f'val/{k}': v.item() for k, v in epoch_summary.items()}, step=epoch)
 
         policy.train()
         optimizer.zero_grad()
@@ -532,6 +599,7 @@ def train_bc(train_dataloader, val_dataloader, config):
         for k, v in epoch_summary.items():
             summary_string += f'{k}: {v.item():.3f} '
         print(summary_string)
+        wandb.log({f'train/{k}': v.item() for k, v in epoch_summary.items()}, step=epoch)
 
         if epoch % 100 == 0:
             ckpt_path = os.path.join(ckpt_dir, f'policy_epoch_{epoch}_seed_{seed}.ckpt')
@@ -545,6 +613,7 @@ def train_bc(train_dataloader, val_dataloader, config):
     torch.save(best_state_dict, ckpt_path)
     print(f'Training finished:\nSeed {seed}, val loss {min_val_loss:.6f} at epoch {best_epoch}')
     plot_history(train_history, validation_history, num_epochs, ckpt_dir, seed)
+    wandb.finish()
     return best_ckpt_info
 
 
@@ -581,10 +650,14 @@ if __name__ == '__main__':
     parser.add_argument('--hidden_dim', action='store', type=int, help='hidden_dim', required=False)
     parser.add_argument('--dim_feedforward', action='store', type=int, help='dim_feedforward', required=False)
     parser.add_argument('--temporal_agg', action='store_true')
+    parser.add_argument('--task_id', action='store', type=int, help='LIBERO task id (0-9) for per-task training', required=False, default=None)
     parser.add_argument('--resume', action='store', type=str, help='path to checkpoint to resume from', required=False, default=None)
 
     # for FAST tokenization
     parser.add_argument('--use_fast_tokens', action='store_true', help='Use FAST action tokenization')
     parser.add_argument('--fast_tokenizer_path', action='store', type=str, help='Path to trained FAST tokenizer', required=False, default=None)
+
+    # for language conditioning (LAV-ACT)
+    parser.add_argument('--use_language', action='store_true', help='Enable CLIP language conditioning (LAV-ACT)')
 
     main(vars(parser.parse_args()))

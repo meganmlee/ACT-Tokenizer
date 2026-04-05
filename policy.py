@@ -16,12 +16,14 @@ class ACTPolicy(nn.Module):
         self.optimizer = optimizer
         self.kl_weight = args_override['kl_weight']
         self.use_fast_tokens = args_override.get('use_fast_tokens', False)
+        self.use_language = args_override.get('use_language', False)
         if self.use_fast_tokens:
             self.fast_pad_token_id = args_override['fast_pad_token_id']
         print(f'KL Weight {self.kl_weight}')
         print(f'Use FAST tokens: {self.use_fast_tokens}')
+        print(f'Use language (LAV-ACT): {self.use_language}')
 
-    def __call__(self, qpos, image, actions=None, is_pad=None):
+    def __call__(self, qpos, image, actions=None, is_pad=None, task_description=None):
         env_state = None
         normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
                                          std=[0.229, 0.224, 0.225])
@@ -35,7 +37,8 @@ class ACTPolicy(nn.Module):
                 is_pad = is_pad[:, :self.model.num_queries]
 
                 # Forward pass — model returns logits (B, max_token_len, vocab_size)
-                logits, _, (mu, logvar) = self.model(qpos, image, env_state, actions, is_pad)
+                logits, _, (mu, logvar) = self.model(qpos, image, env_state, actions, is_pad,
+                                                     task_description=task_description)
 
                 total_kld, dim_wise_kld, mean_kld = kl_divergence(mu, logvar)
                 loss_dict = dict()
@@ -45,6 +48,7 @@ class ACTPolicy(nn.Module):
                 ce_loss = F.cross_entropy(
                     logits.reshape(B * S, V),
                     actions.reshape(B * S),
+                    ignore_index=self.fast_pad_token_id,
                 )
 
                 loss_dict['ce'] = ce_loss
@@ -56,7 +60,8 @@ class ACTPolicy(nn.Module):
                 actions = actions[:, :self.model.num_queries]
                 is_pad = is_pad[:, :self.model.num_queries]
 
-                a_hat, is_pad_hat, (mu, logvar) = self.model(qpos, image, env_state, actions, is_pad)
+                a_hat, is_pad_hat, (mu, logvar) = self.model(qpos, image, env_state, actions, is_pad,
+                                                              task_description=task_description)
                 total_kld, dim_wise_kld, mean_kld = kl_divergence(mu, logvar)
                 loss_dict = dict()
                 all_l1 = F.l1_loss(actions, a_hat, reduction='none')
@@ -68,7 +73,8 @@ class ACTPolicy(nn.Module):
         else:  # inference time
             if self.use_fast_tokens:
                 # Parallel prediction: model returns logits (B, max_token_len, vocab_size)
-                logits, _, (_, _) = self.model(qpos, image, env_state)
+                logits, _, (_, _) = self.model(qpos, image, env_state,
+                                               task_description=task_description)
                 predicted_tokens = logits.argmax(dim=-1)  # (B, max_token_len)
                 # Compute token lengths: first occurrence of pad token
                 B = predicted_tokens.shape[0]
@@ -79,7 +85,8 @@ class ACTPolicy(nn.Module):
                         token_lens[b] = pad_positions[0].item()
                 return predicted_tokens, token_lens
             else:
-                a_hat, _, (_, _) = self.model(qpos, image, env_state)
+                a_hat, _, (_, _) = self.model(qpos, image, env_state,
+                                              task_description=task_description)
                 return a_hat
 
     def configure_optimizers(self):
