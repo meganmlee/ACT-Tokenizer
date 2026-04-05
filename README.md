@@ -13,7 +13,6 @@ These compose: LAV-ACT + FAST gives language-conditioned multi-task training wit
 |---------|---------|----------|----------|---------|
 | ACT (baseline) | Continuous | No | Per-task | _(none)_ |
 | LAV-ACT | Continuous | CLIP | Multi-task | `--use_language` |
-| FAST-ACT | FAST discrete | No | Per-task | `--use_fast_tokens` |
 | LAV-ACT + FAST | FAST discrete | CLIP | Multi-task | `--use_language --use_fast_tokens` |
 
 ## Architecture
@@ -108,13 +107,11 @@ sbatch job.sh libero_spatial
 sbatch job_LACT.sh libero_spatial
 ```
 
-### FAST-ACT (per-task, discrete tokens)
+### LAV-ACT + FAST (multi-task, discrete tokens + CLIP language)
 
 ```bash
 sbatch job_actFAST.sh libero_spatial
 ```
-
-To add language conditioning on top (LAV-ACT + FAST), uncomment `LANG_ARGS` in `job_actFAST.sh`, remove the `--array` SBATCH header, and remove `--task_id`.
 
 All suites: `libero_spatial`, `libero_object`, `libero_goal`, `libero_10`
 
@@ -126,7 +123,7 @@ Checkpoints and eval results are saved to:
 - `checkpoints/{suite}_act/` -- ACT baseline (per-task subdirs)
 - `checkpoints/{suite}_lact/` -- LAV-ACT (single model)
 - `checkpoints/{suite}_act_fast/` -- FAST-ACT (per-task subdirs)
-- `checkpoints/{suite}_act_fast/` -- LAV-ACT + FAST (when LANG_ARGS enabled)
+- `checkpoints/{suite}_lact_fast/` -- LAV-ACT + FAST
 
 ## Swapping tokenizers
 
@@ -141,5 +138,5 @@ The tokenizer is pluggable via the `ActionTokenizer` base class in `tokenizer.py
 - `utils.py` -- Data loading (continuous + tokenized + language)
 - `job.sh` -- ACT baseline (per-task)
 - `job_LACT.sh` -- LAV-ACT (multi-task, continuous + language)
-- `job_actFAST.sh` -- FAST-ACT (per-task, discrete tokens)
+- `job_actFAST.sh` -- LAV-ACT + FAST (multi-task, discrete tokens + language)
 - `eval.sh` / `eval_fast.sh` -- Standalone eval scripts (legacy)
