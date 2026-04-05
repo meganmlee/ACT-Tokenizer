@@ -98,19 +98,19 @@ python tokenizer.py \
 ### ACT baseline (per-task, continuous actions)
 
 ```bash
-sbatch job.sh libero_spatial
+sbatch run_act.sh libero_spatial
 ```
 
 ### LAV-ACT (multi-task, continuous actions + CLIP language)
 
 ```bash
-sbatch job_LACT.sh libero_spatial
+sbatch run_lavact.sh libero_spatial
 ```
 
 ### LAV-ACT + FAST (multi-task, discrete tokens + CLIP language)
 
 ```bash
-sbatch job_actFAST.sh libero_spatial
+sbatch run_lavact_fast.sh libero_spatial
 ```
 
 All suites: `libero_spatial`, `libero_object`, `libero_goal`, `libero_10`
