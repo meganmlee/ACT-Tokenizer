@@ -72,18 +72,10 @@ class ACTPolicy(nn.Module):
                 return loss_dict
         else:  # inference time
             if self.use_fast_tokens:
-                # Parallel prediction: model returns logits (B, max_token_len, vocab_size)
-                logits, _, (_, _) = self.model(qpos, image, env_state,
-                                               task_description=task_description)
-                predicted_tokens = logits.argmax(dim=-1)  # (B, max_token_len)
-                # Compute token lengths: first occurrence of pad token
-                B = predicted_tokens.shape[0]
-                token_lens = torch.full((B,), predicted_tokens.shape[1], dtype=torch.long)
-                for b in range(B):
-                    pad_positions = (predicted_tokens[b] == self.fast_pad_token_id).nonzero(as_tuple=False)
-                    if len(pad_positions) > 0:
-                        token_lens[b] = pad_positions[0].item()
-                return predicted_tokens, token_lens
+                # AR head returns (tokens, token_lens) directly via greedy decoding
+                tokens, token_lens, (_, _) = self.model(qpos, image, env_state,
+                                                        task_description=task_description)
+                return tokens, token_lens
             else:
                 a_hat, _, (_, _) = self.model(qpos, image, env_state,
                                               task_description=task_description)

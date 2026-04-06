@@ -157,11 +157,15 @@ class DETRVAE(nn.Module):
             self.vocab_size = vocab_size
             self.max_token_len = max_token_len
             self.pad_token_id = pad_token_id
-            # Parallel prediction: one query per token position
             self.num_queries = max_token_len
-            self.query_embed = nn.Embedding(max_token_len, hidden_dim)
-            self.action_head = nn.Linear(hidden_dim, vocab_size)
-            self.is_pad_head = nn.Linear(hidden_dim, 1)
+            # Autoregressive token head — replaces parallel query/action_head
+            self.ar_head = AutoregressiveTokenHead(
+                hidden_dim=hidden_dim,
+                vocab_size=vocab_size,
+                max_token_len=max_token_len,
+                bos_token_id=vocab_size,  # BOS = last ID in the embedding table (+1 allocated internally)
+                pad_token_id=pad_token_id,
+            )
         else:
             self.num_queries = num_queries
             self.action_head = nn.Linear(hidden_dim, action_dim)
@@ -321,9 +325,35 @@ class DETRVAE(nn.Module):
             proprio_input = self.input_proj_robot_state(qpos)
             src = torch.cat(all_cam_features, axis=3)
             pos = torch.cat(all_cam_pos, axis=3)
-            hs = self.transformer(src, None, self.query_embed.weight, pos, latent_input, proprio_input,
-                                  self.additional_pos_embed.weight,
-                                  text_input=text_embed if self.use_language else None)[0]
+
+            if self.use_fast_tokens:
+                # Build memory for AR head: run DETR encoder only, skip decoder
+                _bs, c, h, w = src.shape
+                src_flat = src.flatten(2).permute(2, 0, 1)  # (HW, B, C)
+                pos_flat = pos.flatten(2).permute(2, 0, 1).repeat(1, _bs, 1)
+
+                add_pos = self.additional_pos_embed.weight.unsqueeze(1).repeat(1, _bs, 1)
+                pos_flat = torch.cat([add_pos, pos_flat], axis=0)
+
+                if text_embed is not None:
+                    addition_input = torch.stack([latent_input, proprio_input, text_embed], axis=0)
+                else:
+                    addition_input = torch.stack([latent_input, proprio_input], axis=0)
+                src_flat = torch.cat([addition_input, src_flat], axis=0)
+
+                memory = self.transformer.encoder(src_flat, pos=pos_flat)  # (seq, B, C)
+                memory = memory.permute(1, 0, 2)  # (B, seq, C) — AR head expects batch_first
+
+                if is_training:
+                    logits = self.ar_head(memory, targets=actions)
+                    return logits, None, [mu, logvar]
+                else:
+                    tokens, token_lens = self.ar_head(memory)
+                    return tokens, token_lens, [mu, logvar]
+            else:
+                hs = self.transformer(src, None, self.query_embed.weight, pos, latent_input, proprio_input,
+                                      self.additional_pos_embed.weight,
+                                      text_input=text_embed if self.use_language else None)[0]
         else:
             qpos = self.input_proj_robot_state(qpos)
             env_state = self.input_proj_env_state(env_state)
